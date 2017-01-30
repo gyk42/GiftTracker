@@ -53,7 +53,7 @@ Hallmark knows how to celebrate life stages. | They don't keep track of gift giv
 **Needs/ Problems/ Goals:**  
 * With her fast pace liftstyle she needs single and an easy to get to gift tracking app
 
-![Alt text](./images/thrifty-terri.png)
+![Alt text](./images/Thrifty-Terri.png)
 **Name: Thrifty Terri**  
 **Age: 32**  
 **Married with 2 Children**  
@@ -83,4 +83,5 @@ Hallmark knows how to celebrate life stages. | They don't keep track of gift giv
 8. Sync data with Firebase when APP is able to connect to Firebase
 
 ## Wireframes
-![Alt text](./images/wireframes.png)
+![Alt text](./images/wifreframe1.png)
+![Alt text](./images/wireframe2.png)
