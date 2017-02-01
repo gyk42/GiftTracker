@@ -15,14 +15,18 @@ class ListOfGiftsViewController: UIViewController, UITableViewDataSource, UITabl
    @IBOutlet weak var listOfGiftsTableView: UITableView!
    
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return 1
+      return products.count
    }
    
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCell(withIdentifier: "listOfGifts", for: indexPath) as! ListOfGiftsTableViewCell
       
-      cell.productNameLabel.text = products[indexPath.row].title
+      let prdIndexRow = products[indexPath.row]
+      let prdPrice = String(format: "%.2f", prdIndexRow.price)
       
+      cell.productNameLabel.text = prdIndexRow.title
+      cell.productImageView.downLoadImag(from: prdIndexRow.imageUrl)
+      cell.productPriceLabel.text = prdPrice
       
       return cell
    }

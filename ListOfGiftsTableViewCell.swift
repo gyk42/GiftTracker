@@ -15,6 +15,7 @@ class ListOfGiftsTableViewCell: UITableViewCell {
    @IBOutlet weak var productPriceLabel: UILabel!
    @IBOutlet weak var occasionLabel: UILabel!
    @IBOutlet weak var dateLabel: UILabel!
+   @IBOutlet weak var productImageView: UIImageView!
    
    override func awakeFromNib() {
       super.awakeFromNib()
