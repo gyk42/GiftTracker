@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5013BC841E443B0000A8FFF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5013BC831E443B0000A8FFF4 /* Assets.xcassets */; };
+		5013BC861E443D5A00A8FFF4 /* QRScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5013BC851E443D5A00A8FFF4 /* QRScannerController.swift */; };
+		5013BC881E44407100A8FFF4 /* NewProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5013BC871E44407100A8FFF4 /* NewProductViewController.swift */; };
 		508DA8991E3EC6090093514D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508DA8981E3EC6090093514D /* AppDelegate.swift */; };
 		508DA89B1E3EC6090093514D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508DA89A1E3EC6090093514D /* ViewController.swift */; };
 		508DA89E1E3EC6090093514D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 508DA89C1E3EC6090093514D /* Main.storyboard */; };
 		508DA8A11E3EC6090093514D /* GiftTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 508DA89F1E3EC6090093514D /* GiftTracker.xcdatamodeld */; };
 		508DA8A61E3EC6090093514D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 508DA8A41E3EC6090093514D /* LaunchScreen.storyboard */; };
-		508DA8B01E3EE6450093514D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 508DA8AF1E3EE6450093514D /* Assets.xcassets */; };
 		50C5C18E1E4030D800178B58 /* ListOfGiftsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C5C18D1E4030D800178B58 /* ListOfGiftsTableViewCell.swift */; };
 		50C5C1901E4030F800178B58 /* ListOfGiftsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C5C18F1E4030F800178B58 /* ListOfGiftsViewController.swift */; };
 		50C5C1921E40311E00178B58 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C5C1911E40311E00178B58 /* ProductModel.swift */; };
@@ -21,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5013BC831E443B0000A8FFF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5013BC851E443D5A00A8FFF4 /* QRScannerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScannerController.swift; sourceTree = "<group>"; };
+		5013BC871E44407100A8FFF4 /* NewProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProductViewController.swift; sourceTree = "<group>"; };
 		508DA8951E3EC6090093514D /* GiftTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GiftTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		508DA8981E3EC6090093514D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		508DA89A1E3EC6090093514D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,7 +33,6 @@
 		508DA8A01E3EC6090093514D /* GiftTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GiftTracker.xcdatamodel; sourceTree = "<group>"; };
 		508DA8A51E3EC6090093514D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		508DA8A71E3EC6090093514D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		508DA8AF1E3EE6450093514D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50C5C18D1E4030D800178B58 /* ListOfGiftsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListOfGiftsTableViewCell.swift; path = ../ListOfGiftsTableViewCell.swift; sourceTree = "<group>"; };
 		50C5C18F1E4030F800178B58 /* ListOfGiftsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfGiftsViewController.swift; sourceTree = "<group>"; };
 		50C5C1911E40311E00178B58 /* ProductModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 		50C5C18A1E40304100178B58 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				5013BC871E44407100A8FFF4 /* NewProductViewController.swift */,
+				5013BC851E443D5A00A8FFF4 /* QRScannerController.swift */,
 				50C5C18F1E4030F800178B58 /* ListOfGiftsViewController.swift */,
 				50C5C18D1E4030D800178B58 /* ListOfGiftsTableViewCell.swift */,
 				508DA8981E3EC6090093514D /* AppDelegate.swift */,
@@ -90,9 +96,9 @@
 		50C5C18B1E40309800178B58 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				5013BC831E443B0000A8FFF4 /* Assets.xcassets */,
 				508DA89C1E3EC6090093514D /* Main.storyboard */,
 				508DA8A41E3EC6090093514D /* LaunchScreen.storyboard */,
-				508DA8AF1E3EE6450093514D /* Assets.xcassets */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -175,7 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				508DA8A61E3EC6090093514D /* LaunchScreen.storyboard in Resources */,
-				508DA8B01E3EE6450093514D /* Assets.xcassets in Resources */,
+				5013BC841E443B0000A8FFF4 /* Assets.xcassets in Resources */,
 				508DA89E1E3EC6090093514D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -187,8 +193,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5013BC861E443D5A00A8FFF4 /* QRScannerController.swift in Sources */,
 				50C5C1961E4049EA00178B58 /* Extention.swift in Sources */,
 				508DA89B1E3EC6090093514D /* ViewController.swift in Sources */,
+				5013BC881E44407100A8FFF4 /* NewProductViewController.swift in Sources */,
 				508DA8991E3EC6090093514D /* AppDelegate.swift in Sources */,
 				50C5C1901E4030F800178B58 /* ListOfGiftsViewController.swift in Sources */,
 				50C5C18E1E4030D800178B58 /* ListOfGiftsTableViewCell.swift in Sources */,

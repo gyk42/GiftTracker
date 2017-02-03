@@ -22,3 +22,10 @@ extension UIImageView {
       task.resume()
    }
 }
+
+extension Date {
+   func format() -> String {
+      return Format.shared.dateFormatter.string(from: self)
+   }
+}
+

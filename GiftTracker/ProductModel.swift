@@ -8,10 +8,14 @@
 
 import Foundation
 
-class Product {
+enum GiftTarget: String {
+   case to = "To"
+   case from = "From"
+}
+
+class ProductUPC {
    var title: String
    var imageUrl: String
-
    var price: Float
    
    init(jsonObject: [String : Any]) {
@@ -21,8 +25,15 @@ class Product {
       let offers = jsonObject["offers"] as? [[String : Any]] ?? [["Unknown" : "Unknown"]]
       let firstOffer = offers[0]
       price = (firstOffer["price"] as? Float!)!
-      
    }
 }
 
+class Format {
+   static let shared = Format()
+   let dateFormatter = DateFormatter()
+   private init() {
+      dateFormatter.dateStyle = .long
+      dateFormatter.timeStyle = .long
+   }
+}
 

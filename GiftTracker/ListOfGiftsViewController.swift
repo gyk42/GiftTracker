@@ -10,18 +10,18 @@ import UIKit
 
 class ListOfGiftsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
    
-   var products = [Product]()
+   var productsUPC = [ProductUPC]()
    
    @IBOutlet weak var listOfGiftsTableView: UITableView!
    
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return products.count
+      return productsUPC.count
    }
    
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCell(withIdentifier: "listOfGifts", for: indexPath) as! ListOfGiftsTableViewCell
       
-      let prdIndexRow = products[indexPath.row]
+      let prdIndexRow = productsUPC[indexPath.row]
       let prdPrice = String(format: "%.2f", prdIndexRow.price)
       
       cell.productNameLabel.text = prdIndexRow.title
@@ -34,8 +34,10 @@ class ListOfGiftsViewController: UIViewController, UITableViewDataSource, UITabl
    override func viewDidLoad() {
       super.viewDidLoad()
       
-      UPCApi.fetchUPC(upc: "673419267106", closure: { data in
-         self.products = data as! [Product]
+// TODO: Need to guard the UPC code so that app doesn't crash when item is not in the API
+      
+      UPCApi.fetchUPC(upc: "9780545362580", closure: { data in
+         self.productsUPC = data as! [ProductUPC]
          self.listOfGiftsTableView.reloadData()
       })
       
