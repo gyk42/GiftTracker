@@ -8,23 +8,28 @@
 
 import UIKit
 
-class NewProductViewController: UIViewController, UITextFieldDelegate {
+class NewProductViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+
+   var passUPC:String!
+   var productsUPC = [ProductUPC]()
+   var eventPickerData: [String] = ["Birthday", "Valentine\'s day", "Mother\'s day", "Father's day", "Thanksgiving","Hanukkah","Christmas", "Other"]
+   var eventName = ""
    
    @IBOutlet weak var productImageView: UIImageView!
    @IBOutlet weak var productName: UITextField!
    @IBOutlet weak var friendFirstName: UITextField!
    @IBOutlet weak var friendLastName: UITextField!
-   @IBOutlet weak var occassion: UITextField!
    @IBOutlet weak var productPrice: UITextField!
    @IBOutlet weak var upcCode: UILabel!
-   @IBOutlet weak var scrollForKeyboard: UIScrollView!
-   
-   var passUPC:String!
-   
-   var productsUPC = [ProductUPC]()
-   
+   @IBOutlet weak var eventPicker: UIPickerView!
+//   @IBOutlet weak var scrollForKeyboard: UIScrollView!
+
+   // MARK: Life 
    override func viewDidLoad() {
       super.viewDidLoad()
+      
+      eventPicker.delegate = self
+      eventPicker.dataSource = self
       
       if passUPC != nil {
          UPCApi.fetchUPC(upc: passUPC, closure: { data in
@@ -33,7 +38,8 @@ class NewProductViewController: UIViewController, UITextFieldDelegate {
          })
       }
    }
-
+   
+   // displays information fetched from api.upcitemdb.com
    func displayProductInfo() {
       for x in 0..<productsUPC.count {
          productName.text = productsUPC[x].productName
@@ -43,33 +49,28 @@ class NewProductViewController: UIViewController, UITextFieldDelegate {
       }
    }
    
-   // Start Editing The Text Field
-   func textFieldDidBeginEditing(_ textField: UITextField) {
-      moveTextField(textField, moveDistance: -350, up: true)
+   // functions related to event picker
+   // The number of columns of data
+   func numberOfComponents(in pickerView: UIPickerView) -> Int {
+      return 1
    }
    
-   // Finish Editing The Text Field
-   func textFieldDidEndEditing(_ textField: UITextField) {
-      moveTextField(textField, moveDistance: -350, up: false)
+   func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+      return eventPickerData.count
    }
    
-   // Hide the keyboard when the return key pressed
-   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-      textField.resignFirstResponder()
-      return true
+   // The data to return for the row and component (column) that's being passed in
+   func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+      return eventPickerData[row]
    }
    
-   // Move the text field in a pretty animation!
-   func moveTextField(_ textField: UITextField, moveDistance: Int, up: Bool) {
-      let moveDuration = 0.3
-      let movement: CGFloat = CGFloat(up ? moveDistance : -moveDistance)
-      
-      UIView.beginAnimations("animateTextField", context: nil)
-      UIView.setAnimationBeginsFromCurrentState(true)
-      UIView.setAnimationDuration(moveDuration)
-      self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
-      UIView.commitAnimations()
+   // Catpure the picker view selection
+   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+      eventName = eventPickerData[row]
+      print(eventName)
    }
+   
+   // MARK: IBAction ------------------------------------------------
    
    // Button to segue into scanner
    @IBAction func unwindToProductScreen(segue: UIStoryboardSegue) {
