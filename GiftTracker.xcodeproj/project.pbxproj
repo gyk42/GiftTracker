@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0014F1A9173A699D48618386 /* Pods_GiftTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54E0CD3F612E83150DD62AC2 /* Pods_GiftTracker.framework */; };
 		5013BC841E443B0000A8FFF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5013BC831E443B0000A8FFF4 /* Assets.xcassets */; };
 		5013BC861E443D5A00A8FFF4 /* QRScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5013BC851E443D5A00A8FFF4 /* QRScannerController.swift */; };
 		5013BC881E44407100A8FFF4 /* NewProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5013BC871E44407100A8FFF4 /* NewProductViewController.swift */; };
+		50876DF81E44F438003E2AD4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50876DF71E44F438003E2AD4 /* GoogleService-Info.plist */; };
 		508DA8991E3EC6090093514D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508DA8981E3EC6090093514D /* AppDelegate.swift */; };
 		508DA89B1E3EC6090093514D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508DA89A1E3EC6090093514D /* ViewController.swift */; };
 		508DA89E1E3EC6090093514D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 508DA89C1E3EC6090093514D /* Main.storyboard */; };
@@ -23,9 +25,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07548855FE948AF7D1B6EF08 /* Pods-GiftTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiftTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-GiftTracker/Pods-GiftTracker.release.xcconfig"; sourceTree = "<group>"; };
 		5013BC831E443B0000A8FFF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5013BC851E443D5A00A8FFF4 /* QRScannerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScannerController.swift; sourceTree = "<group>"; };
 		5013BC871E44407100A8FFF4 /* NewProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProductViewController.swift; sourceTree = "<group>"; };
+		50876DF71E44F438003E2AD4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		508DA8951E3EC6090093514D /* GiftTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GiftTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		508DA8981E3EC6090093514D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		508DA89A1E3EC6090093514D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +42,8 @@
 		50C5C1911E40311E00178B58 /* ProductModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		50C5C1931E4038EC00178B58 /* UPCApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPCApi.swift; sourceTree = "<group>"; };
 		50C5C1951E4049EA00178B58 /* Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extention.swift; sourceTree = "<group>"; };
+		54E0CD3F612E83150DD62AC2 /* Pods_GiftTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GiftTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF4CA557D0A9F5EEDCF94C2F /* Pods-GiftTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiftTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GiftTracker/Pods-GiftTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0014F1A9173A699D48618386 /* Pods_GiftTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +63,8 @@
 			children = (
 				508DA8971E3EC6090093514D /* GiftTracker */,
 				508DA8961E3EC6090093514D /* Products */,
+				90272B2F025CD75F19805D21 /* Pods */,
+				8BAC6FD1A109BF4250AA6471 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +84,7 @@
 				50C5C18A1E40304100178B58 /* Logic */,
 				50C5C1971E404A1900178B58 /* Extentions */,
 				508DA8A71E3EC6090093514D /* Info.plist */,
+				50876DF71E44F438003E2AD4 /* GoogleService-Info.plist */,
 				508DA89F1E3EC6090093514D /* GiftTracker.xcdatamodeld */,
 			);
 			path = GiftTracker;
@@ -120,6 +130,23 @@
 			name = Extentions;
 			sourceTree = "<group>";
 		};
+		8BAC6FD1A109BF4250AA6471 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				54E0CD3F612E83150DD62AC2 /* Pods_GiftTracker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		90272B2F025CD75F19805D21 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DF4CA557D0A9F5EEDCF94C2F /* Pods-GiftTracker.debug.xcconfig */,
+				07548855FE948AF7D1B6EF08 /* Pods-GiftTracker.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -127,9 +154,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 508DA8AA1E3EC6090093514D /* Build configuration list for PBXNativeTarget "GiftTracker" */;
 			buildPhases = (
+				95C5A6B414D7793932558EA4 /* [CP] Check Pods Manifest.lock */,
 				508DA8911E3EC6090093514D /* Sources */,
 				508DA8921E3EC6090093514D /* Frameworks */,
 				508DA8931E3EC6090093514D /* Resources */,
+				988E54E2E54C2D71F031A6F2 /* [CP] Embed Pods Frameworks */,
+				BF84E66201331BE1E91C8B44 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -181,12 +211,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				508DA8A61E3EC6090093514D /* LaunchScreen.storyboard in Resources */,
+				50876DF81E44F438003E2AD4 /* GoogleService-Info.plist in Resources */,
 				5013BC841E443B0000A8FFF4 /* Assets.xcassets in Resources */,
 				508DA89E1E3EC6090093514D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		95C5A6B414D7793932558EA4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		988E54E2E54C2D71F031A6F2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GiftTracker/Pods-GiftTracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF84E66201331BE1E91C8B44 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GiftTracker/Pods-GiftTracker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		508DA8911E3EC6090093514D /* Sources */ = {
@@ -321,6 +400,7 @@
 		};
 		508DA8AB1E3EC6090093514D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF4CA557D0A9F5EEDCF94C2F /* Pods-GiftTracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ME5VK26M48;
@@ -334,6 +414,7 @@
 		};
 		508DA8AC1E3EC6090093514D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07548855FE948AF7D1B6EF08 /* Pods-GiftTracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ME5VK26M48;
