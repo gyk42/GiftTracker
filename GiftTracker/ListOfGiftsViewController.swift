@@ -22,10 +22,10 @@ class ListOfGiftsViewController: UIViewController, UITableViewDataSource, UITabl
       let cell = tableView.dequeueReusableCell(withIdentifier: "listOfGifts", for: indexPath) as! ListOfGiftsTableViewCell
       
       let prdIndexRow = productsUPC[indexPath.row]
-      let prdPrice = String(format: "%.2f", prdIndexRow.price)
+      let prdPrice = String(format: "%.2f", prdIndexRow.productPrice)
       
-      cell.productNameLabel.text = prdIndexRow.title
-      cell.productImageView.downLoadImag(from: prdIndexRow.imageUrl)
+      cell.productNameLabel.text = prdIndexRow.productName
+      cell.productImageView.downLoadImag(from: prdIndexRow.productImageUrl)
       cell.productPriceLabel.text = prdPrice
       
       return cell

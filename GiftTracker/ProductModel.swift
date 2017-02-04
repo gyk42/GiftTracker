@@ -14,17 +14,17 @@ enum GiftTarget: String {
 }
 
 class ProductUPC {
-   var title: String
-   var imageUrl: String
-   var price: Float
+   var productName: String
+   var productImageUrl: String
+   var productPrice: Float
    
    init(jsonObject: [String : Any]) {
-      title = jsonObject["title"] as? String ?? "Unknown"
+      productName = jsonObject["title"] as? String ?? "Unknown"
       let imageUrls = jsonObject["images"] as? [String] ?? ["Unknown"]
-      imageUrl = imageUrls[0]
+      productImageUrl = imageUrls[0]
       let offers = jsonObject["offers"] as? [[String : Any]] ?? [["Unknown" : "Unknown"]]
       let firstOffer = offers[0]
-      price = (firstOffer["price"] as? Float!)!
+      productPrice = (firstOffer["price"] as? Float!)!
    }
 }
 

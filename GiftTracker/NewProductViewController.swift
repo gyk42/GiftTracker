@@ -36,9 +36,9 @@ class NewProductViewController: UIViewController, UITextFieldDelegate {
 
    func displayProductInfo() {
       for x in 0..<productsUPC.count {
-         productName.text = productsUPC[x].title
-         productImageView.downLoadImag(from: productsUPC[x].imageUrl)
-         productPrice.text = String(format: "%.2f", productsUPC[x].price)
+         productName.text = productsUPC[x].productName
+         productImageView.downLoadImag(from: productsUPC[x].productImageUrl)
+         productPrice.text = String(format: "%.2f", productsUPC[x].productPrice)
          upcCode.text = passUPC
       }
    }
