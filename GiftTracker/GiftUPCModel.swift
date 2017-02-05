@@ -1,5 +1,5 @@
 //
-//  ProductUPCModel.swift
+//  GiftUPCModel.swift
 //  GiftTracker
 //
 //  Created by Yoon Yu on 1/30/17.
@@ -8,18 +8,18 @@
 
 import Foundation
 
-class ProductUPC {
-   var productName: String
-   var productImageUrl: String
-   var productPrice: Float
+class GiftUPC {
+   var giftName: String
+   var giftImageUrl: String
+   var giftPrice: Float
    
    init(jsonObject: [String : Any]) {
-      productName = jsonObject["title"] as? String ?? "Unknown"
+      giftName = jsonObject["title"] as? String ?? "Unknown"
       let imageUrls = jsonObject["images"] as? [String] ?? ["Unknown"]
-      productImageUrl = imageUrls[0]
+      giftImageUrl = imageUrls[0]
       let offers = jsonObject["offers"] as? [[String : Any]] ?? [["Unknown" : "Unknown"]]
       let firstOffer = offers[0]
-      productPrice = (firstOffer["price"] as? Float!)!
+      giftPrice = (firstOffer["price"] as? Float!)!
    }
 }
 

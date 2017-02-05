@@ -1,5 +1,5 @@
 //
-//  NewProductViewController.swift
+//  NewGiftViewController.swift
 //  GiftTracker
 //
 //  Created by Yoon Yu on 2/2/17.
@@ -9,25 +9,28 @@
 import UIKit
 import Firebase
 
-class NewProductViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class NewGiftViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
    
    var source = String()
    var passUPC: String!
-   var productsUPC = [ProductUPC]()
+   var giftsUPC = [GiftUPC]()
    var eventPickerData: [String] = ["Birthday", "Valentine\'s day", "Mother\'s day", "Father's day", "Thanksgiving","Hanukkah","Christmas", "Other"]
    var eventName = "birthday"
    let datePicker = UIDatePicker()
-   var productImageURL = String()
+   var giftImageURL = String()
    
-   @IBOutlet weak var productImageView: UIImageView!
-   @IBOutlet weak var productName: UITextField!
-   @IBOutlet weak var friendFirstName: UITextField!
-   @IBOutlet weak var friendLastName: UITextField!
-   @IBOutlet weak var productPrice: UITextField!
-   @IBOutlet weak var date: UITextField!
+   @IBOutlet weak var giftImageView: UIImageView!
+   @IBOutlet weak var giftNameTextField: UITextField!
+   @IBOutlet weak var friendFirstNameTextField: UITextField!
+   @IBOutlet weak var friendLastNameTextField: UITextField!
+   @IBOutlet weak var giftPriceTextField: UITextField!
+   @IBOutlet weak var giftDateTextField: UITextField!
    @IBOutlet weak var eventPicker: UIPickerView!
    @IBOutlet weak var titleLabel: UILabel!
    @IBOutlet weak var dateLabel: UILabel!
+   @IBOutlet weak var upcLabel: UILabel!
+   @IBOutlet weak var notesTextField: UITextField!
+
    
    //   @IBOutlet weak var scrollForKeyboard: UIScrollView!
    
@@ -43,12 +46,12 @@ class NewProductViewController: UIViewController, UITextFieldDelegate, UIPickerV
       
       if passUPC != nil {
          UPCApi.fetchUPC(upc: passUPC!, closure: { data in
-            self.productsUPC = data as! [ProductUPC]
-            self.displayProductInfo()
+            self.giftsUPC = data as! [GiftUPC]
+            self.displayGiftInfo()
          })
       } else {
          passUPC = "not provided"
-         productImageURL = "0"
+         giftImageURL = "0"
       }
    }
    
@@ -68,13 +71,13 @@ class NewProductViewController: UIViewController, UITextFieldDelegate, UIPickerV
    }
    
    // displays information fetched from api.upcitemdb.com
-   func displayProductInfo() {
-      for x in 0..<productsUPC.count {
-         productName.text = productsUPC[x].productName
-         productImageView.downLoadImag(from: productsUPC[x].productImageUrl)
-         productPrice.text = String(format: "%.2f", productsUPC[x].productPrice)
-         //upcCode.text = passUPC
-         productImageURL = productsUPC[x].productImageUrl
+   func displayGiftInfo() {
+      for x in 0..<giftsUPC.count {
+         giftNameTextField.text = giftsUPC[x].giftName
+         giftImageView.downLoadImag(from: giftsUPC[x].giftImageUrl)
+         giftPriceTextField.text = String(format: "%.2f", giftsUPC[x].giftPrice)
+         upcLabel.text = passUPC
+         giftImageURL = giftsUPC[x].giftImageUrl
       }
    }
    
@@ -96,16 +99,15 @@ class NewProductViewController: UIViewController, UITextFieldDelegate, UIPickerV
    // Catpure the picker view selection
    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
       eventName = eventPickerData[row].lowercased()
-      
    }
    
    // to get rid of keyboard by touching the outside of the textfield
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
       self.view.endEditing(true)
-      friendFirstName.resignFirstResponder()
-      friendLastName.resignFirstResponder()
+      friendFirstNameTextField.resignFirstResponder()
+      friendLastNameTextField.resignFirstResponder()
       eventPicker.resignFirstResponder()
-      productPrice.resignFirstResponder()
+      giftPriceTextField.resignFirstResponder()
    }
    
    // Date picker
@@ -117,36 +119,37 @@ class NewProductViewController: UIViewController, UITextFieldDelegate, UIPickerV
       let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneDatePickerPressed))
       toolbar.setItems([doneButton], animated: false)
       
-      date.inputAccessoryView = toolbar
-      date.inputView = datePicker
+      giftDateTextField.inputAccessoryView = toolbar
+      giftDateTextField.inputView = datePicker
       datePicker.datePickerMode = .date
    }
    
    func doneDatePickerPressed() {
       Format.shared.dateFormatter.dateStyle = .short
       Format.shared.dateFormatter.timeStyle = .none
-      date.text = Format.shared.dateFormatter.string(from: datePicker.date)
+      giftDateTextField.text = Format.shared.dateFormatter.string(from: datePicker.date)
       self.view.endEditing(true)
    }
    
    // MARK: IBAction ------------------------------------------------
    
    // Button to segue into scanner
-   @IBAction func unwindToProductScreen(segue: UIStoryboardSegue) {
+   @IBAction func unwindToGiftScreen(segue: UIStoryboardSegue) {
       dismiss(animated: true, completion: nil)
 //      performSegue(withIdentifier: "toScanner", sender: source)
    }
    
    @IBAction func savePressed(_ sender: Any) {
-      // Save product info into FB
-      let productName = self.productName.text?.lowercased()
-      let firstName = friendFirstName.text?.lowercased()
-      let lastName = friendLastName.text?.lowercased()
-      let productPrice = self.productPrice.text
-      let date = self.date.text
+      // Save gift info into FB
+      let giftName = self.giftNameTextField.text?.lowercased()
+      let firstName = friendFirstNameTextField.text?.lowercased()
+      let lastName = friendLastNameTextField.text?.lowercased()
+      let giftPrice = self.giftPriceTextField.text
+      let notes = self.notesTextField.text
+      let date = self.giftDateTextField.text
       
-      if productName == "" {
-         alert(message: "product name")
+      if giftName == "" {
+         alert(message: "gift name")
       } else if firstName == "" {
          alert(message: "first name")
       } else if lastName == "" {
@@ -154,7 +157,7 @@ class NewProductViewController: UIViewController, UITextFieldDelegate, UIPickerV
       } else if date == "" {
          alert(message: "date")
       } else {
-         ProductDataModel.shared.createProduct(dateRecieved: date!, eventDate: date!, eventName: eventName, friendFirstName: firstName!, friendLastName: lastName!, giftStatus: source, productImageUrl: productImageURL, productName: productName!, productPrice: productPrice!, productUPCCode: passUPC, userID: FIRAuth.auth()!.currentUser!.uid)
+         GiftDataModel.shared.createGift(dateRecieved: date!, eventDate: date!, eventName: eventName, friendFirstName: firstName!, friendLastName: lastName!, giftStatus: source, giftImageUrl: giftImageURL, giftName: giftName!, giftPrice: giftPrice!, giftUPCCode: passUPC, notes: notes!, userID: FIRAuth.auth()!.currentUser!.uid)
       }
    }   
 }

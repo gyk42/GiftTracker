@@ -9,26 +9,26 @@
 import Foundation
 
 class UPCApi {
-   static func parseUPCJson(data: Data, closure: @escaping ([ProductUPC?]) -> ()) {
+   static func parseUPCJson(data: Data, closure: @escaping ([GiftUPC?]) -> ()) {
       
       if let jsonObject = (try? JSONSerialization.jsonObject(with: data, options: .mutableContainers)) as? [String: Any] {
          
-         let productsJSON = jsonObject["items"] as! [[String: Any]]
+         let giftsJSON = jsonObject["items"] as! [[String: Any]]
          
-         var productsUPC: [ProductUPC] = []
+         var giftsUPC: [GiftUPC] = []
          
-         for productJSON in productsJSON {
-            let productUPC = ProductUPC(jsonObject: productJSON)
-            productsUPC.append(productUPC)
+         for giftJSON in giftsJSON {
+            let giftUPC = GiftUPC(jsonObject: giftJSON)
+            giftsUPC.append(giftUPC)
          }
          
          DispatchQueue.main.async {
-            closure(productsUPC)
+            closure(giftsUPC)
          }
       }
    }
 
-   static func fetchUPC(upc: String, closure: @escaping ([ProductUPC?]) -> ()) {
+   static func fetchUPC(upc: String, closure: @escaping ([GiftUPC?]) -> ()) {
       
       let url = URL(string: "https://api.upcitemdb.com/prod/trial/lookup?upc=\(upc)")!
       

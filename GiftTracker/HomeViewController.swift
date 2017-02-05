@@ -26,17 +26,17 @@ class HomeViewController: UIViewController {
    @IBAction func buttonTouchUpInside(_ sender: UIButton) {
       switch sender {
       case givingBtn:
-         performSegue(withIdentifier: "toNewProduct", sender: "giving")
+         performSegue(withIdentifier: "toNewGift", sender: "giving")
       case receivedBtn:
-         performSegue(withIdentifier: "toNewProduct", sender: "received")
+         performSegue(withIdentifier: "toNewGift", sender: "received")
       default:
          ()
       }
    }
    
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      if segue.identifier == "toNewProduct" {
-         let destination = segue.destination as! NewProductViewController
+      if segue.identifier == "toNewGift" {
+         let destination = segue.destination as! NewGiftViewController
          destination.source = sender as! String
       }
    }

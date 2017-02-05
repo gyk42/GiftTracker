@@ -108,14 +108,14 @@ class QRScannerController: UIViewController, AVCaptureMetadataOutputObjectsDeleg
          captureMetadataOutput.setMetadataObjectsDelegate(nil, queue: nil)
          
          DispatchQueue.main.async(execute: {
-            self.performSegue(withIdentifier: "backToProduct", sender: self.lastCapturedCode)
+            self.performSegue(withIdentifier: "backToGift", sender: self.lastCapturedCode)
          })
       }
       
    }
    
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      if let destination = segue.destination as? NewProductViewController {
+      if let destination = segue.destination as? NewGiftViewController {
          destination.passUPC = lastCapturedCode
          destination.source = source
       }

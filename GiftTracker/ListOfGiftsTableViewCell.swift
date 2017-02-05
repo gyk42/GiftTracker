@@ -11,11 +11,11 @@ import UIKit
 class ListOfGiftsTableViewCell: UITableViewCell {
    
    @IBOutlet weak var toFromLabel: UILabel!
-   @IBOutlet weak var productNameLabel: UILabel!
-   @IBOutlet weak var productPriceLabel: UILabel!
-   @IBOutlet weak var occasionLabel: UILabel!
+   @IBOutlet weak var giftNameLabel: UILabel!
+   @IBOutlet weak var giftPriceLabel: UILabel!
+   @IBOutlet weak var eventLabel: UILabel!
    @IBOutlet weak var dateLabel: UILabel!
-   @IBOutlet weak var productImageView: UIImageView!
+   @IBOutlet weak var giftImageView: UIImageView!
    
    override func awakeFromNib() {
       super.awakeFromNib()
