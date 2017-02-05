@@ -15,8 +15,9 @@ class NewProductViewController: UIViewController, UITextFieldDelegate, UIPickerV
    var passUPC: String!
    var productsUPC = [ProductUPC]()
    var eventPickerData: [String] = ["Birthday", "Valentine\'s day", "Mother\'s day", "Father's day", "Thanksgiving","Hanukkah","Christmas", "Other"]
-   var eventName = "Birthday"
+   var eventName = "birthday"
    let datePicker = UIDatePicker()
+   var productImageURL = String()
    
    @IBOutlet weak var productImageView: UIImageView!
    @IBOutlet weak var productName: UITextField!
@@ -45,7 +46,10 @@ class NewProductViewController: UIViewController, UITextFieldDelegate, UIPickerV
             self.productsUPC = data as! [ProductUPC]
             self.displayProductInfo()
          })
-      } 
+      } else {
+         passUPC = "not provided"
+         productImageURL = "0"
+      }
    }
    
    // function for alerts
@@ -70,6 +74,7 @@ class NewProductViewController: UIViewController, UITextFieldDelegate, UIPickerV
          productImageView.downLoadImag(from: productsUPC[x].productImageUrl)
          productPrice.text = String(format: "%.2f", productsUPC[x].productPrice)
          //upcCode.text = passUPC
+         productImageURL = productsUPC[x].productImageUrl
       }
    }
    
@@ -90,7 +95,8 @@ class NewProductViewController: UIViewController, UITextFieldDelegate, UIPickerV
    
    // Catpure the picker view selection
    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-      eventName = eventPickerData[row]
+      eventName = eventPickerData[row].lowercased()
+      
    }
    
    // to get rid of keyboard by touching the outside of the textfield
@@ -133,9 +139,9 @@ class NewProductViewController: UIViewController, UITextFieldDelegate, UIPickerV
    
    @IBAction func savePressed(_ sender: Any) {
       // Save product info into FB
-      let productName = self.productName.text
-      let firstName = friendFirstName.text
-      let lastName = friendLastName.text
+      let productName = self.productName.text?.lowercased()
+      let firstName = friendFirstName.text?.lowercased()
+      let lastName = friendLastName.text?.lowercased()
       let productPrice = self.productPrice.text
       let date = self.date.text
       
@@ -148,10 +154,8 @@ class NewProductViewController: UIViewController, UITextFieldDelegate, UIPickerV
       } else if date == "" {
          alert(message: "date")
       } else {
-         ProductDataModel.shared.createProduct(dateRecieved: date!, eventDate: date!, eventName: eventName, friendFirstName: firstName!, friendLastName: lastName!, giftStatus: source, productImageUrl: "someImage", productName: productName!, productPrice: productPrice!, productUPCCode: passUPC, userID: FIRAuth.auth()!.currentUser!.uid)
+         ProductDataModel.shared.createProduct(dateRecieved: date!, eventDate: date!, eventName: eventName, friendFirstName: firstName!, friendLastName: lastName!, giftStatus: source, productImageUrl: productImageURL, productName: productName!, productPrice: productPrice!, productUPCCode: passUPC, userID: FIRAuth.auth()!.currentUser!.uid)
       }
-      
-   }
-   
+   }   
 }
 
