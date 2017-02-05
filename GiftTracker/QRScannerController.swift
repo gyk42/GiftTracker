@@ -14,6 +14,8 @@ import AVFoundation
 
 class QRScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
    
+   var source = String()
+   
    @IBOutlet weak var messageLabel: UILabel!
    @IBOutlet weak var topbar: UIView!
    
@@ -67,6 +69,7 @@ class QRScannerController: UIViewController, AVCaptureMetadataOutputObjectsDeleg
          // Move the message label and top bar to the front
          view.bringSubview(toFront: messageLabel)
          view.bringSubview(toFront: topbar)
+         print(source)
          
       } catch {
          // If any error occurs, simply print it out and don't continue any more.
@@ -114,6 +117,7 @@ class QRScannerController: UIViewController, AVCaptureMetadataOutputObjectsDeleg
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       if let destination = segue.destination as? NewProductViewController {
          destination.passUPC = lastCapturedCode
+         destination.source = source
       }
    }
    

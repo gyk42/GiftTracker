@@ -700,7 +700,7 @@
                                 <color key="textColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gift Received/Giving  from/to " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1z-no-YuH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gift Header" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1z-no-YuH">
                                 <rect key="frame" x="61" y="64" width="259" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
@@ -717,7 +717,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="PVf-Zf-TET" kind="presentation" id="pAJ-VE-0RF"/>
+                                    <segue destination="PVf-Zf-TET" kind="presentation" identifier="toScanner" id="pAJ-VE-0RF"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter product name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eyd-a4-pKb">
@@ -783,15 +783,8 @@
                                 <color key="textColor" red="0.28627450980000002" green="0.31372549020000001" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phF-tR-AQ2">
-                                <rect key="frame" x="198" y="470" width="156" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="12"/>
-                                <color key="textColor" red="0.28627450980000002" green="0.31372549020000001" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UPC Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAf-wQ-h7X">
-                                <rect key="frame" x="198" y="430" width="89" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAf-wQ-h7X">
+                                <rect key="frame" x="198" y="430" width="147" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="18"/>
                                 <color key="textColor" red="0.28627450980000002" green="0.31372549020000001" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -813,7 +806,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="VeB-uA-GSZ" kind="show" id="HFt-sk-muS"/>
+                                    <action selector="savePressed:" destination="hQn-WU-9RE" eventType="touchUpInside" id="5Ev-Q6-lzq"/>
                                 </connections>
                             </button>
                             <pickerView clipsSubviews="YES" alpha="0.94999999999999996" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XIX-oG-FQw">
@@ -844,18 +837,26 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.97636479139328003" green="0.97653168439865112" blue="0.97635418176651001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter product price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TCk-uG-qnZ">
+                                <rect key="frame" x="198" y="467" width="147" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="date" destination="TCk-uG-qnZ" id="fpt-Ab-G4W"/>
+                        <outlet property="dateLabel" destination="bAf-wQ-h7X" id="vuN-Ru-0dW"/>
                         <outlet property="eventPicker" destination="XIX-oG-FQw" id="TbT-Q8-JFb"/>
                         <outlet property="friendFirstName" destination="5TB-7F-i0n" id="BxB-G2-sxM"/>
                         <outlet property="friendLastName" destination="fFL-Nm-nXb" id="U2n-4h-aoE"/>
-                        <outlet property="header" destination="S1z-no-YuH" id="FnJ-Ho-uqe"/>
                         <outlet property="productImageView" destination="0rk-7H-qX3" id="la7-0F-jgd"/>
                         <outlet property="productName" destination="Eyd-a4-pKb" id="nVO-AN-3or"/>
                         <outlet property="productPrice" destination="jhM-ue-o29" id="0pd-z2-jAi"/>
-                        <outlet property="upcCode" destination="phF-tR-AQ2" id="9PQ-dg-5CL"/>
+                        <outlet property="titleLabel" destination="S1z-no-YuH" id="Jat-3w-m0u"/>
                         <segue destination="pOb-En-CMo" kind="unwind" identifier="" unwindAction="unwindToProductScreenWithSegue:" id="nV2-Mg-YYp"/>
                     </connections>
                 </viewController>
@@ -872,9 +873,8 @@
         <image name="Party Baloons_000000_25" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HFt-sk-muS"/>
-        <segue reference="wUb-PJ-npY"/>
         <segue reference="t3h-rt-gPv"/>
+        <segue reference="wUb-PJ-npY"/>
         <segue reference="n6T-O0-nAO"/>
     </inferredMetricsTieBreakers>
 </document>
