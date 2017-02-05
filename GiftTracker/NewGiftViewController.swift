@@ -30,7 +30,6 @@ class NewGiftViewController: UIViewController, UITextFieldDelegate, UIPickerView
    @IBOutlet weak var dateLabel: UILabel!
    @IBOutlet weak var upcLabel: UILabel!
    @IBOutlet weak var notesTextField: UITextField!
-
    
    //   @IBOutlet weak var scrollForKeyboard: UIScrollView!
    
@@ -51,7 +50,7 @@ class NewGiftViewController: UIViewController, UITextFieldDelegate, UIPickerView
          })
       } else {
          passUPC = "not provided"
-         giftImageURL = "0"
+         giftImageURL = "https://cdn.pixabay.com/photo/2013/09/21/15/47/gift-184574_1280.png"
       }
    }
    

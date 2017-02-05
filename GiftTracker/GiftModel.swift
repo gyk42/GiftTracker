@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-var gifts = [Gift]()
+//var gifts = [Gift]()
 
 class Gift {
    var giftID: String?

@@ -7,41 +7,70 @@
 //
 
 import UIKit
+import Firebase
 
 class ListOfGiftsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
    
-   var giftsUPC = [GiftUPC]()
+   var gifts = [Gift]()
+   var ref: FIRDatabaseReference!
+   static var userID = FIRAuth.auth()!.currentUser!.uid
+   
+   // MARK: IBOutlet --------------------------------------
    
    @IBOutlet weak var listOfGiftsTableView: UITableView!
    
+   // MARK: Life-Cycle  --------------------------------------
+   
+   override func viewDidLoad() {
+      super.viewDidLoad()
+      giftTableviewDisplay()
+      listOfGiftsTableView.reloadData()
+   }
+   
+   // MARK: Tableview -------------------------------------
+   
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return giftsUPC.count
+      return gifts.count
    }
    
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCell(withIdentifier: "listOfGifts", for: indexPath) as! ListOfGiftsTableViewCell
+      let giftsInxdex = gifts[indexPath.row]
       
-      let prdIndexRow = giftsUPC[indexPath.row]
-      let prdPrice = String(format: "%.2f", prdIndexRow.giftPrice)
+     // cell.ref = gifts[indexPath.row].ref!
+      cell.giftNameLabel.text = giftsInxdex.giftName?.capitalized
+      cell.giftPriceLabel.text = giftsInxdex.giftPrice
+      cell.eventLabel.text = giftsInxdex.eventName?.capitalized
+      cell.dateLabel.text = giftsInxdex.eventDate
+      cell.friendFirstNameLabel.text = giftsInxdex.friendFirstName?.capitalized
+      cell.giftImageView.downLoadImag(from: giftsInxdex.giftImageUrl!)
       
-      cell.giftNameLabel.text = prdIndexRow.giftName
-      cell.giftImageView.downLoadImag(from: prdIndexRow.giftImageUrl)
-      cell.giftPriceLabel.text = prdPrice
-      
+      // checks what db to see if gift was received or giving.. and it displays label accordingly
+      if giftsInxdex.giftStatus == "received" {
+         cell.toFromLabel.text = "From"
+      } else {
+         cell.toFromLabel.text = "To"
+      }
       return cell
    }
    
-   override func viewDidLoad() {
-      super.viewDidLoad()
+   func giftTableviewDisplay() {
+      let giftsRef = FIRDatabase.database().reference(withPath:"gifts")
+      let giftsQuery = giftsRef.queryOrdered(byChild: "userID").queryEqual(toValue: ListOfGiftsViewController.userID)
       
-// TODO: Need to guard the UPC code so that app doesn't crash when item is not in the API
-      
-      UPCApi.fetchUPC(upc: "9780545362580", closure: { data in
-         self.giftsUPC = data as! [GiftUPC]
-         self.listOfGiftsTableView.reloadData()
+      giftsQuery.observeSingleEvent(of: .value, with: { (snapshot) in
+         self.gifts.removeAll()
+         
+         for gift in snapshot.children {
+            let gift = Gift(snapshot: gift as! FIRDataSnapshot)
+            self.gifts.append(gift)
+            print(gift)
+         }
+         
+         DispatchQueue.main.async {
+            self.listOfGiftsTableView.reloadData()
+         }
       })
-      
-      listOfGiftsTableView.reloadData()
    }
    
    override func viewWillAppear(_ animated: Bool) {

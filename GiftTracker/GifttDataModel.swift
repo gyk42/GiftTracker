@@ -10,6 +10,7 @@ import Foundation
 import Firebase
 
 var ref: FIRDatabaseReference!
+var gifts = [Gift]()
 
 class GiftDataModel {
    static let shared = GiftDataModel()

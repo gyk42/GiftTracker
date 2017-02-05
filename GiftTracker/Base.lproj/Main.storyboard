@@ -486,7 +486,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Gift Tracker" id="6Q0-bt-Xz4">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="is8-Qq-9nP"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="is8-Qq-9nP">
+                                            <connections>
+                                                <segue destination="DsF-tc-UYt" kind="show" id="E2n-37-67Y"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -512,7 +516,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="From/To:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67m-Dn-lvZ">
-                                                    <rect key="frame" x="122" y="8" width="225" height="30"/>
+                                                    <rect key="frame" x="122" y="8" width="73" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="19"/>
                                                     <nil key="textColor"/>
@@ -525,22 +529,36 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYM-K2-yaa">
-                                                    <rect key="frame" x="316" y="101" width="31" height="28"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Product price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzz-Pk-u9A">
-                                                    <rect key="frame" x="122" y="70" width="96" height="27"/>
+                                                    <rect key="frame" x="137" y="70" width="96" height="27"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Occasion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGb-bo-WQZ">
-                                                    <rect key="frame" x="121" y="101" width="96" height="28"/>
+                                                    <rect key="frame" x="121" y="101" width="152" height="28"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Friend's name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGb-2O-phL">
+                                                    <rect key="frame" x="198" y="8" width="156" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="19"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsb-hk-XvH">
+                                                    <rect key="frame" x="121" y="69" width="10" height="28"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYM-K2-yaa">
+                                                    <rect key="frame" x="288" y="101" width="66" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -551,6 +569,7 @@
                                         <connections>
                                             <outlet property="dateLabel" destination="QYM-K2-yaa" id="TkH-Oi-zBH"/>
                                             <outlet property="eventLabel" destination="HGb-bo-WQZ" id="wp2-M8-H8v"/>
+                                            <outlet property="friendFirstNameLabel" destination="hGb-2O-phL" id="8Ze-5c-MaP"/>
                                             <outlet property="giftImageView" destination="yIz-k9-p0Q" id="2dW-9H-Vhb"/>
                                             <outlet property="giftNameLabel" destination="UxI-sP-xK3" id="QoM-Sr-8vM"/>
                                             <outlet property="giftPriceLabel" destination="pzz-Pk-u9A" id="W2G-wx-q4k"/>
@@ -573,7 +592,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WPi-7x-EtR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="865" y="1520"/>
+            <point key="canvasLocation" x="864.79999999999995" y="1519.7901049475263"/>
         </scene>
         <!--Given-->
         <scene sceneID="CBK-mL-oP9">
@@ -903,8 +922,8 @@
         <image name="Party Baloons_000000_25" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="t3h-rt-gPv"/>
-        <segue reference="a1D-Un-p9x"/>
+        <segue reference="E2n-37-67Y"/>
+        <segue reference="wUb-PJ-npY"/>
         <segue reference="n6T-O0-nAO"/>
     </inferredMetricsTieBreakers>
 </document>

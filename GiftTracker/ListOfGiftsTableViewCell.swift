@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Firebase
 
 class ListOfGiftsTableViewCell: UITableViewCell {
+   var ref: FIRDatabaseReference!
    
    @IBOutlet weak var toFromLabel: UILabel!
    @IBOutlet weak var giftNameLabel: UILabel!
@@ -16,6 +18,7 @@ class ListOfGiftsTableViewCell: UITableViewCell {
    @IBOutlet weak var eventLabel: UILabel!
    @IBOutlet weak var dateLabel: UILabel!
    @IBOutlet weak var giftImageView: UIImageView!
+   @IBOutlet weak var friendFirstNameLabel: UILabel!
    
    override func awakeFromNib() {
       super.awakeFromNib()
