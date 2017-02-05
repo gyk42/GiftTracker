@@ -9,7 +9,8 @@
 import UIKit
 
 class NewProductViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
-
+   
+   var source = String()
    var passUPC:String!
    var productsUPC = [ProductUPC]()
    var eventPickerData: [String] = ["Birthday", "Valentine\'s day", "Mother\'s day", "Father's day", "Thanksgiving","Hanukkah","Christmas", "Other"]
@@ -22,12 +23,15 @@ class NewProductViewController: UIViewController, UITextFieldDelegate, UIPickerV
    @IBOutlet weak var productPrice: UITextField!
    @IBOutlet weak var upcCode: UILabel!
    @IBOutlet weak var eventPicker: UIPickerView!
+   @IBOutlet weak var header: UILabel!
+   
 //   @IBOutlet weak var scrollForKeyboard: UIScrollView!
 
    // MARK: Life 
    override func viewDidLoad() {
       super.viewDidLoad()
       
+      displayHeader()
       eventPicker.delegate = self
       eventPicker.dataSource = self
       
@@ -37,6 +41,11 @@ class NewProductViewController: UIViewController, UITextFieldDelegate, UIPickerV
             self.displayProductInfo()
          })
       }
+   }
+   
+   func displayHeader() {
+      let fromto = source == "received" ? "From" : "To"
+      header.text = "Gift \(source.capitalized) \(fromto)"
    }
    
    // displays information fetched from api.upcitemdb.com
@@ -68,8 +77,18 @@ class NewProductViewController: UIViewController, UITextFieldDelegate, UIPickerV
    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
       eventName = eventPickerData[row]
       print(eventName)
+      print(source)
    }
    
+   // to get rid of keyboard by touching the outside of the textfield
+   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+      self.view.endEditing(true)
+      friendFirstName.resignFirstResponder()
+      friendLastName.resignFirstResponder()
+      eventPicker.resignFirstResponder()
+      productPrice.resignFirstResponder()
+      
+   }
    // MARK: IBAction ------------------------------------------------
    
    // Button to segue into scanner
