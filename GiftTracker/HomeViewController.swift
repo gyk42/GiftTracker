@@ -36,8 +36,8 @@ class HomeViewController: UIViewController {
    
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       if segue.identifier == "toNewGift" {
-         let destination = segue.destination as! NewGiftViewController
-         destination.source = sender as! String
+//         let destination = segue.destination as! NewGiftViewController
+         NewGiftViewController.source = sender as! String
       }
    }
 }

@@ -54,9 +54,20 @@ class ListOfGiftsGivenViewController: UIViewController, UITableViewDataSource, U
       return cell
    }
    
+   /*
+    let username = "SomeUser"
+    
+    FIRDatabase.database().reference.child("users").queryOrderedByChild("username").queryStartingAtValue(username).queryEndingAtValue(username).observeEventType(.ChildAdded, withBlock: { (snapshot) -> Void in
+    
+    }
+    
+    */
+   
    func giftTableviewDisplay() {
       let giftsRef = FIRDatabase.database().reference(withPath:"gifts")
+//      giftsRef.queryOrdered(byChild: "userID").queryStarting(atValue: ListOfGiftsViewController.userID).queryEnding(atValue: <#T##Any?#>)
       let giftsQuery = giftsRef.queryOrdered(byChild: "userID").queryEqual(toValue: ListOfGiftsGivenViewController.userID)
+      //let giftStatusRef = giftsQuery.queryOrdered(byChild: "giftStatus").queryEqual(toValue: "giving")
       
       giftsQuery.observeSingleEvent(of: .value, with: { (snapshot) in
          
@@ -74,6 +85,5 @@ class ListOfGiftsGivenViewController: UIViewController, UITableViewDataSource, U
             }
          }
       })
-   print(gifts)
    }
 }

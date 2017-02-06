@@ -11,10 +11,10 @@ import Firebase
 
 class NewGiftViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
    
-   var source = String()
+   static var source = String()
    var passUPC: String!
    var giftsUPC = [GiftUPC]()
-   var eventPickerData: [String] = ["Birthday", "Valentine\'s day", "Mother\'s day", "Father's day", "Thanksgiving","Hanukkah","Christmas", "Other"]
+   var eventPickerData: [String] = ["Birthday", "Valentine\'s day", "Mother\'s day", "Father's day", "Thanksgiving", "Hanukkah", "Christmas", "Bridal Shower", "Baby Shower", "Other"]
    var eventName = "birthday"
    let datePicker = UIDatePicker()
    var giftImageURL = String()
@@ -63,9 +63,9 @@ class NewGiftViewController: UIViewController, UITextFieldDelegate, UIPickerView
    }
    
    func displayLabels() {
-      let fromto = source == "received" ? "From" : "To"
-      let whichDate = source == "received" ? "Date Recieved" : "Event Date"
-      titleLabel.text = "Gift \(source.capitalized) \(fromto)"
+      let fromto = NewGiftViewController.source == "received" ? "From" : "To"
+      let whichDate = NewGiftViewController.source == "received" ? "Date Recieved" : "Event Date"
+      titleLabel.text = "Gift \(NewGiftViewController.source.capitalized) \(fromto)"
       dateLabel.text = whichDate
    }
    
@@ -156,8 +156,14 @@ class NewGiftViewController: UIViewController, UITextFieldDelegate, UIPickerView
       } else if date == "" {
          alert(message: "date")
       } else {
-         GiftDataModel.shared.createGift(dateRecieved: date!, eventDate: date!, eventName: eventName, friendFirstName: firstName!, friendLastName: lastName!, giftStatus: source, giftImageUrl: giftImageURL, giftName: giftName!, giftPrice: giftPrice!, giftUPCCode: passUPC, notes: notes!, userID: FIRAuth.auth()!.currentUser!.uid)
-         
+         GiftDataModel.shared.createGift(dateRecieved: date!, eventDate: date!, eventName: eventName, friendFirstName: firstName!, friendLastName: lastName!, giftStatus: NewGiftViewController.source, giftImageUrl: giftImageURL, giftName: giftName!, giftPrice: giftPrice!, giftUPCCode: passUPC, notes: notes!, userID: FIRAuth.auth()!.currentUser!.uid, complete: { success in
+            
+           
+            if success {
+               self.performSegue(withIdentifier: "goToHistory", sender: self)
+            }
+            
+         })
       }
       
    }

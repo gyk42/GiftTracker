@@ -25,6 +25,12 @@ class LoginViewController: UIViewController {
    
    override func viewDidLoad() {
       super.viewDidLoad()
+   }
+   
+   
+   override func viewDidAppear(_ animated: Bool) {
+      super.viewDidAppear(animated)
+      
       if FIRAuth.auth()?.currentUser != nil {
          print("=======current user exist============")
          // segue into next page
@@ -34,11 +40,6 @@ class LoginViewController: UIViewController {
       } else {
          print("=========no current user============")
       }
-   }
-   
-   override func viewDidAppear(_ animated: Bool) {
-      super.viewDidAppear(animated)
-      
    }
    // to get rid of keyboard by touching the outside of the textfield
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
