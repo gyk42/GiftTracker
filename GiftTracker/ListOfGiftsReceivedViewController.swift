@@ -1,15 +1,16 @@
 //
-//  ListOfGiftsViewController.swift
+//  ListOfGiftsReceivedViewController.swift
 //  GiftTracker
 //
-//  Created by Yoon Yu on 1/30/17.
+//  Created by Yoon Yu on 2/5/17.
 //  Copyright © 2017 Grace Yu. All rights reserved.
 //
 
 import UIKit
 import Firebase
 
-class ListOfGiftsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ListOfGiftsReceivedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+   
    
    var gifts = [Gift]()
    var ref: FIRDatabaseReference!
@@ -17,19 +18,19 @@ class ListOfGiftsViewController: UIViewController, UITableViewDataSource, UITabl
    
    // MARK: IBOutlet --------------------------------------
    
-   @IBOutlet weak var listOfGiftsTableView: UITableView!
+   @IBOutlet weak var listOfGiftsReceivedTableView: UITableView!
    
    // MARK: Life-Cycle  --------------------------------------
    
    override func viewDidLoad() {
       super.viewDidLoad()
       giftTableviewDisplay()
-      listOfGiftsTableView.reloadData()
+      listOfGiftsReceivedTableView.reloadData()
    }
    
    override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
-      listOfGiftsTableView.reloadData()
+      listOfGiftsReceivedTableView.reloadData()
    }
    
    // MARK: Tableview -------------------------------------
@@ -39,7 +40,7 @@ class ListOfGiftsViewController: UIViewController, UITableViewDataSource, UITabl
    }
    
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      let cell = tableView.dequeueReusableCell(withIdentifier: "listOfGifts", for: indexPath) as! ListOfGiftsTableViewCell
+      let cell = tableView.dequeueReusableCell(withIdentifier: "listOfGiftsReceived", for: indexPath) as! ListOfGiftsReceivedTableViewCell
       let giftsInxdex = gifts[indexPath.row]
       
       // cell.ref = gifts[indexPath.row].ref!
@@ -49,26 +50,13 @@ class ListOfGiftsViewController: UIViewController, UITableViewDataSource, UITabl
       cell.dateLabel.text = giftsInxdex.eventDate
       cell.friendFirstNameLabel.text = giftsInxdex.friendFirstName?.capitalized
       cell.giftImageView.downLoadImag(from: giftsInxdex.giftImageUrl!)
-      
-      // checks what db to see if gift was received or giving.. and it displays label accordingly
-      if giftsInxdex.giftStatus == "received" {
-         cell.toFromLabel.text = "Received from"
-      } else {
-         cell.toFromLabel.text = "Giving to"
-      }
+
       return cell
-   }
-   
-   // delete gift
-   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-      if editingStyle == .delete {
-         GiftDataModel.shared.deleteGift(gift: gifts[indexPath.row])
-      }
    }
    
    func giftTableviewDisplay() {
       let giftsRef = FIRDatabase.database().reference(withPath:"gifts")
-      let giftsQuery = giftsRef.queryOrdered(byChild: "userID").queryEqual(toValue: ListOfGiftsViewController.userID)
+      let giftsQuery = giftsRef.queryOrdered(byChild: "userID").queryEqual(toValue: ListOfGiftsReceivedViewController.userID)
       
       giftsQuery.observeSingleEvent(of: .value, with: { (snapshot) in
          
@@ -81,9 +69,11 @@ class ListOfGiftsViewController: UIViewController, UITableViewDataSource, UITabl
             }
             
             DispatchQueue.main.async {
-               self.listOfGiftsTableView.reloadData()
+               self.listOfGiftsReceivedTableView.reloadData()
             }
          }
       })
    }
+   
+   
 }

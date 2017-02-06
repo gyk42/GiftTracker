@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 
 class ListOfGiftsTableViewCell: UITableViewCell {
+   
    var ref: FIRDatabaseReference!
    
    @IBOutlet weak var toFromLabel: UILabel!

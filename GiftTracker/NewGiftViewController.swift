@@ -157,7 +157,9 @@ class NewGiftViewController: UIViewController, UITextFieldDelegate, UIPickerView
          alert(message: "date")
       } else {
          GiftDataModel.shared.createGift(dateRecieved: date!, eventDate: date!, eventName: eventName, friendFirstName: firstName!, friendLastName: lastName!, giftStatus: source, giftImageUrl: giftImageURL, giftName: giftName!, giftPrice: giftPrice!, giftUPCCode: passUPC, notes: notes!, userID: FIRAuth.auth()!.currentUser!.uid)
+         
       }
-   }   
+      
+   }
 }
 

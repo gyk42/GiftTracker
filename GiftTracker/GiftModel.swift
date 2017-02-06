@@ -9,8 +9,6 @@
 import Foundation
 import Firebase
 
-//var gifts = [Gift]()
-
 class Gift {
    var giftID: String?
    var dateRecieved: String?

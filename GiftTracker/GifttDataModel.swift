@@ -40,13 +40,13 @@ class GiftDataModel {
    func deleteGift(gift: Gift) {
       gift.ref?.removeValue()
    }
-
+   
 }
 
 class Format {
    static let shared = Format()
    let dateFormatter = DateFormatter()
-  
+   
    private init() {
       dateFormatter.dateStyle = .long
       dateFormatter.timeStyle = .long

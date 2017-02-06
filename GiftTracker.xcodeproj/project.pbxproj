@@ -28,6 +28,10 @@
 		50F9C1931E46D7F800E6A958 /* ListOfGiftsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F9C1921E46D7F800E6A958 /* ListOfGiftsTableViewCell.swift */; };
 		50F9C1951E46DFB500E6A958 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F9C1941E46DFB500E6A958 /* HomeViewController.swift */; };
 		50F9C1971E4705C200E6A958 /* GiftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F9C1961E4705C200E6A958 /* GiftModel.swift */; };
+		50F9C19B1E48160700E6A958 /* ListOfGiftsGivenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F9C19A1E48160700E6A958 /* ListOfGiftsGivenTableViewCell.swift */; };
+		50F9C19D1E48161E00E6A958 /* ListOfGiftsReceivedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F9C19C1E48161E00E6A958 /* ListOfGiftsReceivedTableViewCell.swift */; };
+		50F9C19F1E48163300E6A958 /* ListOfGiftsGivenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F9C19E1E48163300E6A958 /* ListOfGiftsGivenViewController.swift */; };
+		50F9C1A11E48163F00E6A958 /* ListOfGiftsReceivedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F9C1A01E48163F00E6A958 /* ListOfGiftsReceivedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,10 @@
 		50F9C1921E46D7F800E6A958 /* ListOfGiftsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfGiftsTableViewCell.swift; sourceTree = "<group>"; };
 		50F9C1941E46DFB500E6A958 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		50F9C1961E4705C200E6A958 /* GiftModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftModel.swift; sourceTree = "<group>"; };
+		50F9C19A1E48160700E6A958 /* ListOfGiftsGivenTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfGiftsGivenTableViewCell.swift; sourceTree = "<group>"; };
+		50F9C19C1E48161E00E6A958 /* ListOfGiftsReceivedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfGiftsReceivedTableViewCell.swift; sourceTree = "<group>"; };
+		50F9C19E1E48163300E6A958 /* ListOfGiftsGivenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfGiftsGivenViewController.swift; sourceTree = "<group>"; };
+		50F9C1A01E48163F00E6A958 /* ListOfGiftsReceivedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfGiftsReceivedViewController.swift; sourceTree = "<group>"; };
 		54E0CD3F612E83150DD62AC2 /* Pods_GiftTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GiftTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF4CA557D0A9F5EEDCF94C2F /* Pods-GiftTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiftTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GiftTracker/Pods-GiftTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +90,10 @@
 		50876DFC1E459990003E2AD4 /* Tab */ = {
 			isa = PBXGroup;
 			children = (
+				50F9C19E1E48163300E6A958 /* ListOfGiftsGivenViewController.swift */,
+				50F9C19A1E48160700E6A958 /* ListOfGiftsGivenTableViewCell.swift */,
+				50F9C1A01E48163F00E6A958 /* ListOfGiftsReceivedViewController.swift */,
+				50F9C19C1E48161E00E6A958 /* ListOfGiftsReceivedTableViewCell.swift */,
 				50C5C18F1E4030F800178B58 /* ListOfGiftsViewController.swift */,
 				50F9C1921E46D7F800E6A958 /* ListOfGiftsTableViewCell.swift */,
 			);
@@ -321,13 +333,17 @@
 				50C5C1961E4049EA00178B58 /* Extention.swift in Sources */,
 				50F9C1951E46DFB500E6A958 /* HomeViewController.swift in Sources */,
 				508DA89B1E3EC6090093514D /* ViewController.swift in Sources */,
+				50F9C19D1E48161E00E6A958 /* ListOfGiftsReceivedTableViewCell.swift in Sources */,
 				5013BC881E44407100A8FFF4 /* NewGiftViewController.swift in Sources */,
+				50F9C19B1E48160700E6A958 /* ListOfGiftsGivenTableViewCell.swift in Sources */,
 				50876E051E46D521003E2AD4 /* NewUserViewController.swift in Sources */,
 				508DA8991E3EC6090093514D /* AppDelegate.swift in Sources */,
 				50C5C1901E4030F800178B58 /* ListOfGiftsViewController.swift in Sources */,
 				50C5C1921E40311E00178B58 /* GiftUPCModel.swift in Sources */,
+				50F9C1A11E48163F00E6A958 /* ListOfGiftsReceivedViewController.swift in Sources */,
 				50876DFA1E45994E003E2AD4 /* LoginViewController.swift in Sources */,
 				50876DFF1E459D56003E2AD4 /* UserModel.swift in Sources */,
+				50F9C19F1E48163300E6A958 /* ListOfGiftsGivenViewController.swift in Sources */,
 				50C5C1941E4038ED00178B58 /* UPCApi.swift in Sources */,
 				50F9C1971E4705C200E6A958 /* GiftModel.swift in Sources */,
 			);
