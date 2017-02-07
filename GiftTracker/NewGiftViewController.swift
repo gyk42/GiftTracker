@@ -39,7 +39,7 @@ class NewGiftViewController: UIViewController, UITextFieldDelegate, UIPickerView
       
       displayLabels()
       createDatePicker()
-   
+      
       eventPicker.delegate = self
       eventPicker.dataSource = self
       
@@ -52,6 +52,11 @@ class NewGiftViewController: UIViewController, UITextFieldDelegate, UIPickerView
          passUPC = "not provided"
          giftImageURL = "https://cdn.pixabay.com/photo/2013/09/21/15/47/gift-184574_1280.png"
       }
+   }
+   
+   // to get rid of keyboard by touching the outside of the textfield
+   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+      self.view.endEditing(true)
    }
    
    // function for alerts
@@ -100,17 +105,7 @@ class NewGiftViewController: UIViewController, UITextFieldDelegate, UIPickerView
       eventName = eventPickerData[row].lowercased()
    }
    
-   // to get rid of keyboard by touching the outside of the textfield
-   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-      self.view.endEditing(true)
-      friendFirstNameTextField.resignFirstResponder()
-      friendLastNameTextField.resignFirstResponder()
-      eventPicker.resignFirstResponder()
-      giftPriceTextField.resignFirstResponder()
-   }
-   
-   // Date picker
-   
+   // MARK: Date picker
    func createDatePicker() {
       let toolbar = UIToolbar()
       toolbar.sizeToFit()
@@ -135,7 +130,7 @@ class NewGiftViewController: UIViewController, UITextFieldDelegate, UIPickerView
    // Button to segue into scanner
    @IBAction func unwindToGiftScreen(segue: UIStoryboardSegue) {
       dismiss(animated: true, completion: nil)
-//      performSegue(withIdentifier: "toScanner", sender: source)
+      //      performSegue(withIdentifier: "toScanner", sender: source)
    }
    
    @IBAction func savePressed(_ sender: Any) {
@@ -157,15 +152,11 @@ class NewGiftViewController: UIViewController, UITextFieldDelegate, UIPickerView
          alert(message: "date")
       } else {
          GiftDataModel.shared.createGift(dateRecieved: date!, eventDate: date!, eventName: eventName, friendFirstName: firstName!, friendLastName: lastName!, giftStatus: NewGiftViewController.source, giftImageUrl: giftImageURL, giftName: giftName!, giftPrice: giftPrice!, giftUPCCode: passUPC, notes: notes!, userID: FIRAuth.auth()!.currentUser!.uid, complete: { success in
-            
-           
             if success {
                self.performSegue(withIdentifier: "goToHistory", sender: self)
             }
-            
          })
       }
-      
    }
 }
 

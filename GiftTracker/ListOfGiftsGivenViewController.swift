@@ -54,32 +54,25 @@ class ListOfGiftsGivenViewController: UIViewController, UITableViewDataSource, U
       return cell
    }
    
-   /*
-    let username = "SomeUser"
-    
-    FIRDatabase.database().reference.child("users").queryOrderedByChild("username").queryStartingAtValue(username).queryEndingAtValue(username).observeEventType(.ChildAdded, withBlock: { (snapshot) -> Void in
-    
-    }
-    
-    */
-   
    func giftTableviewDisplay() {
       let giftsRef = FIRDatabase.database().reference(withPath:"gifts")
-//      giftsRef.queryOrdered(byChild: "userID").queryStarting(atValue: ListOfGiftsViewController.userID).queryEnding(atValue: <#T##Any?#>)
       let giftsQuery = giftsRef.queryOrdered(byChild: "userID").queryEqual(toValue: ListOfGiftsGivenViewController.userID)
-      //let giftStatusRef = giftsQuery.queryOrdered(byChild: "giftStatus").queryEqual(toValue: "giving")
       
       giftsQuery.observeSingleEvent(of: .value, with: { (snapshot) in
          
          if snapshot.hasChildren(){
-            self.gifts.removeAll()
-            
             for gift in snapshot.children {
-               let gift = Gift(snapshot: gift as! FIRDataSnapshot)
-               self.gifts.append(gift)
                
+               if let firGiftStatusSnapshot = gift as? FIRDataSnapshot {
+                  let giftStatusSnapshot = firGiftStatusSnapshot.childSnapshot(forPath: "giftStatus").value!
+                  
+                  if giftStatusSnapshot as! String == "giving" {
+                     let gift = Gift(snapshot: gift as! FIRDataSnapshot)
+                     self.gifts.append(gift)
+                  }
+               }
             }
-
+            
             DispatchQueue.main.async {
                self.listOfGiftsGivenTableView.reloadData()
             }

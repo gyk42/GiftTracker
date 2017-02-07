@@ -56,16 +56,21 @@ class ListOfGiftsReceivedViewController: UIViewController, UITableViewDataSource
    
    func giftTableviewDisplay() {
       let giftsRef = FIRDatabase.database().reference(withPath:"gifts")
-      let giftsQuery = giftsRef.queryOrdered(byChild: "userID").queryEqual(toValue: ListOfGiftsReceivedViewController.userID)
+      let giftsQuery = giftsRef.queryOrdered(byChild: "userID").queryEqual(toValue: ListOfGiftsGivenViewController.userID)
       
       giftsQuery.observeSingleEvent(of: .value, with: { (snapshot) in
          
          if snapshot.hasChildren(){
-            self.gifts.removeAll()
-            
             for gift in snapshot.children {
-               let gift = Gift(snapshot: gift as! FIRDataSnapshot)
-               self.gifts.append(gift)
+               
+               if let firGiftStatusSnapshot = gift as? FIRDataSnapshot {
+                  let giftStatusSnapshot = firGiftStatusSnapshot.childSnapshot(forPath: "giftStatus").value!
+                  
+                  if giftStatusSnapshot as! String == "received" {
+                     let gift = Gift(snapshot: gift as! FIRDataSnapshot)
+                     self.gifts.append(gift)
+                  }
+               }
             }
             
             DispatchQueue.main.async {
@@ -74,6 +79,4 @@ class ListOfGiftsReceivedViewController: UIViewController, UITableViewDataSource
          }
       })
    }
-   
-   
 }
