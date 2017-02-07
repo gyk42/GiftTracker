@@ -100,8 +100,7 @@ class QRScannerController: UIViewController, AVCaptureMetadataOutputObjectsDeleg
          
          if metadataObj.stringValue != nil {
             messageLabel.text = metadataObj.stringValue
-            lastCapturedCode = metadataObj.stringValue
-            print(lastCapturedCode)
+            lastCapturedCode = metadataObj.stringValue            
          }
          
          // Ths is a bit hacky to prevent many callbacks

@@ -55,6 +55,8 @@
 		50C5C1911E40311E00178B58 /* GiftUPCModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftUPCModel.swift; sourceTree = "<group>"; };
 		50C5C1931E4038EC00178B58 /* UPCApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPCApi.swift; sourceTree = "<group>"; };
 		50C5C1951E4049EA00178B58 /* Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extention.swift; sourceTree = "<group>"; };
+		50E100931E4A43CE00AABF25 /* GiftTracker.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = GiftTracker.mobileprovision; sourceTree = "<group>"; };
+		50E100941E4A5B0B00AABF25 /* GiftTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GiftTracker.entitlements; sourceTree = "<group>"; };
 		50F9C1921E46D7F800E6A958 /* ListOfGiftsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfGiftsTableViewCell.swift; sourceTree = "<group>"; };
 		50F9C1941E46DFB500E6A958 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		50F9C1961E4705C200E6A958 /* GiftModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftModel.swift; sourceTree = "<group>"; };
@@ -130,12 +132,14 @@
 		508DA8971E3EC6090093514D /* GiftTracker */ = {
 			isa = PBXGroup;
 			children = (
+				50E100941E4A5B0B00AABF25 /* GiftTracker.entitlements */,
 				50C5C18C1E4030A700178B58 /* Model */,
 				50C5C18A1E40304100178B58 /* Logic */,
 				50C5C18B1E40309800178B58 /* UI */,
 				50C5C1971E404A1900178B58 /* Extentions */,
 				508DA8A71E3EC6090093514D /* Info.plist */,
 				50876DF71E44F438003E2AD4 /* GoogleService-Info.plist */,
+				50E100931E4A43CE00AABF25 /* GiftTracker.mobileprovision */,
 			);
 			path = GiftTracker;
 			sourceTree = "<group>";
@@ -238,6 +242,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = ME5VK26M48;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -467,6 +476,7 @@
 			baseConfigurationReference = DF4CA557D0A9F5EEDCF94C2F /* Pods-GiftTracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GiftTracker/GiftTracker.entitlements;
 				DEVELOPMENT_TEAM = ME5VK26M48;
 				INFOPLIST_FILE = GiftTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -481,6 +491,8 @@
 			baseConfigurationReference = 07548855FE948AF7D1B6EF08 /* Pods-GiftTracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GiftTracker/GiftTracker.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = ME5VK26M48;
 				INFOPLIST_FILE = GiftTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

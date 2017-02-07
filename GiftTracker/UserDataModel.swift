@@ -26,9 +26,6 @@ class UserDataModel {
    func logout() {
       do {
          try FIRAuth.auth()?.signOut()
-         
-        // performSegue(withIdentifier: "logoutToLogin", sender: self)
-         
       } catch {
          print(error.localizedDescription)
       }

@@ -47,6 +47,9 @@ class NewGiftViewController: UIViewController, UITextFieldDelegate, UIPickerView
          UPCApi.fetchUPC(upc: passUPC!, closure: { data in
             self.giftsUPC = data as! [GiftUPC]
             self.displayGiftInfo()
+            if self.giftsUPC.count == 0 {
+               self.alertForUPC()
+            }
          })
       } else {
          passUPC = "not provided"
@@ -60,6 +63,14 @@ class NewGiftViewController: UIViewController, UITextFieldDelegate, UIPickerView
    }
    
    // function for alerts
+   
+   func alertForUPC() {
+      let alertController = UIAlertController(title: "UPC: \(passUPC!) is not found" , message: "Please enter gift information manually", preferredStyle: .alert)
+      let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+      alertController.addAction(defaultAction)
+      self.present(alertController, animated: true, completion: nil)
+   }
+
    func alert(message: String) {
       let alertController = UIAlertController(title: "\(message.capitalized) is a required field" , message: "Please enter your \(message)", preferredStyle: .alert)
       let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
