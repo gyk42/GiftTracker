@@ -25,6 +25,7 @@
 		50C5C1921E40311E00178B58 /* GiftUPCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C5C1911E40311E00178B58 /* GiftUPCModel.swift */; };
 		50C5C1941E4038ED00178B58 /* UPCApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C5C1931E4038EC00178B58 /* UPCApi.swift */; };
 		50C5C1961E4049EA00178B58 /* Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C5C1951E4049EA00178B58 /* Extention.swift */; };
+		50E100961E4AD6B800AABF25 /* DetailGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E100951E4AD6B800AABF25 /* DetailGiftViewController.swift */; };
 		50F9C1931E46D7F800E6A958 /* ListOfGiftsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F9C1921E46D7F800E6A958 /* ListOfGiftsTableViewCell.swift */; };
 		50F9C1951E46DFB500E6A958 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F9C1941E46DFB500E6A958 /* HomeViewController.swift */; };
 		50F9C1971E4705C200E6A958 /* GiftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F9C1961E4705C200E6A958 /* GiftModel.swift */; };
@@ -57,6 +58,7 @@
 		50C5C1951E4049EA00178B58 /* Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extention.swift; sourceTree = "<group>"; };
 		50E100931E4A43CE00AABF25 /* GiftTracker.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = GiftTracker.mobileprovision; sourceTree = "<group>"; };
 		50E100941E4A5B0B00AABF25 /* GiftTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GiftTracker.entitlements; sourceTree = "<group>"; };
+		50E100951E4AD6B800AABF25 /* DetailGiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailGiftViewController.swift; sourceTree = "<group>"; };
 		50F9C1921E46D7F800E6A958 /* ListOfGiftsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfGiftsTableViewCell.swift; sourceTree = "<group>"; };
 		50F9C1941E46DFB500E6A958 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		50F9C1961E4705C200E6A958 /* GiftModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftModel.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 		50876DFD1E4599C2003E2AD4 /* Gift */ = {
 			isa = PBXGroup;
 			children = (
+				50E100951E4AD6B800AABF25 /* DetailGiftViewController.swift */,
 				5013BC871E44407100A8FFF4 /* NewGiftViewController.swift */,
 				5013BC851E443D5A00A8FFF4 /* QRScannerController.swift */,
 			);
@@ -352,6 +355,7 @@
 				50F9C1A11E48163F00E6A958 /* ListOfGiftsReceivedViewController.swift in Sources */,
 				50876DFA1E45994E003E2AD4 /* LoginViewController.swift in Sources */,
 				50876DFF1E459D56003E2AD4 /* UserModel.swift in Sources */,
+				50E100961E4AD6B800AABF25 /* DetailGiftViewController.swift in Sources */,
 				50F9C19F1E48163300E6A958 /* ListOfGiftsGivenViewController.swift in Sources */,
 				50C5C1941E4038ED00178B58 /* UPCApi.swift in Sources */,
 				50F9C1971E4705C200E6A958 /* GiftModel.swift in Sources */,

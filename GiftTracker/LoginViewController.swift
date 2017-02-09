@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
    
    // MARK: IBOutlet -------------------------------
    
@@ -25,8 +25,40 @@ class LoginViewController: UIViewController {
    
    override func viewDidLoad() {
       super.viewDidLoad()
+      
+      // text field delegates
+      userEmailTextField.delegate = self
+      userPasswordTextField.delegate = self
+      
+      // set return key styles
+      userEmailTextField.returnKeyType = UIReturnKeyType.next
+      userPasswordTextField.returnKeyType = UIReturnKeyType.done
+      
+      // only enable userPasswordTextField if userEmailTextField is non-empty
+      userPasswordTextField.isEnabled = false
+      
+      // only enable 'go' key of userPasswordTextField if the field itself is non-empty
+      userPasswordTextField.enablesReturnKeyAutomatically = true
+      
    }
    
+   // UITextFieldDelegate
+   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+      
+      if (userEmailTextField.text?.isEmpty ?? true) {
+         userPasswordTextField.isEnabled = false
+         textField.resignFirstResponder()
+      }
+      else if textField == userEmailTextField {
+         userPasswordTextField.isEnabled = true
+         userPasswordTextField.becomeFirstResponder()
+      }
+      else {
+         textField.resignFirstResponder()
+      }
+      
+      return true
+   }
    
    override func viewDidAppear(_ animated: Bool) {
       super.viewDidAppear(animated)
@@ -35,8 +67,6 @@ class LoginViewController: UIViewController {
          print("=======current user exist============")
          // segue into next page
          performSegue(withIdentifier: "goToGTHome", sender: self)
-         
-         //UserDataModel.shared.logout()
       } else {
          print("=========no current user============")
       }
