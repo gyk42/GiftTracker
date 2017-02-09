@@ -17,6 +17,8 @@ class AddFriendInfoViewController: UIViewController, UITextFieldDelegate, UIPick
    let eventPicker = UIPickerView()
    let datePicker = UIDatePicker()
    
+   // MARK: IBOutlet --------------------------------------
+   
    @IBOutlet weak var giftStatus: UISegmentedControl!
    @IBOutlet weak var titleLabel: UILabel!
    @IBOutlet weak var friendFirstNameTextField: UITextField!
@@ -25,6 +27,8 @@ class AddFriendInfoViewController: UIViewController, UITextFieldDelegate, UIPick
    @IBOutlet weak var eventPickerTextField: UITextField!
    @IBOutlet weak var descriptionTextField: UITextField!
    
+    // MARK: Life-Cycle  --------------------------------------
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       
@@ -32,7 +36,6 @@ class AddFriendInfoViewController: UIViewController, UITextFieldDelegate, UIPick
       eventPicker.delegate = self
       eventPicker.dataSource = self
       eventPickerTextField.inputView = eventPicker
-      
    }
    
    // to get rid of keyboard by touching the outside of the textfield
@@ -48,7 +51,7 @@ class AddFriendInfoViewController: UIViewController, UITextFieldDelegate, UIPick
       self.present(alertController, animated: true, completion: nil)
    }
    
-   // MARK: event picker
+   // Functions for event picker
    // The number of columns of data
    func numberOfComponents(in pickerView: UIPickerView) -> Int {
       return 1

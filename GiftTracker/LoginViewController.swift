@@ -16,15 +16,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
    
    @IBOutlet weak var userEmailTextField: UITextField!
    @IBOutlet weak var userPasswordTextField: UITextField!
+   @IBOutlet weak var createAccountBtn: UIButton!
    
-   // temporary
-   @IBAction func signoutPressed(_ sender: Any) {
-      UserDataModel.shared.logout()
-   }
    // MARK: Life-cycle -------------------------------
    
    override func viewDidLoad() {
       super.viewDidLoad()
+      
+      // adding border color to the button
+      createAccountBtn.layer.borderColor = UIColor.lightGray.cgColor
+      createAccountBtn.layer.cornerRadius = 5
+      createAccountBtn.layer.borderWidth = 1.5
       
       // text field delegates
       userEmailTextField.delegate = self
@@ -39,7 +41,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
       
       // only enable 'go' key of userPasswordTextField if the field itself is non-empty
       userPasswordTextField.enablesReturnKeyAutomatically = true
-      
    }
    
    // UITextFieldDelegate
@@ -66,18 +67,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
       if FIRAuth.auth()?.currentUser != nil {
          print("=======current user exist============")
          // segue into next page
-         performSegue(withIdentifier: "goToGTHome", sender: self)
+         performSegue(withIdentifier: "goToHome", sender: self)
       } else {
          print("=========no current user============")
       }
    }
+   
    // to get rid of keyboard by touching the outside of the textfield
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
       self.view.endEditing(true)
    }
    
    // MARK: IBAction -------------------------------
-   @IBAction func loginBtnPressed(_ sender: Any) {
+   
+   @IBAction func signInPressed(_ sender: Any) {
       
       let userLoginEmail = userEmailTextField.text!
       let userLoginPassword = userPasswordTextField.text!

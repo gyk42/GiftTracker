@@ -1,5 +1,5 @@
 //
-//  NewGiftViewController.swift
+//  AddGiftInfoViewController.swift
 //  GiftTracker
 //
 //  Created by Yoon Yu on 2/2/17.
@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class NewGiftViewController: UIViewController, UITextFieldDelegate {
+class AddGiftInfoController: UIViewController, UITextFieldDelegate {
    
    static var source = String()
    var passUPC: String!

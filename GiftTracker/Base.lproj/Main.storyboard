@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Os7-V8-TNK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,53 +22,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gift Recorder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWc-B1-G4e">
-                                <rect key="frame" x="115" y="51" width="145" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBr-hO-MG2">
+                                <rect key="frame" x="37" y="239" width="300" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.27336850762367249" green="0.37034040689468384" blue="0.55336892604827881" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="25"/>
-                                <color key="textColor" red="0.28627450980000002" green="0.31372549020000001" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBr-hO-MG2">
-                                <rect key="frame" x="76" y="307.5" width="222" height="52"/>
-                                <color key="backgroundColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="25"/>
-                                <state key="normal" title="Login">
+                                <state key="normal" title="Sign In">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="btd-PV-5OQ"/>
+                                    <action selector="signInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Dp-y4-Xfk"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email address" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="1fD-Bx-zpb">
-                                <rect key="frame" x="76" y="168" width="222" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="dqY-FH-7uU">
-                                <rect key="frame" x="76" y="246" width="222" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="dqY-FH-7uU">
+                                <rect key="frame" x="38" y="121" width="299" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRZ-Nb-f4n">
-                                <rect key="frame" x="76" y="128" width="86" height="32"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
-                                <color key="textColor" red="0.28627450980000002" green="0.31372549020000001" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B17-PE-Cag">
-                                <rect key="frame" x="77" y="206" width="85" height="32"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
-                                <color key="textColor" red="0.28627450980000002" green="0.31372549020000001" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vlf-SZ-N5N">
-                                <rect key="frame" x="76" y="395.5" width="222" height="52"/>
-                                <color key="backgroundColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gift Recorder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWc-B1-G4e">
+                                <rect key="frame" x="115" y="28" width="145" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="25"/>
-                                <state key="normal" title="Sign Up">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.28627450980000002" green="0.31372549020000001" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email address" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="1fD-Bx-zpb">
+                                <rect key="frame" x="37" y="83" width="300" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Not a Gift Recorder user?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7Q-gZ-bc2">
+                                <rect key="frame" x="98" y="328" width="179" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="18"/>
+                                <color key="textColor" red="0.28627450980000002" green="0.31372549020000001" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vlf-SZ-N5N">
+                                <rect key="frame" x="91" y="365" width="192" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
+                                <state key="normal" title="Create an account">
+                                    <color key="titleColor" red="0.27336850759999998" green="0.37034040689999997" blue="0.55336892599999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="dZN-d0-4dC" kind="show" id="Tm1-it-mjq"/>
@@ -76,38 +75,17 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="B17-PE-Cag" secondAttribute="trailing" constant="213" id="0Pr-3O-IYH"/>
-                            <constraint firstAttribute="trailing" secondItem="WRZ-Nb-f4n" secondAttribute="trailing" constant="213" id="4jf-tZ-Trr"/>
-                            <constraint firstItem="B17-PE-Cag" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="77" id="7FZ-aQ-qUJ"/>
-                            <constraint firstItem="1fD-Bx-zpb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="76" id="9jA-Xc-wDg"/>
-                            <constraint firstItem="IBr-hO-MG2" firstAttribute="trailing" secondItem="dqY-FH-7uU" secondAttribute="trailing" id="AdB-6L-W1A"/>
-                            <constraint firstItem="IBr-hO-MG2" firstAttribute="trailing" secondItem="Vlf-SZ-N5N" secondAttribute="trailing" id="MDl-D7-ad7"/>
-                            <constraint firstAttribute="trailing" secondItem="dqY-FH-7uU" secondAttribute="trailing" constant="77" id="N2O-qD-xlq"/>
-                            <constraint firstItem="Vlf-SZ-N5N" firstAttribute="top" secondItem="IBr-hO-MG2" secondAttribute="bottom" constant="36" id="NPz-ZQ-l7Y"/>
-                            <constraint firstItem="WWc-B1-G4e" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ocx-Ts-nUz"/>
-                            <constraint firstItem="WRZ-Nb-f4n" firstAttribute="top" secondItem="WWc-B1-G4e" secondAttribute="bottom" constant="37" id="YGa-nf-6zh"/>
-                            <constraint firstItem="IBr-hO-MG2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ZNN-7i-3aI"/>
-                            <constraint firstItem="B17-PE-Cag" firstAttribute="top" secondItem="1fD-Bx-zpb" secondAttribute="bottom" constant="8" id="c7c-Bp-g7M"/>
-                            <constraint firstItem="IBr-hO-MG2" firstAttribute="leading" secondItem="dqY-FH-7uU" secondAttribute="leading" id="dps-Jv-URQ"/>
-                            <constraint firstAttribute="trailing" secondItem="1fD-Bx-zpb" secondAttribute="trailing" constant="77" id="eHk-dP-C1G"/>
-                            <constraint firstItem="WWc-B1-G4e" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-262.5" id="elh-Fw-0N8"/>
-                            <constraint firstItem="dqY-FH-7uU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="76" id="g7w-GQ-cDy"/>
-                            <constraint firstItem="WRZ-Nb-f4n" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="76" id="iG4-cz-WQx"/>
-                            <constraint firstItem="dqY-FH-7uU" firstAttribute="top" secondItem="B17-PE-Cag" secondAttribute="bottom" constant="8" id="jDp-QS-ALO"/>
-                            <constraint firstItem="IBr-hO-MG2" firstAttribute="leading" secondItem="Vlf-SZ-N5N" secondAttribute="leading" id="nw8-09-6A0"/>
-                            <constraint firstItem="1fD-Bx-zpb" firstAttribute="top" secondItem="WRZ-Nb-f4n" secondAttribute="bottom" constant="8" id="qRi-Kd-qfF"/>
-                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="createAccountBtn" destination="Vlf-SZ-N5N" id="J4k-QN-oUP"/>
                         <outlet property="userEmailTextField" destination="1fD-Bx-zpb" id="HA4-aO-WsE"/>
                         <outlet property="userPasswordTextField" destination="dqY-FH-7uU" id="3is-n3-pr8"/>
-                        <segue destination="DsF-tc-UYt" kind="show" identifier="goToGTHome" id="63z-FV-q2V"/>
+                        <segue destination="Q3W-Eh-x0a" kind="show" identifier="goToHome" id="aQm-OJ-foc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-684" y="25"/>
+            <point key="canvasLocation" x="-890.39999999999998" y="-604.04797601199402"/>
         </scene>
         <!--New User View Controller-->
         <scene sceneID="0z8-EG-0lO">
@@ -121,134 +99,85 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New User" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stJ-T1-wwc">
-                                <rect key="frame" x="151.5" y="42" width="81.5" height="32"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gift Recorder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCW-gJ-z1f">
+                                <rect key="frame" x="115" y="20" width="145" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="25"/>
                                 <color key="textColor" red="0.28627450980000002" green="0.31372549020000001" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="lbg-CI-NNA">
-                                <rect key="frame" x="81" y="386" width="222" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter your first name" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Ag1-4T-3hJ">
+                                <rect key="frame" x="37" y="81" width="300" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter your last name" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="tfE-C5-0UK">
+                                <rect key="frame" x="37" y="119" width="300" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email address" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="3rD-cO-1Tt">
+                                <rect key="frame" x="37" y="157" width="300" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="lbg-CI-NNA">
+                                <rect key="frame" x="37" y="195" width="300" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ctw-JY-Kfq">
-                                <rect key="frame" x="81" y="103" width="93" height="32"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVP-iy-pOL">
+                                <rect key="frame" x="37" y="241" width="300" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.27336850759999998" green="0.37034040689999997" blue="0.55336892599999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="25"/>
+                                <state key="normal" title="Create an Account">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitPressed:" destination="dZN-d0-4dC" eventType="touchUpInside" id="QxW-Uo-neJ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Already a Gift Recorder user?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPd-Tt-1Mw">
+                                <rect key="frame" x="84" y="327" width="207" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="18"/>
                                 <color key="textColor" red="0.28627450980000002" green="0.31372549020000001" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1CX-p4-Fyb">
-                                <rect key="frame" x="81" y="352" width="85" height="32"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rl-m2-hDb">
+                                <rect key="frame" x="135" y="364" width="105" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
-                                <color key="textColor" red="0.28627450980000002" green="0.31372549020000001" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLj-vR-voW">
-                                <rect key="frame" x="82" y="181" width="93" height="32"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
-                                <color key="textColor" red="0.28627450980000002" green="0.31372549020000001" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your email address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yg-7p-70i">
-                                <rect key="frame" x="82" y="267" width="157" height="32"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
-                                <color key="textColor" red="0.28627450980000002" green="0.31372549020000001" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter your first name" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Ag1-4T-3hJ">
-                                <rect key="frame" x="81" y="137" width="222" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter your last name" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="tfE-C5-0UK">
-                                <rect key="frame" x="81" y="216" width="222" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email address" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="3rD-cO-1Tt">
-                                <rect key="frame" x="81" y="302" width="222" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                            </textField>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="PHA-Hu-QXq">
-                                <rect key="frame" x="67.5" y="480" width="240" height="52"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rl-m2-hDb">
-                                        <rect key="frame" x="0.0" y="0.0" width="110" height="52"/>
-                                        <color key="backgroundColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="25"/>
-                                        <state key="normal" title="Cancel">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="Zqm-Jp-7fE"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVP-iy-pOL">
-                                        <rect key="frame" x="130" y="0.0" width="110" height="52"/>
-                                        <color key="backgroundColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="25"/>
-                                        <state key="normal" title="Submit">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="submitPressed:" destination="dZN-d0-4dC" eventType="touchUpInside" id="QxW-Uo-neJ"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="982-fd-ZUf"/>
-                                </constraints>
-                            </stackView>
+                                <state key="normal" title="Sign in">
+                                    <color key="titleColor" red="0.27336850759999998" green="0.37034040689999997" blue="0.55336892599999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="Zqm-Jp-7fE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="6yg-7p-70i" firstAttribute="leading" secondItem="I58-KR-jID" secondAttribute="leading" constant="82" id="5q1-Bs-BMQ"/>
-                            <constraint firstItem="tfE-C5-0UK" firstAttribute="top" secondItem="nLj-vR-voW" secondAttribute="bottom" constant="3" id="9rP-pj-Awj"/>
-                            <constraint firstItem="nLj-vR-voW" firstAttribute="top" secondItem="Ag1-4T-3hJ" secondAttribute="bottom" constant="14" id="B2R-EQ-WLq"/>
-                            <constraint firstItem="PHA-Hu-QXq" firstAttribute="centerX" secondItem="I58-KR-jID" secondAttribute="centerX" id="HZ6-Ne-uiR"/>
-                            <constraint firstItem="Ctw-JY-Kfq" firstAttribute="top" secondItem="stJ-T1-wwc" secondAttribute="bottom" constant="29" id="J1H-fi-Pka"/>
-                            <constraint firstItem="3rD-cO-1Tt" firstAttribute="leading" secondItem="I58-KR-jID" secondAttribute="leading" constant="81" id="K2k-Gj-C7n"/>
-                            <constraint firstItem="Ag1-4T-3hJ" firstAttribute="top" secondItem="Ctw-JY-Kfq" secondAttribute="bottom" constant="2" id="KHn-sK-Uyy"/>
-                            <constraint firstItem="1CX-p4-Fyb" firstAttribute="leading" secondItem="I58-KR-jID" secondAttribute="leading" constant="81" id="MHE-cS-TSh"/>
-                            <constraint firstItem="nLj-vR-voW" firstAttribute="leading" secondItem="I58-KR-jID" secondAttribute="leading" constant="82" id="NFR-9G-0RV"/>
-                            <constraint firstAttribute="trailing" secondItem="nLj-vR-voW" secondAttribute="trailing" constant="200" id="Of7-l6-ySk"/>
-                            <constraint firstItem="lbg-CI-NNA" firstAttribute="leading" secondItem="I58-KR-jID" secondAttribute="leading" constant="81" id="VC1-ld-Bjz"/>
-                            <constraint firstAttribute="trailing" secondItem="tfE-C5-0UK" secondAttribute="trailing" constant="72" id="acs-Q9-4mX"/>
-                            <constraint firstItem="1CX-p4-Fyb" firstAttribute="top" secondItem="3rD-cO-1Tt" secondAttribute="bottom" constant="20" id="aoa-fT-nqh"/>
-                            <constraint firstItem="Ag1-4T-3hJ" firstAttribute="leading" secondItem="I58-KR-jID" secondAttribute="leading" constant="81" id="b0N-r5-xhu"/>
-                            <constraint firstAttribute="trailing" secondItem="Ag1-4T-3hJ" secondAttribute="trailing" constant="72" id="bGH-Ml-Jk0"/>
-                            <constraint firstItem="tfE-C5-0UK" firstAttribute="leading" secondItem="I58-KR-jID" secondAttribute="leading" constant="81" id="dld-Ey-Ogk"/>
-                            <constraint firstAttribute="trailing" secondItem="3rD-cO-1Tt" secondAttribute="trailing" constant="72" id="eFr-RF-bVZ"/>
-                            <constraint firstAttribute="trailing" secondItem="6yg-7p-70i" secondAttribute="trailing" constant="136" id="exC-Hm-gvl"/>
-                            <constraint firstItem="3rD-cO-1Tt" firstAttribute="top" secondItem="6yg-7p-70i" secondAttribute="bottom" constant="3" id="fDP-66-Fa2"/>
-                            <constraint firstAttribute="trailing" secondItem="Ctw-JY-Kfq" secondAttribute="trailing" constant="201" id="fSU-zk-SCN"/>
-                            <constraint firstAttribute="trailing" secondItem="lbg-CI-NNA" secondAttribute="trailing" constant="72" id="fxR-Tv-5vs"/>
-                            <constraint firstItem="6yg-7p-70i" firstAttribute="top" secondItem="tfE-C5-0UK" secondAttribute="bottom" constant="21" id="mMf-Ag-DyM"/>
-                            <constraint firstItem="stJ-T1-wwc" firstAttribute="centerY" secondItem="I58-KR-jID" secondAttribute="centerY" constant="-275.5" id="pNA-I8-9KD"/>
-                            <constraint firstItem="stJ-T1-wwc" firstAttribute="centerX" secondItem="I58-KR-jID" secondAttribute="centerX" constant="4.5" id="phy-QA-0mi"/>
-                            <constraint firstAttribute="trailing" secondItem="1CX-p4-Fyb" secondAttribute="trailing" constant="209" id="qh5-s6-ldT"/>
-                            <constraint firstItem="Ctw-JY-Kfq" firstAttribute="leading" secondItem="I58-KR-jID" secondAttribute="leading" constant="81" id="tRC-ve-hD6"/>
-                            <constraint firstItem="PHA-Hu-QXq" firstAttribute="top" secondItem="lbg-CI-NNA" secondAttribute="bottom" constant="64" id="vBv-h4-Bxi"/>
-                            <constraint firstItem="lbg-CI-NNA" firstAttribute="top" secondItem="1CX-p4-Fyb" secondAttribute="bottom" constant="2" id="ySl-2f-0Bk"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="userEmail" destination="3rD-cO-1Tt" id="XOn-Uz-3nx"/>
                         <outlet property="userFirstName" destination="Ag1-4T-3hJ" id="U7m-PJ-xZ8"/>
                         <outlet property="userLastName" destination="tfE-C5-0UK" id="Aae-pB-LnF"/>
                         <outlet property="userPassword" destination="lbg-CI-NNA" id="J1y-u1-XZA"/>
-                        <segue destination="DsF-tc-UYt" kind="show" identifier="newToGTHome" id="HJb-dm-Jam"/>
+                        <segue destination="Q3W-Eh-x0a" kind="show" identifier="goToHome" id="XRz-oh-R7D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dsO-GQ-r7x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-369" y="734"/>
+            <point key="canvasLocation" x="-122.40000000000001" y="-620.23988005997012"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="2Uu-N4-uzf">
@@ -294,9 +223,6 @@
                                         <state key="normal" title="History">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="VeB-uA-GSZ" kind="show" id="6cH-XM-iGL"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E1t-JH-I3x">
                                         <rect key="frame" x="0.0" y="219" width="229.5" height="52"/>
@@ -307,7 +233,6 @@
                                         </state>
                                         <connections>
                                             <action selector="signoutPressed:" destination="DsF-tc-UYt" eventType="touchUpInside" id="TzE-iz-Hfj"/>
-                                            <segue destination="BYZ-38-t0r" kind="show" identifier="logoutToLogin" id="n6T-O0-nAO"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -331,12 +256,11 @@
                     <connections>
                         <outlet property="givingBtn" destination="abL-7R-J88" id="eon-uP-oSZ"/>
                         <outlet property="receivedBtn" destination="DHd-JY-txH" id="bb8-qj-U8k"/>
-                        <segue destination="hQn-WU-9RE" kind="show" identifier="toNewGift" id="wUb-PJ-npY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wqd-1o-g6r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12" y="-222"/>
+            <point key="canvasLocation" x="-2678" y="-812"/>
         </scene>
         <!--Scanner Controller-->
         <scene sceneID="KqP-cy-Mg1">
@@ -368,7 +292,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.27336850759999998" green="0.37034040689999997" blue="0.55336892599999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="WLp-jE-wrX" firstAttribute="centerX" secondItem="9QO-hE-mWF" secondAttribute="centerX" id="Egt-TD-whV"/>
                                     <constraint firstItem="ffF-5S-Owm" firstAttribute="leading" secondItem="9QO-hE-mWF" secondAttribute="leadingMargin" id="Uf5-dq-Zyo"/>
@@ -408,154 +332,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DOU-eW-E42" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2508" y="0.0"/>
+            <point key="canvasLocation" x="2298" y="-1230"/>
         </scene>
-        <!--Received-->
-        <scene sceneID="Sd1-wn-FLK">
-            <objects>
-                <viewController id="JkW-vc-y3L" customClass="ListOfGiftsReceivedViewController" customModule="GiftTracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hgj-JT-VcP"/>
-                        <viewControllerLayoutGuide type="bottom" id="glh-Vy-eeB"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="jgZ-oY-qFo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xnz-ji-QDi" userLabel="GreyTopBackground">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97636479139328003" green="0.97653168439865112" blue="0.97635418176651001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pUJ-b6-tok">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Gift Recorder" id="jxt-4v-N7U">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="1rl-ly-fzX">
-                                            <connections>
-                                                <segue destination="DsF-tc-UYt" kind="show" id="Akh-6S-jO6"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wGB-gD-oDP">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nNr-cS-maE">
-                                <rect key="frame" x="0.0" y="147" width="375" height="474"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="listOfGiftsReceived" rowHeight="140" id="LbB-5U-gk6" customClass="ListOfGiftsReceivedTableViewCell" customModule="GiftTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="140"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LbB-5U-gk6" id="QTQ-Lr-JXU">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="139"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pn1-vf-Vtf">
-                                                    <rect key="frame" x="16" y="8" width="98" height="122"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gift name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uBn-ut-4QZ">
-                                                    <rect key="frame" x="128" y="37" width="225" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="19"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gift price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q6h-j2-6OM">
-                                                    <rect key="frame" x="143" y="69" width="96" height="33"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Received from" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWO-oU-Foq">
-                                                    <rect key="frame" x="128" y="7" width="111" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="19"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Friend's name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="735-Mt-lxm">
-                                                    <rect key="frame" x="241" y="7" width="121" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="19"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYk-MG-TpT">
-                                                    <rect key="frame" x="128" y="72" width="10" height="28"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Occasion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJy-3L-qPk">
-                                                    <rect key="frame" x="128" y="102" width="152" height="28"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdU-40-IfS">
-                                                    <rect key="frame" x="265" y="101" width="88" height="28"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="dateLabel" destination="PdU-40-IfS" id="Q8a-oB-ewV"/>
-                                            <outlet property="eventLabel" destination="gJy-3L-qPk" id="YTZ-fr-WxM"/>
-                                            <outlet property="friendFirstNameLabel" destination="735-Mt-lxm" id="F2l-wd-HoE"/>
-                                            <outlet property="giftImageView" destination="pn1-vf-Vtf" id="qg3-nO-nuG"/>
-                                            <outlet property="giftNameLabel" destination="uBn-ut-4QZ" id="HNO-hy-lcs"/>
-                                            <outlet property="giftPriceLabel" destination="q6h-j2-6OM" id="Yav-U6-Ftn"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="JkW-vc-y3L" id="hBJ-Kv-vHM"/>
-                                    <outlet property="delegate" destination="JkW-vc-y3L" id="aiP-Jp-OaP"/>
-                                </connections>
-                            </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="History of Gifts Received " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gR-gA-0Kn">
-                                <rect key="frame" x="16" y="108" width="343" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="23"/>
-                                <color key="textColor" red="0.28627450980000002" green="0.31372549020000001" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Received" image="Gift_000000_25" selectedImage="Gift_000000_25" id="Ept-nv-fJQ"/>
-                    <connections>
-                        <outlet property="listOfGiftsReceivedTableView" destination="nNr-cS-maE" id="tJ8-gA-ex0"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gU3-b0-uez" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1817" y="1596"/>
-        </scene>
-        <!--List Of Gifts View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="Fco-5w-3wS">
             <objects>
-                <viewController id="UrC-oV-uNf" customClass="ListOfGiftsViewController" customModule="GiftTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="UrC-oV-uNf" customClass="HomeViewController" customModule="GiftTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nnX-Up-KvQ"/>
                         <viewControllerLayoutGuide type="bottom" id="t2n-h4-PCA"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="dN8-YK-y4a">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="dN8-YK-y4a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fr4-Ae-XJm" userLabel="GreyTopBackground">
@@ -563,37 +351,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.97636479139328003" green="0.97653168439865112" blue="0.97635418176651001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="History of Gifts Received and Given" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6b-K4-Aba">
-                                <rect key="frame" x="16" y="108" width="343" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="23"/>
-                                <color key="textColor" red="0.28627450980000002" green="0.31372549020000001" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nRM-Mk-BBM">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Gift Recorder" id="6Q0-bt-Xz4">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="is8-Qq-9nP">
-                                            <connections>
-                                                <segue destination="DsF-tc-UYt" kind="show" id="E2n-37-67Y"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Dr-zF-1pM">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="143" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ey9-kM-ZXh">
-                                <rect key="frame" x="0.0" y="147" width="375" height="488"/>
+                                <rect key="frame" x="0.0" y="128" width="375" height="519"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="listOfGifts" rowHeight="143" id="cHo-gW-Anr" customClass="ListOfGiftsTableViewCell" customModule="GiftTracker" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="listOfGifts" rowHeight="143" id="cHo-gW-Anr" customClass="HomeTableViewCell" customModule="GiftTracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="143"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cHo-gW-Anr" id="VmG-V1-keN">
@@ -671,153 +434,48 @@
                                     <outlet property="delegate" destination="UrC-oV-uNf" id="Tue-4A-cbt"/>
                                 </connections>
                             </tableView>
+                            <segmentedControl opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9pc-Lj-4n3">
+                                <rect key="frame" x="58" y="86" width="259" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99586468935012817" green="0.79707974195480347" blue="0.42725622653961182" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <segments>
+                                    <segment title="Giving"/>
+                                    <segment title="Received"/>
+                                </segments>
+                                <color key="tintColor" red="0.27336850762367249" green="0.37034040689468384" blue="0.55336892604827881" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="giftStatusChanged:" destination="UrC-oV-uNf" eventType="valueChanged" id="iII-0S-M7p"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ES-tr-IKf">
+                                <rect key="frame" x="333" y="64" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="out"/>
+                                <connections>
+                                    <action selector="logoutPressed:" destination="UrC-oV-uNf" eventType="touchUpInside" id="OaX-mf-Et8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="history" id="vMd-v1-GTN"/>
+                    <navigationItem key="navigationItem" id="VGa-Pu-flf">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Wsb-L4-nCe"/>
+                        <barButtonItem key="rightBarButtonItem" image="Gift_000000_25" id="Po7-B5-ETP">
+                            <color key="tintColor" red="0.27336850762367249" green="0.37034040689468384" blue="0.55336892604827881" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="Os7-V8-TNK" kind="show" id="WPq-I4-hZa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="giftStatus" destination="9pc-Lj-4n3" id="cwl-fF-fSx"/>
                         <outlet property="listOfGiftsTableView" destination="ey9-kM-ZXh" id="qj5-0E-cQf"/>
+                        <segue destination="HgE-u0-Xky" kind="show" identifier="toDetail" id="UgH-VX-CXJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WPi-7x-EtR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="62" y="1585"/>
-        </scene>
-        <!--Given-->
-        <scene sceneID="CBK-mL-oP9">
-            <objects>
-                <viewController id="fXD-td-2kR" customClass="ListOfGiftsGivenViewController" customModule="GiftTracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ayx-Za-RNR"/>
-                        <viewControllerLayoutGuide type="bottom" id="qos-qy-Igk"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0tM-Kx-BHe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RED-Pe-dS4" userLabel="GreyTopBackground">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97636479139328003" green="0.97653168439865112" blue="0.97635418176651001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IOg-bU-8cF">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Gift Recorder" id="xfW-Gf-f1K">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="YAA-rX-57u">
-                                            <connections>
-                                                <segue destination="DsF-tc-UYt" kind="show" id="WjG-5P-EpI"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fHQ-jk-7g3">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="141" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SP4-cz-Dkd">
-                                <rect key="frame" x="0.0" y="147" width="375" height="474"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="listOfGiftsGiven" rowHeight="141" id="DJt-8G-3Oy" customClass="ListOfGiftsGivenTableViewCell" customModule="GiftTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="141"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DJt-8G-3Oy" id="pfO-Xf-ldU">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iKC-Bp-D6B">
-                                                    <rect key="frame" x="18" y="8" width="98" height="122"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gfit name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5b4-np-Vu4">
-                                                    <rect key="frame" x="131" y="39" width="225" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="19"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gift price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WlH-d0-gbv">
-                                                    <rect key="frame" x="149" y="75" width="96" height="28"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Giving it to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DaE-um-Qz0">
-                                                    <rect key="frame" x="131" y="8" width="91" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="19"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Friend's name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wan-uD-9LN">
-                                                    <rect key="frame" x="216" y="9" width="121" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="19"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kX-sj-loG">
-                                                    <rect key="frame" x="131" y="76" width="10" height="28"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ApJ-D5-Y4o">
-                                                    <rect key="frame" x="131" y="104" width="152" height="28"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVA-S3-VxE">
-                                                    <rect key="frame" x="273" y="105" width="83" height="26"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="dateLabel" destination="NVA-S3-VxE" id="pyZ-XZ-6ZD"/>
-                                            <outlet property="eventLabel" destination="ApJ-D5-Y4o" id="NG2-y7-fNF"/>
-                                            <outlet property="friendFirstNameLabel" destination="wan-uD-9LN" id="8C3-Pc-1fU"/>
-                                            <outlet property="giftImageView" destination="iKC-Bp-D6B" id="m77-gY-tXi"/>
-                                            <outlet property="giftNameLabel" destination="5b4-np-Vu4" id="1Hf-te-ctu"/>
-                                            <outlet property="giftPriceLabel" destination="WlH-d0-gbv" id="uFg-pH-rzB"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="fXD-td-2kR" id="hT3-ux-jyR"/>
-                                    <outlet property="delegate" destination="fXD-td-2kR" id="bPh-d8-bI4"/>
-                                </connections>
-                            </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="History of Gifts Given " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tOI-un-B9d">
-                                <rect key="frame" x="16" y="108" width="343" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="23"/>
-                                <color key="textColor" red="0.28627450980000002" green="0.31372549020000001" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Given" image="Party Baloons_000000_25" selectedImage="Party Baloons_000000_25" id="AXR-SC-5A6"/>
-                    <connections>
-                        <outlet property="listOfGiftsGivenTableView" destination="SP4-cz-Dkd" id="YMV-do-QcK"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9o9-xQ-6x6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="937" y="1597"/>
+            <point key="canvasLocation" x="1316" y="-584"/>
         </scene>
         <!--Detail Gift View Controller-->
         <scene sceneID="1nU-id-e4n">
@@ -831,24 +489,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ccL-A7-ycr">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Gift Recorder" id="Qy5-Zm-BKc">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="CaV-hb-HEh">
-                                            <connections>
-                                                <segue destination="VeB-uA-GSZ" kind="show" id="FjV-b6-vov"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="azH-ja-bac" userLabel="GreyTopBackground">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97636479139999999" green="0.97653168440000004" blue="0.9763541818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IDI-1t-QLj">
                                 <rect key="frame" x="67" y="99" width="240" height="166"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -938,25 +578,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" fixedFrame="YES" text="Notes goes here...." translatesAutoresizingMaskIntoConstraints="NO" id="Unt-RA-65l">
-                                <rect key="frame" x="89" y="486" width="255" height="78"/>
+                                <rect key="frame" x="89" y="486" width="255" height="134"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.97592383623123169" green="0.97666221857070923" blue="0.97603815793991089" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Goz-tD-FF8">
-                                <rect key="frame" x="37" y="591" width="307" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="16"/>
-                                <state key="normal" title="Click here to explore more on Amazon">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="exploreAmaonPressed:" destination="HgE-u0-Xky" eventType="touchUpInside" id="AvR-aA-ZjV"/>
-                                    <action selector="submitPressed:" destination="dZN-d0-4dC" eventType="touchUpInside" id="LhL-0Z-T7U"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -974,28 +601,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DhG-q7-dpP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="924" y="2265.5172413793107"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="Dvy-Aa-eRf">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="VeB-uA-GSZ" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="Rjf-f0-2Lk">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="selectedImageTintColor" red="0.83840852975845337" green="0.58222857271239958" blue="0.14106596894079693" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="UrC-oV-uNf" kind="relationship" relationship="viewControllers" id="ZiY-VK-TcV"/>
-                        <segue destination="fXD-td-2kR" kind="relationship" relationship="viewControllers" id="Ht5-tv-iQ5"/>
-                        <segue destination="JkW-vc-y3L" kind="relationship" relationship="viewControllers" id="0Rx-aA-xYw"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="avG-qt-FNx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1113" y="836"/>
+            <point key="canvasLocation" x="1380" y="62"/>
         </scene>
         <!--Add Friend Info View Controller-->
         <scene sceneID="nKZ-nl-qQG">
@@ -1009,22 +615,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gda-RF-ni7">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Gift Recorder" id="SRi-B2-hDn">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="ctS-pZ-dwm"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GSW-aI-qzi">
                                 <rect key="frame" x="58" y="128" width="259" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99586468935012817" green="0.79707974195480347" blue="0.42725622653961182" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <segments>
                                     <segment title="Giving"/>
                                     <segment title="Received"/>
                                 </segments>
+                                <color key="tintColor" red="0.27336850762367249" green="0.37034040689468384" blue="0.55336892604827881" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="giftStatusChanged:" destination="Os7-V8-TNK" eventType="valueChanged" id="MPP-Hc-ee5"/>
                                 </connections>
@@ -1067,7 +666,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLX-iS-rQK">
                                 <rect key="frame" x="74" y="341" width="230" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.27336850759999998" green="0.37034040689999997" blue="0.55336892599999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="25"/>
                                 <state key="normal" title="Add a Gift">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1076,7 +675,7 @@
                                     <action selector="addAGiftPressed:" destination="Os7-V8-TNK" eventType="touchUpInside" id="GZ7-H3-bCw"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gift Giving it To" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAP-DT-tS8">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gift Giving To" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAP-DT-tS8">
                                 <rect key="frame" x="58" y="72" width="259" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
@@ -1099,7 +698,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z5A-MQ-DGF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="620" y="203"/>
+            <point key="canvasLocation" x="2337" y="-401"/>
         </scene>
         <!--New Gift View Controller-->
         <scene sceneID="HcM-Vv-qHI">
@@ -1156,18 +755,14 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Gift Recorder" id="4bd-f0-8W6">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="UPF-UY-3V3">
-                                            <connections>
-                                                <segue destination="DsF-tc-UYt" kind="show" id="t3h-rt-gPv"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="UPF-UY-3V3"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b99-ai-wvr">
                                 <rect key="frame" x="114" y="243" width="152" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.27336850759999998" green="0.37034040689999997" blue="0.55336892599999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="18"/>
                                 <size key="titleShadowOffset" width="10" height="10"/>
                                 <state key="normal" title="    scan" image="Barcode_000000_25">
@@ -1194,7 +789,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUJ-zL-JWJ">
                                 <rect key="frame" x="28" y="371" width="328" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.27336850759999998" green="0.37034040689999997" blue="0.55336892599999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="25"/>
                                 <state key="normal" title="Save Gift Info">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1213,25 +808,41 @@
                         <outlet property="titleLabel" destination="S1z-no-YuH" id="Jat-3w-m0u"/>
                         <outlet property="upcLabel" destination="KJf-Xd-lqd" id="n3E-lB-0yd"/>
                         <segue destination="pOb-En-CMo" kind="unwind" identifier="" unwindAction="unwindToProductScreenWithSegue:" id="nV2-Mg-YYp"/>
-                        <segue destination="VeB-uA-GSZ" kind="show" identifier="goToHistory" id="cWF-eO-1Ah"/>
+                        <segue destination="Q3W-Eh-x0a" kind="show" identifier="goToHome" id="DqR-12-oRF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sA1-qd-M5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="pOb-En-CMo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1333.5999999999999" y="-304.4977511244378"/>
+            <point key="canvasLocation" x="1631" y="-1230"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HOU-9j-Z3g">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q3W-Eh-x0a" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="history" id="vMd-v1-GTN"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wue-MN-BYY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UrC-oV-uNf" kind="relationship" relationship="rootViewController" id="gob-bH-SFg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pPp-Nc-EyP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="570" y="-620"/>
         </scene>
     </scenes>
     <resources>
         <image name="Barcode_000000_25" width="25" height="25"/>
         <image name="Gift_000000_25" width="25" height="25"/>
         <image name="Multiply_000000_50" width="50" height="50"/>
-        <image name="Party Baloons_000000_25" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6cH-XM-iGL"/>
-        <segue reference="t3h-rt-gPv"/>
-        <segue reference="wUb-PJ-npY"/>
-        <segue reference="n6T-O0-nAO"/>
+        <segue reference="aQm-OJ-foc"/>
+        <segue reference="y5d-Vz-T4A"/>
     </inferredMetricsTieBreakers>
 </document>

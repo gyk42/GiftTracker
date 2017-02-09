@@ -114,7 +114,7 @@ class QRScannerController: UIViewController, AVCaptureMetadataOutputObjectsDeleg
    }
    
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      if let destination = segue.destination as? NewGiftViewController {
+      if let destination = segue.destination as? AddGiftInfoController {
          destination.passUPC = lastCapturedCode
       }
    }

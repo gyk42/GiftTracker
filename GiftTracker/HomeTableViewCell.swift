@@ -1,5 +1,5 @@
 //
-//  ListOfGiftsTableViewCell.swift
+//  HomeTableViewCell.swift
 //  GiftTracker
 //
 //  Created by Yoon Yu on 1/30/17.
@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class ListOfGiftsTableViewCell: UITableViewCell {
+class HomeTableViewCell: UITableViewCell {
    
    var ref: FIRDatabaseReference!
    

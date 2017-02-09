@@ -10,7 +10,9 @@ import UIKit
 import Firebase
 
 class DetailGiftViewController: UIViewController {
-
+   
+   var gift: Gift!
+   
    @IBOutlet weak var giftImageView: UIImageView!
    @IBOutlet weak var giftNameLabel: UILabel!
    @IBOutlet weak var friendFirstNameLabel: UILabel!
@@ -21,15 +23,18 @@ class DetailGiftViewController: UIViewController {
    @IBOutlet weak var eventDateLabel: UILabel!
    @IBOutlet weak var notesTextView: UITextView!
    
-   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-   
-   // https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=
-   
-   @IBAction func exploreAmaonPressed(_ sender: Any) {
+   override func viewDidLoad() {
+      super.viewDidLoad()
+      self.title = "Gift Recorder"
+      self.giftImageView.downLoadImag(from: gift.giftImageUrl!)
+      self.giftNameLabel.text = gift?.giftName?.capitalized
+      self.friendFirstNameLabel.text = gift?.friendFirstName?.capitalized
+      self.friendLastNameLabel.text = gift?.friendLastName?.capitalized
+      self.giftPriceLabel.text = gift?.giftPrice
+      self.upcLabel.text = gift?.giftUPCCode
+      self.eventLabel.text = gift?.eventName?.capitalized
+      self.eventDateLabel.text = gift?.eventDate
+      self.notesTextView.text = gift?.notes
    }
-
+   
 }
