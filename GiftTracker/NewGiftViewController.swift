@@ -9,39 +9,24 @@
 import UIKit
 import Firebase
 
-class NewGiftViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class NewGiftViewController: UIViewController, UITextFieldDelegate {
    
    static var source = String()
    var passUPC: String!
    var giftsUPC = [GiftUPC]()
-   var eventPickerData: [String] = ["Birthday", "Valentine\'s day", "Mother\'s day", "Father's day", "Thanksgiving", "Hanukkah", "Christmas", "Bridal Shower", "Baby Shower", "Other"]
-   var eventName = "birthday"
-   let datePicker = UIDatePicker()
    var giftImageURL = String()
    
    @IBOutlet weak var giftImageView: UIImageView!
    @IBOutlet weak var giftNameTextField: UITextField!
-   @IBOutlet weak var friendFirstNameTextField: UITextField!
-   @IBOutlet weak var friendLastNameTextField: UITextField!
    @IBOutlet weak var giftPriceTextField: UITextField!
-   @IBOutlet weak var giftDateTextField: UITextField!
-   @IBOutlet weak var eventPicker: UIPickerView!
    @IBOutlet weak var titleLabel: UILabel!
-   @IBOutlet weak var dateLabel: UILabel!
    @IBOutlet weak var upcLabel: UILabel!
-   @IBOutlet weak var notesTextField: UITextField!
-   
+
    //   @IBOutlet weak var scrollForKeyboard: UIScrollView!
    
    // MARK: Life cycle
    override func viewDidLoad() {
       super.viewDidLoad()
-      
-      displayLabels()
-      createDatePicker()
-      
-      eventPicker.delegate = self
-      eventPicker.dataSource = self
       
       if passUPC != nil {
          UPCApi.fetchUPC(upc: passUPC!, closure: { data in
@@ -78,12 +63,7 @@ class NewGiftViewController: UIViewController, UITextFieldDelegate, UIPickerView
       self.present(alertController, animated: true, completion: nil)
    }
    
-   func displayLabels() {
-      let fromto = NewGiftViewController.source == "received" ? "From" : "To"
-      let whichDate = NewGiftViewController.source == "received" ? "Date Recieved" : "Event Date"
-      titleLabel.text = "Gift \(NewGiftViewController.source.capitalized) \(fromto)"
-      dateLabel.text = whichDate
-   }
+   
    
    // displays information fetched from api.upcitemdb.com
    func displayGiftInfo() {
@@ -96,46 +76,6 @@ class NewGiftViewController: UIViewController, UITextFieldDelegate, UIPickerView
       }
    }
    
-   // functions related to event picker
-   // The number of columns of data
-   func numberOfComponents(in pickerView: UIPickerView) -> Int {
-      return 1
-   }
-   
-   func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-      return eventPickerData.count
-   }
-   
-   // The data to return for the row and component (column) that's being passed in
-   func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-      return eventPickerData[row]
-   }
-   
-   // Catpure the picker view selection
-   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-      eventName = eventPickerData[row].lowercased()
-   }
-   
-   // MARK: Date picker
-   func createDatePicker() {
-      let toolbar = UIToolbar()
-      toolbar.sizeToFit()
-      
-      let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneDatePickerPressed))
-      toolbar.setItems([doneButton], animated: false)
-      
-      giftDateTextField.inputAccessoryView = toolbar
-      giftDateTextField.inputView = datePicker
-      datePicker.datePickerMode = .date
-   }
-   
-   func doneDatePickerPressed() {
-      Format.shared.dateFormatter.dateStyle = .short
-      Format.shared.dateFormatter.timeStyle = .none
-      giftDateTextField.text = Format.shared.dateFormatter.string(from: datePicker.date)
-      self.view.endEditing(true)
-   }
-   
    // MARK: IBAction ------------------------------------------------
    
    // Button to segue into scanner
@@ -144,30 +84,24 @@ class NewGiftViewController: UIViewController, UITextFieldDelegate, UIPickerView
       //      performSegue(withIdentifier: "toScanner", sender: source)
    }
    
-   @IBAction func savePressed(_ sender: Any) {
-      // Save gift info into FB
-      let giftName = self.giftNameTextField.text?.lowercased()
-      let firstName = friendFirstNameTextField.text?.lowercased()
-      let lastName = friendLastNameTextField.text?.lowercased()
-      let giftPrice = self.giftPriceTextField.text
-      let notes = self.notesTextField.text
-      let date = self.giftDateTextField.text
-      
-      if giftName == "" {
-         alert(message: "gift name")
-      } else if firstName == "" {
-         alert(message: "first name")
-      } else if lastName == "" {
-         alert(message: "last name")
-      } else if date == "" {
-         alert(message: "date")
-      } else {
-         GiftDataModel.shared.createGift(dateRecieved: date!, eventDate: date!, eventName: eventName, friendFirstName: firstName!, friendLastName: lastName!, giftStatus: NewGiftViewController.source, giftImageUrl: giftImageURL, giftName: giftName!, giftPrice: giftPrice!, giftUPCCode: passUPC, notes: notes!, userID: FIRAuth.auth()!.currentUser!.uid, complete: { success in
-            if success {
-               self.performSegue(withIdentifier: "goToHistory", sender: self)
-            }
-         })
-      }
-   }
+//   @IBAction func savePressed(_ sender: Any) {
+//      // Save gift info into FB
+//      let giftName = self.giftNameTextField.text?.lowercased()
+//      let firstName = friendFirstNameTextField.text?.lowercased()
+//      let lastName = friendLastNameTextField.text?.lowercased()
+//      let giftPrice = self.giftPriceTextField.text
+//      let notes = self.notesTextField.text
+//      let date = self.giftDateTextField.text
+//      
+//      if giftName == "" {
+//         alert(message: "gift name")
+//      } else {
+//         GiftDataModel.shared.createGift(dateRecieved: date!, eventDate: date!, eventName: eventName, friendFirstName: firstName!, friendLastName: lastName!, giftStatus: NewGiftViewController.source, giftImageUrl: giftImageURL, giftName: giftName!, giftPrice: giftPrice!, giftUPCCode: passUPC, notes: notes!, userID: FIRAuth.auth()!.currentUser!.uid, complete: { success in
+//            if success {
+//               self.performSegue(withIdentifier: "goToHistory", sender: self)
+//            }
+//         })
+//      }
+//   }
 }
 

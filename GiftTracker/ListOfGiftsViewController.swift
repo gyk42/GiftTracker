@@ -42,7 +42,7 @@ class ListOfGiftsViewController: UIViewController, UITableViewDataSource, UITabl
       let cell = tableView.dequeueReusableCell(withIdentifier: "listOfGifts", for: indexPath) as! ListOfGiftsTableViewCell
       let giftsInxdex = gifts[indexPath.row]
       
-      // cell.ref = gifts[indexPath.row].ref!
+      //cell.ref = gifts[indexPath.row].ref!
       cell.giftNameLabel.text = giftsInxdex.giftName?.capitalized
       cell.giftPriceLabel.text = giftsInxdex.giftPrice
       cell.eventLabel.text = giftsInxdex.eventName?.capitalized
@@ -68,6 +68,7 @@ class ListOfGiftsViewController: UIViewController, UITableViewDataSource, UITabl
    
    func giftTableviewDisplay() {
       let giftsRef = FIRDatabase.database().reference(withPath:"gifts")
+      let giftID = giftsRef.ref.key
       let giftsQuery = giftsRef.queryOrdered(byChild: "userID").queryEqual(toValue: ListOfGiftsViewController.userID)
       
       giftsQuery.observeSingleEvent(of: .value, with: { (snapshot) in
