@@ -11,23 +11,30 @@ import Firebase
 
 class AddGiftInfoController: UIViewController, UITextFieldDelegate {
    
-   static var source = String()
+   var source = String()
    var passUPC: String!
    var giftsUPC = [GiftUPC]()
    var giftImageURL = String()
+   //static var firstName = String()
+   var firstName = String()
+   var lastName = String()
+   var notes = String()
+   var date = String()
+   var eventName = String()
+   var sourceType: String = ""
    
    @IBOutlet weak var giftImageView: UIImageView!
    @IBOutlet weak var giftNameTextField: UITextField!
    @IBOutlet weak var giftPriceTextField: UITextField!
    @IBOutlet weak var titleLabel: UILabel!
    @IBOutlet weak var upcLabel: UILabel!
-
+   
    //   @IBOutlet weak var scrollForKeyboard: UIScrollView!
    
    // MARK: Life cycle
    override func viewDidLoad() {
       super.viewDidLoad()
-      
+      print("from gift \(firstName)")
       if passUPC != nil {
          UPCApi.fetchUPC(upc: passUPC!, closure: { data in
             self.giftsUPC = data as! [GiftUPC]
@@ -40,6 +47,8 @@ class AddGiftInfoController: UIViewController, UITextFieldDelegate {
          passUPC = "not provided"
          giftImageURL = "https://cdn.pixabay.com/photo/2013/09/21/15/47/gift-184574_1280.png"
       }
+      
+      self.source = sourceType
    }
    
    // to get rid of keyboard by touching the outside of the textfield
@@ -55,7 +64,7 @@ class AddGiftInfoController: UIViewController, UITextFieldDelegate {
       alertController.addAction(defaultAction)
       self.present(alertController, animated: true, completion: nil)
    }
-
+   
    func alert(message: String) {
       let alertController = UIAlertController(title: "\(message.capitalized) is a required field" , message: "Please enter your \(message)", preferredStyle: .alert)
       let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -84,24 +93,24 @@ class AddGiftInfoController: UIViewController, UITextFieldDelegate {
       //      performSegue(withIdentifier: "toScanner", sender: source)
    }
    
-//   @IBAction func savePressed(_ sender: Any) {
-//      // Save gift info into FB
-//      let giftName = self.giftNameTextField.text?.lowercased()
-//      let firstName = friendFirstNameTextField.text?.lowercased()
-//      let lastName = friendLastNameTextField.text?.lowercased()
-//      let giftPrice = self.giftPriceTextField.text
-//      let notes = self.notesTextField.text
-//      let date = self.giftDateTextField.text
-//      
-//      if giftName == "" {
-//         alert(message: "gift name")
-//      } else {
-//         GiftDataModel.shared.createGift(dateRecieved: date!, eventDate: date!, eventName: eventName, friendFirstName: firstName!, friendLastName: lastName!, giftStatus: NewGiftViewController.source, giftImageUrl: giftImageURL, giftName: giftName!, giftPrice: giftPrice!, giftUPCCode: passUPC, notes: notes!, userID: FIRAuth.auth()!.currentUser!.uid, complete: { success in
-//            if success {
-//               self.performSegue(withIdentifier: "goToHistory", sender: self)
-//            }
-//         })
-//      }
-//   }
+   @IBAction func savePressed(_ sender: Any) {
+      // Save gift info into FB
+      let giftName = self.giftNameTextField.text?.lowercased()
+      let firstName = self.firstName.lowercased()
+      let lastName = self.lastName.lowercased()
+      let giftPrice = self.giftPriceTextField?.text
+      let notes = self.notes
+      let date = self.date
+      
+      if giftName == "" {
+         alert(message: "gift name")
+      } else {
+         GiftDataModel.shared.createGift(dateRecieved: date, eventDate: date, eventName: self.eventName, friendFirstName: firstName, friendLastName: lastName, giftStatus: self.source, giftImageUrl: giftImageURL, giftName: giftName!, giftPrice: giftPrice!, giftUPCCode: passUPC, notes: notes, userID: FIRAuth.auth()!.currentUser!.uid, complete: { success in
+            if success {
+               self.performSegue(withIdentifier: "goToHome", sender: self)
+            }
+         })
+      }
+   }
 }
 

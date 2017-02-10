@@ -17,35 +17,64 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
    var isGiving:Bool = true
    var source = "giving"  // Default
    
+   
    // MARK: IBOutlet --------------------------------------
    
    @IBOutlet weak var giftStatus: UISegmentedControl!
    @IBOutlet weak var listOfGiftsTableView: UITableView!
+   @IBOutlet weak var spinnerOutlet: UIActivityIndicatorView!
    
-   @IBAction func logoutPressed(_ sender: Any) {
-      UserDataModel.shared.logout()
-   }
-
    // MARK: Life-Cycle  ------------------------------------
    
    override func viewDidLoad() {
       super.viewDidLoad()
+
+      
       giftTableviewDisplay()
+      customizeNavigation()
+      
       listOfGiftsTableView.reloadData()
+   }
+   
+   //   override func viewWillAppear(_ animated: Bool) {
+   //      super.viewWillAppear(animated)
+   //      self.navigationController?.isNavigationBarHidden = false
+   //   }
+   //
+   //   override func viewWillDisappear(_ animated: Bool) {
+   //      super.viewWillDisappear(animated)
+   //      self.navigationController?.isNavigationBarHidden = false
+   //   }
+   
+   // MARK: Navigation controller related functions
+   
+   func customizeNavigation() {
+      // Set the title via VC because issues with embed navigation controller
       self.title = "Gift Recorder"
+      
+      // Set the image for logout and adds action to it
+      navigationController?.navigationBar.topItem?.leftBarButtonItem = UIBarButtonItem(image: UIImage(named:"logout"), style: .plain, target: self, action:#selector(menuButtonTapped))
    }
    
-   override func viewWillAppear(_ animated: Bool) {
-      super.viewWillAppear(animated)
-      listOfGiftsTableView.reloadData()
+   func menuButtonTapped() {
+      // Logs out user by singleton
+      UserDataModel.shared.logout()
+      
+      // Redirect as user signouts to login VC
+      performSegue(withIdentifier: "toLogin", sender: self)
    }
    
-   override func viewDidAppear(_ animated: Bool) {
-      super.viewDidAppear(animated)
-      listOfGiftsTableView.reloadData()
+   func spinnerStart() {
+      spinnerOutlet.startAnimating()
+      spinnerOutlet.hidesWhenStopped = true
    }
    
-   // MARK: Tableview -------------------------------------
+   func spinnerStop() {
+      spinnerOutlet.hidesWhenStopped = true
+      spinnerOutlet.stopAnimating()
+   }
+   
+   // MARK: Tableview related functions ------------------------
    
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       return gifts.count
@@ -105,11 +134,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                   
                   // Source param passes in from segmented control
                   if giftStatusSnapshot as! String == self.source {
+                     print(self.source)
                      let gift = Gift(snapshot: gift as! FIRDataSnapshot)
                      self.gifts.append(gift)
                   }
                }
             }
+            
+            self.spinnerOutlet.hidesWhenStopped = true
+            self.spinnerOutlet.stopAnimating()
+            
             DispatchQueue.main.async {
                self.listOfGiftsTableView.reloadData()
             }
@@ -122,8 +156,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
    // Segmented control to toggle between giving and received for source variable
    @IBAction func giftStatusChanged(_ sender: UISegmentedControl) {
       
-      // Flips boolean
+      // Toggles isGiving to true or false
       isGiving = !isGiving
       source = isGiving ? "giving" : "received"
+      giftTableviewDisplay()
    }
 }

@@ -10,7 +10,7 @@ import UIKit
 
 class AddFriendInfoViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
    
-   var source = String()
+   var source = "giving"
    var isGiving:Bool = true
    var eventPickerData: [String] = ["Birthday", "Valentine\'s day", "Mother\'s day", "Father's day", "Thanksgiving", "Hanukkah", "Christmas", "Bridal Shower", "Baby Shower", "Other"]
    var eventName = "birthday"
@@ -113,7 +113,6 @@ class AddFriendInfoViewController: UIViewController, UITextFieldDelegate, UIPick
    @IBAction func addAGiftPressed(_ sender: Any) {
       let firstName = friendFirstNameTextField.text?.lowercased()
       let lastName = friendLastNameTextField.text?.lowercased()
-      let notes = descriptionTextField.text
       let date = giftDateTextField.text
       let eventName = eventPickerTextField.text
       
@@ -126,10 +125,25 @@ class AddFriendInfoViewController: UIViewController, UITextFieldDelegate, UIPick
       } else if eventName == "" {
          alert(message: "event name")
       } else {
-         
+        self.performSegue(withIdentifier: "toSaveGiftInfo", sender: self)
       }
    }
    
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      if segue.identifier == "toSaveGiftInfo" {
+         if let destinationVC = segue.destination as? AddGiftInfoController {
+            destinationVC.firstName = friendFirstNameTextField.text!
+            destinationVC.lastName = friendLastNameTextField.text!
+            destinationVC.notes = descriptionTextField.text!
+            destinationVC.date = giftDateTextField.text!
+            destinationVC.eventName = eventPickerTextField.text!
+            destinationVC.sourceType = source
+            
+            print("from friend \(destinationVC.firstName)")
+   
+         }
+      }
+   }
    
 }
 

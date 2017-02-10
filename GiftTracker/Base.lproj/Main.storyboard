@@ -10,6 +10,24 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="hwH-De-pKh">
+            <objects>
+                <viewController id="eP1-jz-COM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="T6b-QF-V6Q"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gmc-kV-veM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="w43-Rl-ZK5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PLA-hc-4cd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1137" y="-712"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -73,6 +91,10 @@
                                     <segue destination="dZN-d0-4dC" kind="show" id="Tm1-it-mjq"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" alpha="0.55000001192092896" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OjR-Oa-vv2">
+                                <rect key="frame" x="0.0" y="427" width="375" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -85,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-890.39999999999998" y="-604.04797601199402"/>
+            <point key="canvasLocation" x="63" y="-814"/>
         </scene>
         <!--New User View Controller-->
         <scene sceneID="0z8-EG-0lO">
@@ -164,6 +186,10 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="Zqm-Jp-7fE"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4x6-oi-Ork">
+                                <rect key="frame" x="0.0" y="427" width="375" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -177,90 +203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dsO-GQ-r7x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-122.40000000000001" y="-620.23988005997012"/>
-        </scene>
-        <!--Home View Controller-->
-        <scene sceneID="2Uu-N4-uzf">
-            <objects>
-                <viewController id="DsF-tc-UYt" customClass="HomeViewController" customModule="GiftTracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="IMD-xm-dqP"/>
-                        <viewControllerLayoutGuide type="bottom" id="GSA-m7-VWY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="sPL-iY-bjQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="MUG-uc-VuU">
-                                <rect key="frame" x="73" y="181" width="229.5" height="271"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abL-7R-J88">
-                                        <rect key="frame" x="0.0" y="0.0" width="229.5" height="52"/>
-                                        <color key="backgroundColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="25"/>
-                                        <state key="normal" title="Giving">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="buttonTouchUpInside:" destination="DsF-tc-UYt" eventType="touchUpInside" id="DFe-A8-AAu"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHd-JY-txH">
-                                        <rect key="frame" x="0.0" y="73" width="229.5" height="52"/>
-                                        <color key="backgroundColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="25"/>
-                                        <state key="normal" title="Received">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="buttonTouchUpInside:" destination="DsF-tc-UYt" eventType="touchUpInside" id="e8H-Wq-RoH"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrl-fY-0oH">
-                                        <rect key="frame" x="0.0" y="146" width="229.5" height="52"/>
-                                        <color key="backgroundColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="25"/>
-                                        <state key="normal" title="History">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E1t-JH-I3x">
-                                        <rect key="frame" x="0.0" y="219" width="229.5" height="52"/>
-                                        <color key="backgroundColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="25"/>
-                                        <state key="normal" title="Signout">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="signoutPressed:" destination="DsF-tc-UYt" eventType="touchUpInside" id="TzE-iz-Hfj"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GiftRecorder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4U-y9-KQT">
-                                <rect key="frame" x="118" y="62" width="139.5" height="40"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="25"/>
-                                <color key="textColor" red="0.28627450980000002" green="0.31372549020000001" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="MUG-uc-VuU" firstAttribute="centerX" secondItem="n4U-y9-KQT" secondAttribute="centerX" id="2Uv-ac-bSu"/>
-                            <constraint firstItem="n4U-y9-KQT" firstAttribute="centerY" secondItem="sPL-iY-bjQ" secondAttribute="centerY" constant="-251.5" id="5tG-QH-chz"/>
-                            <constraint firstItem="MUG-uc-VuU" firstAttribute="top" secondItem="n4U-y9-KQT" secondAttribute="bottom" constant="79" id="GoW-pQ-qfj"/>
-                            <constraint firstItem="MUG-uc-VuU" firstAttribute="leading" secondItem="sPL-iY-bjQ" secondAttribute="leadingMargin" constant="57" id="b8v-DM-qXz"/>
-                            <constraint firstItem="n4U-y9-KQT" firstAttribute="centerX" secondItem="sPL-iY-bjQ" secondAttribute="centerX" id="oxN-cB-hqG"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="givingBtn" destination="abL-7R-J88" id="eon-uP-oSZ"/>
-                        <outlet property="receivedBtn" destination="DHd-JY-txH" id="bb8-qj-U8k"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wqd-1o-g6r" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2678" y="-812"/>
+            <point key="canvasLocation" x="61.600000000000001" y="-107.49625187406298"/>
         </scene>
         <!--Scanner Controller-->
         <scene sceneID="KqP-cy-Mg1">
@@ -288,7 +231,7 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" image="Multiply_000000_50"/>
                                         <connections>
-                                            <segue destination="hQn-WU-9RE" kind="show" id="McP-QJ-udT"/>
+                                            <segue destination="hQn-WU-9RE" kind="show" id="fJ7-jW-UG6"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -327,12 +270,12 @@
                     <connections>
                         <outlet property="messageLabel" destination="BkG-PF-7D3" id="BYi-kx-gpP"/>
                         <outlet property="topbar" destination="9QO-hE-mWF" id="ava-q6-qLN"/>
-                        <segue destination="hQn-WU-9RE" kind="show" identifier="backToGift" id="a1D-Un-p9x"/>
+                        <segue destination="hQn-WU-9RE" kind="show" identifier="backToGift" id="xIl-Jv-Cmh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DOU-eW-E42" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2298" y="-1230"/>
+            <point key="canvasLocation" x="2913" y="-107"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="Fco-5w-3wS">
@@ -346,6 +289,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="HWg-Qp-pHj">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                            </activityIndicatorView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fr4-Ae-XJm" userLabel="GreyTopBackground">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -363,7 +309,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="142"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yIz-k9-p0Q">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yIz-k9-p0Q">
                                                     <rect key="frame" x="16" y="7" width="98" height="122"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -447,35 +393,38 @@
                                     <action selector="giftStatusChanged:" destination="UrC-oV-uNf" eventType="valueChanged" id="iII-0S-M7p"/>
                                 </connections>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ES-tr-IKf">
-                                <rect key="frame" x="333" y="64" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="out"/>
-                                <connections>
-                                    <action selector="logoutPressed:" destination="UrC-oV-uNf" eventType="touchUpInside" id="OaX-mf-Et8"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HWg-Qp-pHj" firstAttribute="centerY" secondItem="dN8-YK-y4a" secondAttribute="centerY" id="jJi-wT-atQ"/>
+                            <constraint firstItem="HWg-Qp-pHj" firstAttribute="centerX" secondItem="dN8-YK-y4a" secondAttribute="centerX" id="qaL-RJ-qNO"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="VGa-Pu-flf">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="Wsb-L4-nCe"/>
+                        <barButtonItem key="backBarButtonItem" title="Item" id="Wsb-L4-nCe"/>
+                        <barButtonItem key="leftBarButtonItem" image="logout" id="KcS-RA-HEg">
+                            <color key="tintColor" red="0.27336850759999998" green="0.37034040689999997" blue="0.55336892599999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="toLogin" id="FST-GN-N5b"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="Gift_000000_25" id="Po7-B5-ETP">
                             <color key="tintColor" red="0.27336850762367249" green="0.37034040689468384" blue="0.55336892604827881" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="Os7-V8-TNK" kind="show" id="WPq-I4-hZa"/>
+                                <segue destination="Os7-V8-TNK" kind="show" identifier="toAddGift" id="WPq-I4-hZa"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="giftStatus" destination="9pc-Lj-4n3" id="cwl-fF-fSx"/>
                         <outlet property="listOfGiftsTableView" destination="ey9-kM-ZXh" id="qj5-0E-cQf"/>
+                        <outlet property="spinnerOutlet" destination="HWg-Qp-pHj" id="pSD-0E-wZq"/>
                         <segue destination="HgE-u0-Xky" kind="show" identifier="toDetail" id="UgH-VX-CXJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WPi-7x-EtR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1316" y="-584"/>
+            <point key="canvasLocation" x="1487" y="-814"/>
         </scene>
         <!--Detail Gift View Controller-->
         <scene sceneID="1nU-id-e4n">
@@ -601,7 +550,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DhG-q7-dpP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1380" y="62"/>
+            <point key="canvasLocation" x="1486" y="-87"/>
         </scene>
         <!--Add Friend Info View Controller-->
         <scene sceneID="nKZ-nl-qQG">
@@ -682,6 +631,10 @@
                                 <color key="textColor" red="0.28627450980000002" green="0.31372549020000001" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" alpha="0.55000001192092896" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iPL-hy-dWL">
+                                <rect key="frame" x="0.0" y="427" width="375" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -693,17 +646,17 @@
                         <outlet property="giftDateTextField" destination="TCk-uG-qnZ" id="niX-me-jLR"/>
                         <outlet property="giftStatus" destination="GSW-aI-qzi" id="THu-BM-O91"/>
                         <outlet property="titleLabel" destination="fAP-DT-tS8" id="mXc-Rd-ikJ"/>
-                        <segue destination="hQn-WU-9RE" kind="show" id="y5d-Vz-T4A"/>
+                        <segue destination="hQn-WU-9RE" kind="show" identifier="toSaveGiftInfo" id="y5d-Vz-T4A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z5A-MQ-DGF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2337" y="-401"/>
+            <point key="canvasLocation" x="2193" y="-815"/>
         </scene>
-        <!--New Gift View Controller-->
+        <!--Add Gift Info Controller-->
         <scene sceneID="HcM-Vv-qHI">
             <objects>
-                <viewController id="hQn-WU-9RE" customClass="NewGiftViewController" customModule="GiftTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hQn-WU-9RE" customClass="AddGiftInfoController" customModule="GiftTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fP5-Zg-IaY"/>
                         <viewControllerLayoutGuide type="bottom" id="d2J-36-yql"/>
@@ -798,6 +751,17 @@
                                     <action selector="savePressed:" destination="hQn-WU-9RE" eventType="touchUpInside" id="5Ev-Q6-lzq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDs-or-0CQ" userLabel="EmptyToSegueIntoScanner">
+                                <rect key="frame" x="114" y="105" width="154" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="PVf-Zf-TET" kind="show" id="2fQ-wg-s0k"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" alpha="0.55000001192092896" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rcU-iI-Gg6">
+                                <rect key="frame" x="0.0" y="427" width="375" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -807,14 +771,14 @@
                         <outlet property="giftPriceTextField" destination="jhM-ue-o29" id="CBy-U0-jVn"/>
                         <outlet property="titleLabel" destination="S1z-no-YuH" id="Jat-3w-m0u"/>
                         <outlet property="upcLabel" destination="KJf-Xd-lqd" id="n3E-lB-0yd"/>
-                        <segue destination="pOb-En-CMo" kind="unwind" identifier="" unwindAction="unwindToProductScreenWithSegue:" id="nV2-Mg-YYp"/>
-                        <segue destination="Q3W-Eh-x0a" kind="show" identifier="goToHome" id="DqR-12-oRF"/>
+                        <segue destination="pOb-En-CMo" kind="unwind" unwindAction="unwindToGiftScreenWithSegue:" id="EvQ-Dg-wMf"/>
+                        <segue destination="Q3W-Eh-x0a" kind="show" identifier="goToHome" id="hsF-5d-U5P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sA1-qd-M5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="pOb-En-CMo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1631" y="-1230"/>
+            <point key="canvasLocation" x="2913" y="-815"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HOU-9j-Z3g">
@@ -833,16 +797,19 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pPp-Nc-EyP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="570" y="-620"/>
+            <point key="canvasLocation" x="769" y="-814"/>
         </scene>
     </scenes>
     <resources>
         <image name="Barcode_000000_25" width="25" height="25"/>
         <image name="Gift_000000_25" width="25" height="25"/>
         <image name="Multiply_000000_50" width="50" height="50"/>
+        <image name="logout" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aQm-OJ-foc"/>
+        <segue reference="2fQ-wg-s0k"/>
         <segue reference="y5d-Vz-T4A"/>
+        <segue reference="aQm-OJ-foc"/>
+        <segue reference="Zqm-Jp-7fE"/>
     </inferredMetricsTieBreakers>
 </document>

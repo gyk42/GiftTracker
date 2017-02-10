@@ -43,6 +43,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
       userPasswordTextField.enablesReturnKeyAutomatically = true
    }
    
+   override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(animated)
+      self.navigationController?.isNavigationBarHidden = false
+      self.navigationController!.popToRootViewController(animated: true)
+   }
+   
+   override func viewWillDisappear(_ animated: Bool) {
+      super.viewWillDisappear(animated)
+      self.navigationController?.isNavigationBarHidden = false
+      self.navigationController!.popToRootViewController(animated: true)
+   }
+   
    // UITextFieldDelegate
    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
       
@@ -87,7 +99,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
       
       UserDataModel.shared.login(email: userLoginEmail, password: userLoginPassword, complete: { success in
          if success {
-            self.performSegue(withIdentifier: "goToGTHome", sender: self)
+            self.performSegue(withIdentifier: "goToHome", sender: self)
          } else {
             let alertController = UIAlertController(title: "Error", message: "Please provide a valid email or password", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
