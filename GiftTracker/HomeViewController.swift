@@ -61,7 +61,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
       UserDataModel.shared.logout()
       
       // Redirect as user signouts to login VC
-      performSegue(withIdentifier: "toLogin", sender: self)
+      navigationController?.performSegue(withIdentifier: "toLogin", sender: self)
    }
    
    func spinnerStart() {
