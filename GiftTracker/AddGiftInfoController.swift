@@ -11,17 +11,17 @@ import Firebase
 
 class AddGiftInfoController: UIViewController, UITextFieldDelegate {
    
-   var source = String()
    var passUPC: String!
    var giftsUPC = [GiftUPC]()
    var giftImageURL = String()
-   //static var firstName = String()
-   var firstName = String()
-   var lastName = String()
-   var notes = String()
-   var date = String()
-   var eventName = String()
-   var sourceType: String = ""
+   static var source = String()
+   static var firstName = String()
+   static var lastName = String()
+   static var notes = String()
+   static var date = String()
+   static var eventName = String()
+   //   var firstName = String()
+   //static var sourceType: String = ""
    
    @IBOutlet weak var giftImageView: UIImageView!
    @IBOutlet weak var giftNameTextField: UITextField!
@@ -36,7 +36,7 @@ class AddGiftInfoController: UIViewController, UITextFieldDelegate {
    override func viewDidLoad() {
       super.viewDidLoad()
       
-      print("from gift \(firstName)")
+      print("from gift \(AddGiftInfoController.firstName)")
       
       // style button to give softer look
       StyleModel.shared.styleButtons(buttonName: saveGiftInfoBtn)
@@ -45,7 +45,7 @@ class AddGiftInfoController: UIViewController, UITextFieldDelegate {
       grabPassUPC()
       
       // WIP trying to grab source and set it to pass it to scanner...
-      self.source = sourceType
+      //self.source = sourceType
    }
    
    // to get rid of keyboard by touching the outside of the textfield
@@ -104,22 +104,22 @@ class AddGiftInfoController: UIViewController, UITextFieldDelegate {
    // Button to segue into scanner
    @IBAction func unwindToGiftScreen(segue: UIStoryboardSegue) {
       dismiss(animated: true, completion: nil)
-      //      performSegue(withIdentifier: "toScanner", sender: source)
+      // performSegue(withIdentifier: "toScanner", sender: source)
    }
    
    @IBAction func savePressed(_ sender: Any) {
       // Save gift info into FB
       let giftName = self.giftNameTextField.text?.lowercased()
-      let firstName = self.firstName.lowercased()
-      let lastName = self.lastName.lowercased()
+      let firstName = AddGiftInfoController.firstName.lowercased()
+      let lastName = AddGiftInfoController.lastName.lowercased()
       let giftPrice = self.giftPriceTextField?.text
-      let notes = self.notes
-      let date = self.date
+      let notes = AddGiftInfoController.notes
+      let date = AddGiftInfoController.date
       
       if giftName == "" {
          alert(message: "gift name")
       } else {
-         GiftDataModel.shared.createGift(dateRecieved: date, eventDate: date, eventName: self.eventName, friendFirstName: firstName, friendLastName: lastName, giftStatus: self.source, giftImageUrl: giftImageURL, giftName: giftName!, giftPrice: giftPrice!, giftUPCCode: passUPC, notes: notes, userID: FIRAuth.auth()!.currentUser!.uid, complete: { success in
+         GiftDataModel.shared.createGift(dateRecieved: date, eventDate: date, eventName: AddGiftInfoController.eventName, friendFirstName: firstName, friendLastName: lastName, giftStatus: AddGiftInfoController.source, giftImageUrl: giftImageURL, giftName: giftName!, giftPrice: giftPrice!, giftUPCCode: passUPC, notes: notes, userID: FIRAuth.auth()!.currentUser!.uid, complete: { success in
             if success {
                self.performSegue(withIdentifier: "goToHome", sender: self)
             }

@@ -28,35 +28,25 @@ class AddFriendInfoViewController: UIViewController, UITextFieldDelegate, UIPick
    @IBOutlet weak var descriptionTextField: UITextField!
    @IBOutlet weak var addAGiftBtn: UIButton!
    
-    // MARK: Life-Cycle  --------------------------------------
+   // MARK: Life-Cycle  --------------------------------------
    
    override func viewDidLoad() {
       super.viewDidLoad()
       
-      createDatePicker()
-      
-      // style buttons to give softer look
+      // Style buttons to give softer look
       StyleModel.shared.styleButtons(buttonName: addAGiftBtn)
       
-      eventPicker.delegate = self
-      eventPicker.dataSource = self
-      eventPickerTextField.inputView = eventPicker
+      // Picker calls
+      eventPickerView()
+      createDatePicker()
    }
    
-   // to get rid of keyboard by touching the outside of the textfield
+   // Gets rid of keyboard by touching the outside of the textfield
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
       self.view.endEditing(true)
    }
    
-   
-   // style buttons to give softer look
-   func styleButtons() {
-      addAGiftBtn.layer.cornerRadius = 8
-      addAGiftBtn.layer.borderWidth = 1.5
-      addAGiftBtn.layer.borderColor = UIColor.lightGray.cgColor
-   }
-   
-   // dynamic alert controller to handle different textfields
+   // Dynamic alert controller to handle different textfields
    func alert(message: String) {
       let alertController = UIAlertController(title: "\(message.capitalized) is a required field" , message: "Please enter your \(message)", preferredStyle: .alert)
       let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -64,8 +54,9 @@ class AddFriendInfoViewController: UIViewController, UITextFieldDelegate, UIPick
       self.present(alertController, animated: true, completion: nil)
    }
    
-   // Functions for event picker
-   // The number of columns of data
+   // MARK: Event picker
+   
+   // The number of columns of event picker view
    func numberOfComponents(in pickerView: UIPickerView) -> Int {
       return 1
    }
@@ -81,12 +72,29 @@ class AddFriendInfoViewController: UIViewController, UITextFieldDelegate, UIPick
    
    // Catpure the picker view selection
    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-      eventName = eventPickerData[row].lowercased()
+      eventName = eventPickerData[row]
       eventPickerTextField.text = eventName
-      self.view.endEditing(false)
+   }
+   
+   // Sets
+   func eventPickerView() {
+      let toolbar = UIToolbar()
+      toolbar.sizeToFit()
+      let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneEventPickerPressed))
+      toolbar.setItems([doneButton], animated: false)
+      
+      eventPicker.delegate = self
+      eventPicker.dataSource = self
+      eventPickerTextField.inputView = eventPicker
+      eventPickerTextField.inputAccessoryView = toolbar
+   }
+   
+   func doneEventPickerPressed() {
+      self.view.endEditing(true)
    }
    
    // MARK: Date picker
+   
    func createDatePicker() {
       let toolbar = UIToolbar()
       toolbar.sizeToFit()
@@ -127,7 +135,7 @@ class AddFriendInfoViewController: UIViewController, UITextFieldDelegate, UIPick
       let firstName = friendFirstNameTextField.text?.lowercased()
       let lastName = friendLastNameTextField.text?.lowercased()
       let date = giftDateTextField.text
-      let eventName = eventPickerTextField.text
+      let eventName = eventPickerTextField.text?.lowercased()
       
       if firstName == "" {
          alert(message: "first name")
@@ -138,25 +146,24 @@ class AddFriendInfoViewController: UIViewController, UITextFieldDelegate, UIPick
       } else if eventName == "" {
          alert(message: "event name")
       } else {
-        self.performSegue(withIdentifier: "toSaveGiftInfo", sender: self)
+         self.performSegue(withIdentifier: "toSaveGiftInfo", sender: self)
       }
    }
    
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       if segue.identifier == "toSaveGiftInfo" {
          if let destinationVC = segue.destination as? AddGiftInfoController {
-            destinationVC.firstName = friendFirstNameTextField.text!
-            destinationVC.lastName = friendLastNameTextField.text!
-            destinationVC.notes = descriptionTextField.text!
-            destinationVC.date = giftDateTextField.text!
-            destinationVC.eventName = eventPickerTextField.text!
-            destinationVC.sourceType = source
+            AddGiftInfoController.firstName = friendFirstNameTextField.text!
+            AddGiftInfoController.lastName = friendLastNameTextField.text!
+            AddGiftInfoController.notes = descriptionTextField.text!
+            AddGiftInfoController.date = giftDateTextField.text!
+            AddGiftInfoController.eventName = eventPickerTextField.text!
+            AddGiftInfoController.source = source
             
-            print("from friend \(destinationVC.firstName)")
-   
+            print("from friend \(AddGiftInfoController.firstName)")
+            
          }
       }
    }
-   
 }
 
