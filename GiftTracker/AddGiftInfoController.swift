@@ -28,26 +28,23 @@ class AddGiftInfoController: UIViewController, UITextFieldDelegate {
    @IBOutlet weak var giftPriceTextField: UITextField!
    @IBOutlet weak var titleLabel: UILabel!
    @IBOutlet weak var upcLabel: UILabel!
+   @IBOutlet weak var saveGiftInfoBtn: UIButton!
    
    //   @IBOutlet weak var scrollForKeyboard: UIScrollView!
    
    // MARK: Life cycle
    override func viewDidLoad() {
       super.viewDidLoad()
-      print("from gift \(firstName)")
-      if passUPC != nil {
-         UPCApi.fetchUPC(upc: passUPC!, closure: { data in
-            self.giftsUPC = data as! [GiftUPC]
-            self.displayGiftInfo()
-            if self.giftsUPC.count == 0 {
-               self.alertForUPC()
-            }
-         })
-      } else {
-         passUPC = "not provided"
-         giftImageURL = "https://cdn.pixabay.com/photo/2013/09/21/15/47/gift-184574_1280.png"
-      }
       
+      print("from gift \(firstName)")
+      
+      // style button to give softer look
+      StyleModel.shared.styleButtons(buttonName: saveGiftInfoBtn)
+      
+      // Grabs the upc code from scanner and pass it through API
+      grabPassUPC()
+      
+      // WIP trying to grab source and set it to pass it to scanner...
       self.source = sourceType
    }
    
@@ -56,7 +53,7 @@ class AddGiftInfoController: UIViewController, UITextFieldDelegate {
       self.view.endEditing(true)
    }
    
-   // function for alerts
+   // MARK: function for alerts
    
    func alertForUPC() {
       let alertController = UIAlertController(title: "UPC: \(passUPC!) is not found" , message: "Please enter gift information manually", preferredStyle: .alert)
@@ -72,7 +69,24 @@ class AddGiftInfoController: UIViewController, UITextFieldDelegate {
       self.present(alertController, animated: true, completion: nil)
    }
    
+   // MARK: API related functions
    
+   // Grabs the upc code from scanner and pass it through API
+   func grabPassUPC() {
+      if passUPC != nil {
+         UPCApi.fetchUPC(upc: passUPC!, closure: { data in
+            self.giftsUPC = data as! [GiftUPC]
+            self.displayGiftInfo()
+            if self.giftsUPC.count == 0 {
+               self.alertForUPC()
+            }
+         })
+      } else {
+         passUPC = "not provided"
+         giftImageURL = "https://cdn.pixabay.com/photo/2013/09/21/15/47/gift-184574_1280.png"
+      }
+      
+   }
    
    // displays information fetched from api.upcitemdb.com
    func displayGiftInfo() {

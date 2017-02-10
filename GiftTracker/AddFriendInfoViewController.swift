@@ -26,6 +26,7 @@ class AddFriendInfoViewController: UIViewController, UITextFieldDelegate, UIPick
    @IBOutlet weak var giftDateTextField: UITextField!
    @IBOutlet weak var eventPickerTextField: UITextField!
    @IBOutlet weak var descriptionTextField: UITextField!
+   @IBOutlet weak var addAGiftBtn: UIButton!
    
     // MARK: Life-Cycle  --------------------------------------
    
@@ -33,6 +34,10 @@ class AddFriendInfoViewController: UIViewController, UITextFieldDelegate, UIPick
       super.viewDidLoad()
       
       createDatePicker()
+      
+      // style buttons to give softer look
+      StyleModel.shared.styleButtons(buttonName: addAGiftBtn)
+      
       eventPicker.delegate = self
       eventPicker.dataSource = self
       eventPickerTextField.inputView = eventPicker
@@ -41,6 +46,14 @@ class AddFriendInfoViewController: UIViewController, UITextFieldDelegate, UIPick
    // to get rid of keyboard by touching the outside of the textfield
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
       self.view.endEditing(true)
+   }
+   
+   
+   // style buttons to give softer look
+   func styleButtons() {
+      addAGiftBtn.layer.cornerRadius = 8
+      addAGiftBtn.layer.borderWidth = 1.5
+      addAGiftBtn.layer.borderColor = UIColor.lightGray.cgColor
    }
    
    // dynamic alert controller to handle different textfields

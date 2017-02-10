@@ -19,12 +19,20 @@ class NewUserViewController: UIViewController {
    @IBOutlet weak var userLastName: UITextField!
    @IBOutlet weak var userEmail: UITextField!
    @IBOutlet weak var userPassword: UITextField!
+   @IBOutlet weak var signInBtn: UIButton!
+   @IBOutlet weak var createAccountBtn: UIButton!
    
    //MARK: Life-cycle ---------------------------------
    
    override func viewDidLoad() {
       super.viewDidLoad()
+      
       ref = FIRDatabase.database().reference()
+      
+      // style buttons to give softer look
+      StyleModel.shared.styleButtons(buttonName: signInBtn)
+      StyleModel.shared.styleButtons(buttonName: createAccountBtn)
+
    }
    
    // to get rid of keyboard by touching the outside of the textfield

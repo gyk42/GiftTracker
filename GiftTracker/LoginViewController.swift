@@ -17,16 +17,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
    @IBOutlet weak var userEmailTextField: UITextField!
    @IBOutlet weak var userPasswordTextField: UITextField!
    @IBOutlet weak var createAccountBtn: UIButton!
+   @IBOutlet weak var signInBtn: UIButton!
    
    // MARK: Life-cycle -------------------------------
-   
+
    override func viewDidLoad() {
       super.viewDidLoad()
       
-      // adding border color to the button
-      createAccountBtn.layer.borderColor = UIColor.lightGray.cgColor
-      createAccountBtn.layer.cornerRadius = 5
-      createAccountBtn.layer.borderWidth = 1.5
+      // style buttons to give softer look
+      StyleModel.shared.styleButtons(buttonName: signInBtn)
+      StyleModel.shared.styleButtons(buttonName: createAccountBtn)
       
       // text field delegates
       userEmailTextField.delegate = self
@@ -46,13 +46,25 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
    override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
       self.navigationController?.isNavigationBarHidden = false
-      self.navigationController!.popToRootViewController(animated: true)
+      //self.navigationController!.popToRootViewController(animated: true)
    }
    
    override func viewWillDisappear(_ animated: Bool) {
       super.viewWillDisappear(animated)
       self.navigationController?.isNavigationBarHidden = false
-      self.navigationController!.popToRootViewController(animated: true)
+      //self.navigationController!.popToRootViewController(animated: true)
+   }
+   
+   override func viewDidAppear(_ animated: Bool) {
+      super.viewDidAppear(animated)
+      
+      if FIRAuth.auth()?.currentUser != nil {
+         print("=======current user exist============")
+         // segue into next page
+         performSegue(withIdentifier: "goToHome", sender: self)
+      } else {
+         print("=========no current user============")
+      }
    }
    
    // UITextFieldDelegate
@@ -71,18 +83,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
       }
       
       return true
-   }
-   
-   override func viewDidAppear(_ animated: Bool) {
-      super.viewDidAppear(animated)
-      
-      if FIRAuth.auth()?.currentUser != nil {
-         print("=======current user exist============")
-         // segue into next page
-         performSegue(withIdentifier: "goToHome", sender: self)
-      } else {
-         print("=========no current user============")
-      }
    }
    
    // to get rid of keyboard by touching the outside of the textfield
