@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -70,7 +71,10 @@
                                     <color key="titleColor" red="0.27336850759999998" green="0.37034040689999997" blue="0.55336892599999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="dZN-d0-4dC" kind="show" id="Tm1-it-mjq"/>
+                                    <segue destination="dZN-d0-4dC" kind="presentation" modalTransitionStyle="flipHorizontal" id="pdp-rL-6Oy">
+                                        <segue key="commit" destination="dZN-d0-4dC" kind="presentation" modalTransitionStyle="flipHorizontal" id="9JK-4L-g2z"/>
+                                        <segue key="preview" inheritsFrom="commit" id="hCb-b4-OeR"/>
+                                    </segue>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OjR-Oa-vv2">
@@ -90,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="63" y="-814"/>
+            <point key="canvasLocation" x="-359" y="-762"/>
         </scene>
         <!--New User View Controller-->
         <scene sceneID="0z8-EG-0lO">
@@ -166,7 +170,10 @@
                                     <color key="titleColor" red="0.27336850759999998" green="0.37034040689999997" blue="0.55336892599999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="Zqm-Jp-7fE"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="flipHorizontal" id="oEb-MX-RGE">
+                                        <segue key="commit" destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="flipHorizontal" id="z3q-pH-7LW"/>
+                                        <segue key="preview" inheritsFrom="commit" id="ylG-ZJ-Hbh"/>
+                                    </segue>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4x6-oi-Ork">
@@ -188,7 +195,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dsO-GQ-r7x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="61.600000000000001" y="-107.49625187406298"/>
+            <point key="canvasLocation" x="-537" y="-36"/>
         </scene>
         <!--Scanner Controller-->
         <scene sceneID="KqP-cy-Mg1">
@@ -481,9 +488,6 @@
                         <barButtonItem key="backBarButtonItem" title="Item" id="Wsb-L4-nCe"/>
                         <barButtonItem key="leftBarButtonItem" image="logout" id="KcS-RA-HEg">
                             <color key="tintColor" red="0.27336850759999998" green="0.37034040689999997" blue="0.55336892599999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" identifier="toLogin" id="FST-GN-N5b"/>
-                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="Gift_000000_25" id="Po7-B5-ETP">
                             <color key="tintColor" red="0.27336850762367249" green="0.37034040689468384" blue="0.55336892604827881" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -611,7 +615,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="33b-bf-2Ob" userLabel="BarStack">
-                                <rect key="frame" x="0.0" y="64" width="375" height="5"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VEt-6B-c9o">
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="5"/>
@@ -770,8 +774,8 @@
                                     <constraint firstAttribute="height" constant="5" id="njZ-l0-quU"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="4b6-Qr-7dQ" userLabel="BarStack">
-                                <rect key="frame" x="0.0" y="64" width="375" height="5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="4b6-Qr-7dQ" userLabel="BarStack">
+                                <rect key="frame" x="0.0" y="65" width="375" height="5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F4b-iR-WJC">
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="5"/>
@@ -938,7 +942,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="j6w-xc-toB" userLabel="BarStack">
-                                <rect key="frame" x="0.0" y="64" width="375" height="5"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tjw-PH-oLk">
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="5"/>
@@ -1006,6 +1010,7 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="UrC-oV-uNf" kind="relationship" relationship="rootViewController" id="gob-bH-SFg"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toLogin" id="nUF-Gj-KWw"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pPp-Nc-EyP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1020,9 +1025,10 @@
         <image name="logout" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2fQ-wg-s0k"/>
         <segue reference="y5d-Vz-T4A"/>
-        <segue reference="hsF-5d-U5P"/>
-        <segue reference="Zqm-Jp-7fE"/>
+        <segue reference="XRz-oh-R7D"/>
+        <segue reference="pdp-rL-6Oy"/>
+        <segue reference="oEb-MX-RGE"/>
+        <segue reference="2fQ-wg-s0k"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -49,6 +49,7 @@ class NewUserViewController: UIViewController {
    }
    
    //MARK: IBAction ---------------------------------
+  // @IBAction func unwindToNewUser(segue: UIStoryboardSegue) {}
    
    @IBAction func submitPressed(_ sender: Any) {
       let email = userEmail.text!
@@ -81,7 +82,7 @@ class NewUserViewController: UIViewController {
                UserDataModel.shared.user = User(userID: currentUserID, userEmail: email, userFirstName: firstName, userLastName: lastName)
                
                print("User signed in!")
-               self.performSegue(withIdentifier: "newToGTHome", sender: self)
+               self.performSegue(withIdentifier: "goToHome", sender: self)
             }
          }
       }
