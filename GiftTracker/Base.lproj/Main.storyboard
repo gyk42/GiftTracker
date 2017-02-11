@@ -238,13 +238,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLp-jE-wrX">
-                                        <rect key="frame" x="160.5" y="5" width="55.5" height="40"/>
+                                        <rect key="frame" x="160" y="5" width="56" height="40"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffF-5S-Owm">
-                                        <rect key="frame" x="8" y="5" width="55.5" height="44"/>
+                                        <rect key="frame" x="8" y="5" width="55" height="44"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" image="Multiply_000000_50"/>
                                         <connections>
@@ -639,7 +639,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="33b-bf-2Ob" userLabel="TopBarStack">
-                                <rect key="frame" x="0.0" y="20" width="375" height="5"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VEt-6B-c9o">
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="5"/>
@@ -774,7 +774,7 @@
                                 <color key="textColor" red="0.28627450980000002" green="0.31372549020000001" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" alpha="0.55000001192092896" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iPL-hy-dWL">
+                            <imageView userInteractionEnabled="NO" alpha="0.55000001192092896" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gift-boxes-2" translatesAutoresizingMaskIntoConstraints="NO" id="iPL-hy-dWL">
                                 <rect key="frame" x="0.0" y="427" width="375" height="236"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -941,7 +941,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" alpha="0.55000001192092896" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rcU-iI-Gg6">
+                            <imageView userInteractionEnabled="NO" alpha="0.55000001192092896" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gift-boxes" translatesAutoresizingMaskIntoConstraints="NO" id="rcU-iI-Gg6">
                                 <rect key="frame" x="0.0" y="427" width="375" height="236"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -1047,13 +1047,14 @@
         <image name="Gift_000000_25" width="25" height="25"/>
         <image name="Multiply_000000_50" width="50" height="50"/>
         <image name="gift-boxes" width="1308" height="673"/>
+        <image name="gift-boxes-2" width="1114" height="948"/>
         <image name="logout" width="20" height="20"/>
         <image name="ribbon" width="1494" height="736"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xIl-Jv-Cmh"/>
+        <segue reference="hsF-5d-U5P"/>
+        <segue reference="y5d-Vz-T4A"/>
         <segue reference="2fQ-wg-s0k"/>
-        <segue reference="XRz-oh-R7D"/>
         <segue reference="pdp-rL-6Oy"/>
         <segue reference="oEb-MX-RGE"/>
     </inferredMetricsTieBreakers>
