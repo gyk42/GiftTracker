@@ -10,8 +10,8 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
-   
+class LoginViewController: UIViewController {
+   //UITextFieldDelegate
    // MARK: IBOutlet -------------------------------
    
    @IBOutlet weak var userEmailTextField: UITextField!
@@ -28,19 +28,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
       StyleModel.shared.styleButtons(buttonName: signInBtn)
       StyleModel.shared.styleButtons(buttonName: createAccountBtn)
       
-      // text field delegates
-      userEmailTextField.delegate = self
-      userPasswordTextField.delegate = self
-      
-      // set return key styles
-      userEmailTextField.returnKeyType = UIReturnKeyType.next
-      userPasswordTextField.returnKeyType = UIReturnKeyType.done
-      
-      // only enable userPasswordTextField if userEmailTextField is non-empty
-      userPasswordTextField.isEnabled = false
-      
-      // only enable 'go' key of userPasswordTextField if the field itself is non-empty
-      userPasswordTextField.enablesReturnKeyAutomatically = true
+      // Use exention getting to the next textfield
+      UITextField.connectFields(fields: [userEmailTextField, userPasswordTextField])
    }
    
    override func viewWillAppear(_ animated: Bool) {

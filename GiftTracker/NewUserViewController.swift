@@ -29,10 +29,12 @@ class NewUserViewController: UIViewController {
       
       ref = FIRDatabase.database().reference()
       
-      // style buttons to give softer look
+      // Style buttons to give softer look
       StyleModel.shared.styleButtons(buttonName: signInBtn)
       StyleModel.shared.styleButtons(buttonName: createAccountBtn)
-
+      
+      // Use exention getting to the next textfield
+      UITextField.connectFields(fields: [userFirstName, userLastName, userEmail, userPassword])
    }
    
    // to get rid of keyboard by touching the outside of the textfield

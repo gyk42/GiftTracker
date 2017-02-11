@@ -41,11 +41,13 @@ class AddGiftInfoController: UIViewController, UITextFieldDelegate {
       // style button to give softer look
       StyleModel.shared.styleButtons(buttonName: saveGiftInfoBtn)
       
+      // Use exention getting to the next textfield
+      UITextField.connectFields(fields: [giftNameTextField, giftPriceTextField])
+      
       // Grabs the upc code from scanner and pass it through API
       grabPassUPC()
       
-      // WIP trying to grab source and set it to pass it to scanner...
-      //self.source = sourceType
+      
    }
    
    // to get rid of keyboard by touching the outside of the textfield

@@ -13,9 +13,10 @@ class AddFriendInfoViewController: UIViewController, UITextFieldDelegate, UIPick
    var source = "giving"
    var isGiving:Bool = true
    var eventPickerData: [String] = ["Birthday", "Valentine\'s day", "Mother\'s day", "Father's day", "Thanksgiving", "Hanukkah", "Christmas", "Bridal Shower", "Baby Shower", "Other"]
-   var eventName = "birthday"
+   var eventName = "Birthday"
    let eventPicker = UIPickerView()
    let datePicker = UIDatePicker()
+   var activeTF : UITextField!
    
    // MARK: IBOutlet --------------------------------------
    
@@ -35,6 +36,9 @@ class AddFriendInfoViewController: UIViewController, UITextFieldDelegate, UIPick
       
       // Style buttons to give softer look
       StyleModel.shared.styleButtons(buttonName: addAGiftBtn)
+      
+      // Use exention getting to the next textfield
+      UITextField.connectFields(fields: [friendFirstNameTextField, friendLastNameTextField, giftDateTextField, eventPickerTextField, descriptionTextField])
       
       // Picker calls
       eventPickerView()
@@ -67,6 +71,7 @@ class AddFriendInfoViewController: UIViewController, UITextFieldDelegate, UIPick
    
    // The data to return for the row and component (column) that's being passed in
    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+      
       return eventPickerData[row]
    }
    
@@ -76,20 +81,23 @@ class AddFriendInfoViewController: UIViewController, UITextFieldDelegate, UIPick
       eventPickerTextField.text = eventName
    }
    
-   // Sets
+   // Sets event picker
    func eventPickerView() {
       let toolbar = UIToolbar()
       toolbar.sizeToFit()
       let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneEventPickerPressed))
-      toolbar.setItems([doneButton], animated: false)
-      
+      let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+            toolbar.setItems([spaceButton, doneButton], animated: false)
+
       eventPicker.delegate = self
       eventPicker.dataSource = self
       eventPickerTextField.inputView = eventPicker
       eventPickerTextField.inputAccessoryView = toolbar
+      
    }
    
    func doneEventPickerPressed() {
+      self.eventPicker.selectRow(0, inComponent: 0, animated: true)
       self.view.endEditing(true)
    }
    
@@ -100,7 +108,9 @@ class AddFriendInfoViewController: UIViewController, UITextFieldDelegate, UIPick
       toolbar.sizeToFit()
       
       let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneDatePickerPressed))
-      toolbar.setItems([doneButton], animated: false)
+      let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+      toolbar.setItems([spaceButton, doneButton], animated: false)
+
       
       giftDateTextField.inputAccessoryView = toolbar
       giftDateTextField.inputView = datePicker
