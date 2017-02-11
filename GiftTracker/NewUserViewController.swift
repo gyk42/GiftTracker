@@ -85,7 +85,7 @@ class NewUserViewController: UIViewController {
                
                print(currentUserID)
                print("User signed in!")
-               self.performSegue(withIdentifier: "goToHome", sender: self)
+               self.performSegue(withIdentifier: "toPopUp", sender: self)
             }
          }
       }

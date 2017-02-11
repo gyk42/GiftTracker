@@ -50,7 +50,7 @@ class LoginViewController: UIViewController {
       if FIRAuth.auth()?.currentUser != nil {
          print("=======current user exist============")
          // segue into next page
-         performSegue(withIdentifier: "goToHome", sender: self)
+         performSegue(withIdentifier: "toHome", sender: self)
       } else {
          print("=========no current user============")
       }
@@ -89,7 +89,7 @@ class LoginViewController: UIViewController {
       
       UserDataModel.shared.login(email: userLoginEmail, password: userLoginPassword, complete: { success in
          if success {
-            self.performSegue(withIdentifier: "goToHome", sender: self)
+            self.performSegue(withIdentifier: "toHome", sender: self)
          } else {
             let alertController = UIAlertController(title: "Error", message: "Please provide a valid email or password", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)

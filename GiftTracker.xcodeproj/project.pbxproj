@@ -12,7 +12,7 @@
 		5013BC861E443D5A00A8FFF4 /* QRScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5013BC851E443D5A00A8FFF4 /* QRScannerController.swift */; };
 		5013BC881E44407100A8FFF4 /* AddGiftInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5013BC871E44407100A8FFF4 /* AddGiftInfoController.swift */; };
 		503ACF7F1E4D4E8000F34828 /* StyleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503ACF7E1E4D4E8000F34828 /* StyleModel.swift */; };
-		503ACF821E4E592E00F34828 /* NewUserPassThroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503ACF811E4E592E00F34828 /* NewUserPassThroughViewController.swift */; };
+		503ACF821E4E592E00F34828 /* NewUserPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503ACF811E4E592E00F34828 /* NewUserPopUpViewController.swift */; };
 		50876DF81E44F438003E2AD4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50876DF71E44F438003E2AD4 /* GoogleService-Info.plist */; };
 		50876DFA1E45994E003E2AD4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50876DF91E45994E003E2AD4 /* LoginViewController.swift */; };
 		50876DFF1E459D56003E2AD4 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50876DFE1E459D56003E2AD4 /* UserModel.swift */; };
@@ -38,7 +38,7 @@
 		5013BC851E443D5A00A8FFF4 /* QRScannerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScannerController.swift; sourceTree = "<group>"; };
 		5013BC871E44407100A8FFF4 /* AddGiftInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGiftInfoController.swift; sourceTree = "<group>"; };
 		503ACF7E1E4D4E8000F34828 /* StyleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleModel.swift; sourceTree = "<group>"; };
-		503ACF811E4E592E00F34828 /* NewUserPassThroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserPassThroughViewController.swift; sourceTree = "<group>"; };
+		503ACF811E4E592E00F34828 /* NewUserPopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserPopUpViewController.swift; sourceTree = "<group>"; };
 		50876DF71E44F438003E2AD4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		50876DF91E45994E003E2AD4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		50876DFE1E459D56003E2AD4 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -91,6 +91,7 @@
 			children = (
 				50876E041E46D521003E2AD4 /* NewUserViewController.swift */,
 				50876DF91E45994E003E2AD4 /* LoginViewController.swift */,
+				503ACF811E4E592E00F34828 /* NewUserPopUpViewController.swift */,
 			);
 			name = Auth;
 			sourceTree = "<group>";
@@ -154,7 +155,6 @@
 			children = (
 				5013BC831E443B0000A8FFF4 /* Assets.xcassets */,
 				508DA89C1E3EC6090093514D /* Main.storyboard */,
-				503ACF811E4E592E00F34828 /* NewUserPassThroughViewController.swift */,
 				508DA8A41E3EC6090093514D /* LaunchScreen.storyboard */,
 			);
 			name = UI;
@@ -340,7 +340,7 @@
 				50876E051E46D521003E2AD4 /* NewUserViewController.swift in Sources */,
 				508DA8991E3EC6090093514D /* AppDelegate.swift in Sources */,
 				50C5C1901E4030F800178B58 /* HomeViewController.swift in Sources */,
-				503ACF821E4E592E00F34828 /* NewUserPassThroughViewController.swift in Sources */,
+				503ACF821E4E592E00F34828 /* NewUserPopUpViewController.swift in Sources */,
 				50C5C1921E40311E00178B58 /* GiftUPCModel.swift in Sources */,
 				50876DFA1E45994E003E2AD4 /* LoginViewController.swift in Sources */,
 				50876DFF1E459D56003E2AD4 /* UserModel.swift in Sources */,
