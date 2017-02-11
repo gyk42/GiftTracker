@@ -13,7 +13,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
    
    var gifts = [Gift]()
    var ref: FIRDatabaseReference!
-   static var userID = FIRAuth.auth()!.currentUser!.uid
+   var userID = FIRAuth.auth()!.currentUser!.uid
    var isGiving:Bool = true
    var source = "giving"  // Default
    
@@ -31,7 +31,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
       giftTableviewDisplay()
       customizeNavigation()
-      
+      print(userID)
       listOfGiftsTableView.reloadData()
    }
    
@@ -51,16 +51,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
       
       // Redirect as user signouts to login VC
       navigationController?.performSegue(withIdentifier: "toLogin", sender: self)
-   }
-   
-   func spinnerStart() {
-      spinnerOutlet.startAnimating()
-      spinnerOutlet.hidesWhenStopped = true
-   }
-   
-   func spinnerStop() {
-      spinnerOutlet.hidesWhenStopped = true
-      spinnerOutlet.stopAnimating()
    }
    
    // MARK: Tableview related functions ------------------------
@@ -108,8 +98,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
    // Firebase call for gifts that has a matching userID with current user
    func giftTableviewDisplay() {
       let giftsRef = FIRDatabase.database().reference(withPath:"gifts")
-      let giftsQuery = giftsRef.queryOrdered(byChild: "userID").queryEqual(toValue: HomeViewController.userID)
-      
+      let giftsQuery = giftsRef.queryOrdered(byChild: "userID").queryEqual(toValue: userID)
+
       giftsQuery.observeSingleEvent(of: .value, with: { (snapshot) in
          
          if snapshot.hasChildren(){
@@ -130,14 +120,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                }
             }
             
-            self.spinnerOutlet.hidesWhenStopped = true
-            self.spinnerOutlet.stopAnimating()
-            
             DispatchQueue.main.async {
                self.listOfGiftsTableView.reloadData()
             }
          }
       })
+      
    }
    
    // MARK: IBAction -------------------------------------

@@ -77,7 +77,7 @@
                                     </segue>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OjR-Oa-vv2">
+                            <imageView userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gift-boxes" translatesAutoresizingMaskIntoConstraints="NO" id="OjR-Oa-vv2">
                                 <rect key="frame" x="0.0" y="427" width="375" height="240"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -176,7 +176,7 @@
                                     </segue>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4x6-oi-Ork">
+                            <imageView userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ribbon" translatesAutoresizingMaskIntoConstraints="NO" id="4x6-oi-Ork">
                                 <rect key="frame" x="0.0" y="427" width="375" height="240"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -190,9 +190,7 @@
                         <outlet property="userFirstName" destination="Ag1-4T-3hJ" id="U7m-PJ-xZ8"/>
                         <outlet property="userLastName" destination="tfE-C5-0UK" id="Aae-pB-LnF"/>
                         <outlet property="userPassword" destination="lbg-CI-NNA" id="J1y-u1-XZA"/>
-                        <segue destination="Q3W-Eh-x0a" kind="popoverPresentation" identifier="goToHome" id="XRz-oh-R7D">
-                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                        </segue>
+                        <segue destination="Q3W-Eh-x0a" kind="show" identifier="goToHome" id="XRz-oh-R7D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dsO-GQ-r7x" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -222,7 +220,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M5Y-KL-IRu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="442" y="202"/>
+            <point key="canvasLocation" x="519" y="-107"/>
         </scene>
         <!--Scanner Controller-->
         <scene sceneID="KqP-cy-Mg1">
@@ -1048,12 +1046,14 @@
         <image name="Barcode_000000_25" width="25" height="25"/>
         <image name="Gift_000000_25" width="25" height="25"/>
         <image name="Multiply_000000_50" width="50" height="50"/>
+        <image name="gift-boxes" width="1308" height="673"/>
         <image name="logout" width="20" height="20"/>
+        <image name="ribbon" width="1494" height="736"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="xIl-Jv-Cmh"/>
         <segue reference="2fQ-wg-s0k"/>
-        <segue reference="hsF-5d-U5P"/>
+        <segue reference="XRz-oh-R7D"/>
         <segue reference="pdp-rL-6Oy"/>
         <segue reference="oEb-MX-RGE"/>
     </inferredMetricsTieBreakers>

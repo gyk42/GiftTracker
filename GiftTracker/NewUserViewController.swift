@@ -81,6 +81,7 @@ class NewUserViewController: UIViewController {
                self.ref.child("users").updateChildValues(["\(currentUserID)":["userFirstName": firstName, "userLastName" : lastName, "userEmail" : email]])
                UserDataModel.shared.user = User(userID: currentUserID, userEmail: email, userFirstName: firstName, userLastName: lastName)
                
+               print(currentUserID)
                print("User signed in!")
                self.performSegue(withIdentifier: "goToHome", sender: self)
             }
