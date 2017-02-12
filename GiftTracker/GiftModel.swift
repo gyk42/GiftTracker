@@ -22,10 +22,11 @@ class Gift {
    var giftPrice: String?
    var giftUPCCode: String?
    var notes: String?
+   var timeStamp: String?
    var userID = FIRAuth.auth()?.currentUser?.uid
    var ref: FIRDatabaseReference?
    
-   init(dateRecieved: String, eventDate: String, eventName: String, friendFirstName: String, friendLastName: String, giftStatus: String, giftImageUrl: String, giftName: String, giftPrice: String, giftUPCCode: String, notes: String, userID: String) {
+   init(dateRecieved: String, eventDate: String, eventName: String, friendFirstName: String, friendLastName: String, giftStatus: String, giftImageUrl: String, giftName: String, giftPrice: String, giftUPCCode: String, notes: String, timeStamp:String, userID: String) {
       self.dateRecieved = dateRecieved
       self.eventDate = eventDate
       self.eventName = eventName
@@ -37,6 +38,7 @@ class Gift {
       self.giftPrice = giftPrice
       self.giftUPCCode = giftUPCCode
       self.notes = notes
+      self.timeStamp = timeStamp
       self.userID = userID
    }
    
@@ -54,6 +56,7 @@ class Gift {
       giftPrice = snapshotValue["giftPrice"] as? String ?? "Unknown"
       giftUPCCode = snapshotValue["giftUPCCode"] as? String ?? "Unknown"
       notes = snapshotValue["notes"] as? String ?? "Unknown"
+      timeStamp = snapshotValue["timeStamp"] as? String ?? "Unknown"
       userID = snapshotValue["userID"] as? String
    }
    
@@ -71,6 +74,7 @@ class Gift {
          "giftPrice" : giftPrice! as String as AnyObject,
          "giftUPCCode" : giftUPCCode! as String as AnyObject,
          "notes" : notes! as String as AnyObject,
+         "timeStamp" : timeStamp! as String as AnyObject,
          "userID" : userID! as String as AnyObject
       ]
    }

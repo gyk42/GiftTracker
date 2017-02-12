@@ -47,20 +47,10 @@ class AddGiftInfoController: UIViewController, UITextFieldDelegate {
       // Grabs the upc code from scanner and pass it through API
       grabPassUPC()
       
-     // self.navigationController?.isNavigationBarHidden = true
-      
-      
+      // sets for timestamp for Firebase
+      Format.shared.dateFormatter.timeStyle = .long
    }
    
-   override func viewWillAppear(_ animated: Bool) {
-      super.viewWillDisappear(animated)
-     // self.navigationController?.setNavigationBarHidden(true, animated: animated)
-   }
-   
-   override func viewWillDisappear(_ animated: Bool) {
-      super.viewWillDisappear(animated)
-       // self.navigationController?.setNavigationBarHidden(false, animated: animated)
-   }
    // to get rid of keyboard by touching the outside of the textfield
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
       self.view.endEditing(true)
@@ -96,7 +86,7 @@ class AddGiftInfoController: UIViewController, UITextFieldDelegate {
          })
       } else {
          passUPC = "not provided"
-         giftImageURL = "https://cdn.pixabay.com/photo/2013/09/21/15/47/gift-184574_1280.png"
+         giftImageURL = "http://icons.iconarchive.com/icons/himacchi/sweetbox/128/gift-icon.png"
       }
       
    }
@@ -132,7 +122,7 @@ class AddGiftInfoController: UIViewController, UITextFieldDelegate {
       if giftName == "" {
          alert(message: "gift name")
       } else {
-         GiftDataModel.shared.createGift(dateRecieved: date, eventDate: date, eventName: AddGiftInfoController.eventName, friendFirstName: firstName, friendLastName: lastName, giftStatus: AddGiftInfoController.source, giftImageUrl: giftImageURL, giftName: giftName!, giftPrice: giftPrice!, giftUPCCode: passUPC, notes: notes, userID: FIRAuth.auth()!.currentUser!.uid, complete: { success in
+         GiftDataModel.shared.createGift(dateRecieved: date, eventDate: date, eventName: AddGiftInfoController.eventName, friendFirstName: firstName, friendLastName: lastName, giftStatus: AddGiftInfoController.source, giftImageUrl: giftImageURL, giftName: giftName!, giftPrice: giftPrice!, giftUPCCode: passUPC, notes: notes, timeStamp: Date().format(), userID: FIRAuth.auth()!.currentUser!.uid, complete: { success in
             if success {
                self.performSegue(withIdentifier: "goToHome", sender: self)
             }

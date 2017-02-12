@@ -21,10 +21,10 @@ class GiftDataModel {
       gifts.observe(.value, with: didUpdateGifts)
    }
    
-   func createGift(dateRecieved: String, eventDate: String, eventName: String, friendFirstName: String, friendLastName: String, giftStatus: String, giftImageUrl: String, giftName: String, giftPrice: String, giftUPCCode: String, notes: String, userID: String, complete:@escaping(Bool)->()) {
+   func createGift(dateRecieved: String, eventDate: String, eventName: String, friendFirstName: String, friendLastName: String, giftStatus: String, giftImageUrl: String, giftName: String, giftPrice: String, giftUPCCode: String, notes: String, timeStamp: String, userID: String, complete:@escaping(Bool)->()) {
       
       let giftsRef = FIRDatabase.database().reference(withPath: "gifts")
-      let gift = Gift(dateRecieved: dateRecieved, eventDate: eventDate, eventName: eventName, friendFirstName: friendFirstName, friendLastName: friendLastName, giftStatus: giftStatus, giftImageUrl: giftImageUrl, giftName: giftName, giftPrice: giftPrice, giftUPCCode: giftUPCCode, notes: notes, userID: userID)
+      let gift = Gift(dateRecieved: dateRecieved, eventDate: eventDate, eventName: eventName, friendFirstName: friendFirstName, friendLastName: friendLastName, giftStatus: giftStatus, giftImageUrl: giftImageUrl, giftName: giftName, giftPrice: giftPrice, giftUPCCode: giftUPCCode, notes: notes, timeStamp: timeStamp, userID: userID)
       let giftRef = giftsRef.childByAutoId()
       giftRef.setValue(gift.toAnyObject(), withCompletionBlock: { error, ref in
          
