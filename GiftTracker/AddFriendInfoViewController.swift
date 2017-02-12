@@ -38,7 +38,7 @@ class AddFriendInfoViewController: UIViewController, UITextFieldDelegate, UIPick
       StyleModel.shared.styleButtons(buttonName: addAGiftBtn)
       
       // Use exention getting to the next textfield
-      UITextField.connectFields(fields: [friendFirstNameTextField, friendLastNameTextField, giftDateTextField, eventPickerTextField, descriptionTextField])
+      UITextField.connectFields(fields: [friendFirstNameTextField, friendLastNameTextField, eventPickerTextField,giftDateTextField,  descriptionTextField])
       
       // Picker calls
       eventPickerView()
@@ -162,7 +162,7 @@ class AddFriendInfoViewController: UIViewController, UITextFieldDelegate, UIPick
    
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       if segue.identifier == "toSaveGiftInfo" {
-         if let destinationVC = segue.destination as? AddGiftInfoController {
+         if segue.destination is AddGiftInfoController {
             AddGiftInfoController.firstName = friendFirstNameTextField.text!
             AddGiftInfoController.lastName = friendLastNameTextField.text!
             AddGiftInfoController.notes = descriptionTextField.text!

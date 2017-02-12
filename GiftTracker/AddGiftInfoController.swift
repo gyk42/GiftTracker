@@ -47,9 +47,20 @@ class AddGiftInfoController: UIViewController, UITextFieldDelegate {
       // Grabs the upc code from scanner and pass it through API
       grabPassUPC()
       
+     // self.navigationController?.isNavigationBarHidden = true
+      
       
    }
    
+   override func viewWillAppear(_ animated: Bool) {
+      super.viewWillDisappear(animated)
+     // self.navigationController?.setNavigationBarHidden(true, animated: animated)
+   }
+   
+   override func viewWillDisappear(_ animated: Bool) {
+      super.viewWillDisappear(animated)
+       // self.navigationController?.setNavigationBarHidden(false, animated: animated)
+   }
    // to get rid of keyboard by touching the outside of the textfield
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
       self.view.endEditing(true)

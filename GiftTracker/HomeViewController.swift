@@ -35,6 +35,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
       listOfGiftsTableView.reloadData()
    }
    
+   override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(animated)
+      self.listOfGiftsTableView.reloadData()
+   }
    // MARK: Navigation controller related functions
    
    func customizeNavigation() {
