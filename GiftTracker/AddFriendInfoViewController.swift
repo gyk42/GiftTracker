@@ -38,7 +38,7 @@ class AddFriendInfoViewController: UIViewController, UITextFieldDelegate, UIPick
       StyleModel.shared.styleButtons(buttonName: addAGiftBtn)
       
       // Use exention getting to the next textfield
-      UITextField.connectFields(fields: [friendFirstNameTextField, friendLastNameTextField, eventPickerTextField,giftDateTextField,  descriptionTextField])
+      UITextField.connectFields(fields: [friendFirstNameTextField, friendLastNameTextField, eventPickerTextField,giftDateTextField, descriptionTextField])
       
       // Picker calls
       eventPickerView()
