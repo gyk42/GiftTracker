@@ -27,7 +27,7 @@ class UPCApi {
          }
       }
    }
-
+   
    static func fetchUPC(upc: String, closure: @escaping ([GiftUPC?]) -> ()) {
       
       let url = URL(string: "https://api.upcitemdb.com/prod/trial/lookup?upc=\(upc)")!
@@ -41,5 +41,5 @@ class UPCApi {
          parseUPCJson(data: responseData, closure: closure)
          }.resume()
    }
-
+   
 }

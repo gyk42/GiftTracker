@@ -51,14 +51,15 @@ class NewUserViewController: UIViewController {
    }
    
    //MARK: IBAction ---------------------------------
-  // @IBAction func unwindToNewUser(segue: UIStoryboardSegue) {}
    
    @IBAction func submitPressed(_ sender: Any) {
+      
       let email = userEmail.text!
       let firstName = userFirstName.text!
       let lastName = userLastName.text!
       let password = userPassword.text!
       
+      // textfield validation
       if firstName == "" {
          alert(message: "first name")
       } else if lastName == "" {
@@ -78,17 +79,16 @@ class NewUserViewController: UIViewController {
                self.present(alertController, animated: true, completion: nil)
                print(error.localizedDescription)
             } else {
+               // Creates user
                let currentUserID = FIRAuth.auth()!.currentUser!.uid
                
                self.ref.child("users").updateChildValues(["\(currentUserID)":["userFirstName": firstName, "userLastName" : lastName, "userEmail" : email]])
                UserDataModel.shared.user = User(userID: currentUserID, userEmail: email, userFirstName: firstName, userLastName: lastName)
                
-               print(currentUserID)
-               print("User signed in!")
+               // After it creates an account, it goes into new member modal
                self.performSegue(withIdentifier: "toPopUp", sender: self)
             }
          }
       }
-      
    }
 }

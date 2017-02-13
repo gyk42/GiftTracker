@@ -11,7 +11,7 @@ import Firebase
 import FirebaseDatabase
 
 class LoginViewController: UIViewController {
-   //UITextFieldDelegate
+   
    // MARK: IBOutlet -------------------------------
    
    @IBOutlet weak var userEmailTextField: UITextField!
@@ -20,7 +20,7 @@ class LoginViewController: UIViewController {
    @IBOutlet weak var signInBtn: UIButton!
    
    // MARK: Life-cycle -------------------------------
-
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       
@@ -48,12 +48,9 @@ class LoginViewController: UIViewController {
       super.viewDidAppear(animated)
       
       if FIRAuth.auth()?.currentUser != nil {
-         print("=======current user exist============")
          // segue into next page
          performSegue(withIdentifier: "toHome", sender: self)
-      } else {
-         print("=========no current user============")
-      }
+      } 
    }
    
    // UITextFieldDelegate
@@ -80,7 +77,6 @@ class LoginViewController: UIViewController {
    }
    
    // MARK: IBAction -------------------------------
- //  @IBAction func unwindToLogin(segue: UIStoryboardSegue) {}
    
    @IBAction func signInPressed(_ sender: Any) {
       

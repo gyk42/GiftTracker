@@ -75,15 +75,11 @@ class QRScannerController: UIViewController, AVCaptureMetadataOutputObjectsDeleg
          view.bringSubview(toFront: messageLabel)
          view.bringSubview(toFront: topbar)
          
-         
       } catch {
          // If any error occurs, simply print it out and don't continue any more.
          print(error)
          return
       }
-      
-      print("from scanner \(firstName)")
-      print(source)
    }
    
    // MARK: - AVCaptureMetadataOutputObjectsDelegate Methods

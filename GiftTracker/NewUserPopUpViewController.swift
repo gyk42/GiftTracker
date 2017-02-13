@@ -10,19 +10,22 @@ import UIKit
 
 class NewUserPopUpViewController: UIViewController {
    
+   // MARK: IBAOutlet -------------------------------------
+   
    @IBOutlet weak var popUpMessageOutlet: UIView!
    
    @IBOutlet weak var popUpEnterBtn: UIButton!
    
+   // MARK: Life-cycle -------------------------------------
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       popUpMessageOutlet.layer.cornerRadius = 8
-      //popUpMessageOutlet.layer.borderWidth = 1.5
-     // popUpMessageOutlet.layer.borderColor = UIColor.lightGray.cgColor
    }
    
+   // MARK: IBAction -------------------------------------
+   
    @IBAction func dissmissPopupPressed(_ sender: Any) {
-      //dismiss(animated: true, completion: nil)
       self.performSegue(withIdentifier: "toHome", sender: self)
    }
    

@@ -8,8 +8,8 @@
 
 import Foundation
 import UIKit
-   
-   
+
+// Stying buttons globally so that it's consistent
 class StyleModel {
    static let shared = StyleModel()
    private init() {}

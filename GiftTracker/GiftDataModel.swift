@@ -43,7 +43,6 @@ class GiftDataModel {
    func deleteGift(gift: Gift) {
       gift.ref?.removeValue()
    }
-   
 }
 
 class Format {

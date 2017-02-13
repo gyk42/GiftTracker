@@ -11,11 +11,11 @@ import Firebase
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
    
-   var gifts = [Gift]()
    var ref: FIRDatabaseReference!
    var userID = FIRAuth.auth()!.currentUser!.uid
    var isGiving:Bool = true
    var source = "giving"  // Default
+   var gifts = [Gift]()
    var filterGifts:[Gift] = []
    var searchController = UISearchController(searchResultsController: nil)
    
@@ -24,12 +24,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
    @IBOutlet weak var giftStatus: UISegmentedControl!
    @IBOutlet weak var listOfGiftsTableView: UITableView!
    @IBOutlet weak var spinnerOutlet: UIActivityIndicatorView!
-
+   
    // MARK: Life-Cycle  ------------------------------------
    
    override func viewDidLoad() {
       super.viewDidLoad()
-
+      
       giftTableviewDisplay()
       customizeNavigation()
       setSearchBar()
@@ -45,6 +45,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
       super.viewDidAppear(animated)
       self.listOfGiftsTableView.reloadData()
    }
+   
    // MARK: Navigation controller related functions
    
    func customizeNavigation() {
@@ -63,8 +64,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
       navigationController?.performSegue(withIdentifier: "toLogin", sender: self)
    }
    
-   // serach bar
+   // MARK: Serach bar
    
+   // View did load search settings
    func setSearchBar() {
       searchController.searchResultsUpdater = self
       searchController.dimsBackgroundDuringPresentation = false
@@ -72,14 +74,15 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
       listOfGiftsTableView.tableHeaderView = searchController.searchBar
    }
    
+   // Filtering of serach with friend's name
    func filterContentSearch(searchext: String, scoope: String = "All"){
       filterGifts = gifts.filter({ (name) -> Bool in
          return (name.friendFirstName?.lowercased().contains(searchext.lowercased()))!
       })
       listOfGiftsTableView.reloadData()
    }
-
    
+   // Adding text into search bar
    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
       filterGifts = gifts.filter({ (gifts) -> Bool in
          return (gifts.friendFirstName?.lowercased().contains(searchText.lowercased()))!
@@ -148,7 +151,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
    func giftTableviewDisplay() {
       let giftsRef = FIRDatabase.database().reference(withPath:"gifts")
       let giftsQuery = giftsRef.queryOrdered(byChild: "userID").queryEqual(toValue: userID)
-
+      
       giftsQuery.observeSingleEvent(of: .value, with: { (snapshot) in
          
          if snapshot.hasChildren(){
@@ -162,7 +165,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                   
                   // Source param passes in from segmented control
                   if giftStatusSnapshot as! String == self.source {
-                     print(self.source)
                      let gift = Gift(snapshot: gift as! FIRDataSnapshot)
                      self.gifts.append(gift)
                   }
@@ -195,5 +197,4 @@ extension HomeViewController: UISearchResultsUpdating {
    public func updateSearchResults(for searchController: UISearchController) {
       filterContentSearch(searchext: searchController.searchBar.text!)
    }
-   
 }

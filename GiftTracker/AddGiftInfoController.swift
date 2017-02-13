@@ -20,9 +20,9 @@ class AddGiftInfoController: UIViewController, UITextFieldDelegate {
    static var notes = String()
    static var date = String()
    static var eventName = String()
-   //   var firstName = String()
-   //static var sourceType: String = ""
    
+   //   @IBOutlet -------------------------------------------
+
    @IBOutlet weak var giftImageView: UIImageView!
    @IBOutlet weak var giftNameTextField: UITextField!
    @IBOutlet weak var giftPriceTextField: UITextField!
@@ -30,15 +30,13 @@ class AddGiftInfoController: UIViewController, UITextFieldDelegate {
    @IBOutlet weak var upcLabel: UILabel!
    @IBOutlet weak var saveGiftInfoBtn: UIButton!
    
-   //   @IBOutlet weak var scrollForKeyboard: UIScrollView!
    
-   // MARK: Life cycle
+   // MARK: Life cycle -------------------------------------
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       
-      print("from gift \(AddGiftInfoController.firstName)")
-      
-      // style button to give softer look
+      // Style button to give softer look
       StyleModel.shared.styleButtons(buttonName: saveGiftInfoBtn)
       
       // Use exention getting to the next textfield
@@ -47,11 +45,11 @@ class AddGiftInfoController: UIViewController, UITextFieldDelegate {
       // Grabs the upc code from scanner and pass it through API
       grabPassUPC()
       
-      // sets for timestamp for Firebase
+      // Sets for timestamp for Firebase
       Format.shared.dateFormatter.timeStyle = .long
    }
    
-   // to get rid of keyboard by touching the outside of the textfield
+   // To get rid of keyboard by touching the outside of the textfield
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
       self.view.endEditing(true)
    }
@@ -88,10 +86,9 @@ class AddGiftInfoController: UIViewController, UITextFieldDelegate {
          passUPC = "not provided"
          giftImageURL = "http://icons.iconarchive.com/icons/himacchi/sweetbox/128/gift-icon.png"
       }
-      
    }
    
-   // displays information fetched from api.upcitemdb.com
+   // Displays information fetched from api.upcitemdb.com
    func displayGiftInfo() {
       for x in 0..<giftsUPC.count {
          giftNameTextField.text = giftsUPC[x].giftName
@@ -107,7 +104,6 @@ class AddGiftInfoController: UIViewController, UITextFieldDelegate {
    // Button to segue into scanner
    @IBAction func unwindToGiftScreen(segue: UIStoryboardSegue) {
       dismiss(animated: true, completion: nil)
-      // performSegue(withIdentifier: "toScanner", sender: source)
    }
    
    @IBAction func savePressed(_ sender: Any) {
