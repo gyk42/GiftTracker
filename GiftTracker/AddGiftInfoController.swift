@@ -80,6 +80,7 @@ class AddGiftInfoController: UIViewController, UITextFieldDelegate {
             self.displayGiftInfo()
             if self.giftsUPC.count == 0 {
                self.alertForUPC()
+               self.giftImageURL = "http://icons.iconarchive.com/icons/himacchi/sweetbox/128/gift-icon.png"
             }
          })
       } else {

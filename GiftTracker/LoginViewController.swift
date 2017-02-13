@@ -46,7 +46,7 @@ class LoginViewController: UIViewController {
    
    override func viewDidAppear(_ animated: Bool) {
       super.viewDidAppear(animated)
-      
+      //UserDataModel.shared.logout()
       if FIRAuth.auth()?.currentUser != nil {
          // segue into next page
          performSegue(withIdentifier: "toHome", sender: self)
