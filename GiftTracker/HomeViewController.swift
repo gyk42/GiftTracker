@@ -16,14 +16,15 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
    var userID = FIRAuth.auth()!.currentUser!.uid
    var isGiving:Bool = true
    var source = "giving"  // Default
-   
+   var filterGifts:[Gift] = []
+   var searchController = UISearchController(searchResultsController: nil)
    
    // MARK: IBOutlet --------------------------------------
    
    @IBOutlet weak var giftStatus: UISegmentedControl!
    @IBOutlet weak var listOfGiftsTableView: UITableView!
    @IBOutlet weak var spinnerOutlet: UIActivityIndicatorView!
-   
+
    // MARK: Life-Cycle  ------------------------------------
    
    override func viewDidLoad() {
@@ -31,12 +32,17 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
       giftTableviewDisplay()
       customizeNavigation()
-      print(userID)
+      setSearchBar()
       listOfGiftsTableView.reloadData()
    }
    
    override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
+      self.listOfGiftsTableView.reloadData()
+   }
+   
+   override func viewDidAppear(_ animated: Bool) {
+      super.viewDidAppear(animated)
       self.listOfGiftsTableView.reloadData()
    }
    // MARK: Navigation controller related functions
@@ -57,15 +63,49 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
       navigationController?.performSegue(withIdentifier: "toLogin", sender: self)
    }
    
+   // serach bar
+   
+   func setSearchBar() {
+      searchController.searchResultsUpdater = self
+      searchController.dimsBackgroundDuringPresentation = false
+      definesPresentationContext = true
+      listOfGiftsTableView.tableHeaderView = searchController.searchBar
+   }
+   
+   func filterContentSearch(searchext: String, scoope: String = "All"){
+      filterGifts = gifts.filter({ (name) -> Bool in
+         return (name.friendFirstName?.lowercased().contains(searchext.lowercased()))!
+      })
+      listOfGiftsTableView.reloadData()
+   }
+
+   
+   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+      filterGifts = gifts.filter({ (gifts) -> Bool in
+         return (gifts.friendFirstName?.lowercased().contains(searchText.lowercased()))!
+      })
+      self.listOfGiftsTableView.reloadData()
+   }
+   
    // MARK: Tableview related functions ------------------------
    
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+      if searchController.isActive && searchController.searchBar.text != "" {
+         return filterGifts.count
+      }
       return gifts.count
    }
    
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCell(withIdentifier: "listOfGifts", for: indexPath) as! HomeTableViewCell
-      let giftsIndex = gifts[indexPath.row]
+      
+      let giftsIndex: Gift
+      
+      if searchController.isActive && searchController.searchBar.text != "" {
+         giftsIndex = filterGifts[indexPath.row]
+      } else {
+         giftsIndex  = gifts[indexPath.row]
+      }
       
       cell.giftNameLabel.text = giftsIndex.giftName?.capitalized
       cell.giftPriceLabel.text = giftsIndex.giftPrice
@@ -93,7 +133,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
       if segue.identifier == "toDetail" {
          let vc = segue.destination as! DetailGiftViewController
          let indexPath = listOfGiftsTableView.indexPathForSelectedRow!
-         vc.gift = gifts[indexPath.row]
+         if searchController.isActive && searchController.searchBar.text != "" {
+            vc.gift = filterGifts[indexPath.row]
+            searchController.searchBar.text = ""
+         } else {
+            vc.gift  = gifts[indexPath.row]
+         }
       }
    }
    
@@ -142,4 +187,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
       source = isGiving ? "giving" : "received"
       giftTableviewDisplay()
    }
+}
+
+//MARK: extension
+extension HomeViewController: UISearchResultsUpdating {
+   @available(iOS 8.0, *)
+   public func updateSearchResults(for searchController: UISearchController) {
+      filterContentSearch(searchext: searchController.searchBar.text!)
+   }
+   
 }

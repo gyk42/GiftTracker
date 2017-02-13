@@ -505,10 +505,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="HWg-Qp-pHj">
-                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                                <rect key="frame" x="178" y="324" width="20" height="20"/>
                             </activityIndicatorView>
                             <segmentedControl opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9pc-Lj-4n3">
-                                <rect key="frame" x="58" y="42" width="258" height="29"/>
+                                <rect key="frame" x="58" y="35" width="258" height="29"/>
                                 <color key="backgroundColor" red="0.99586468935012817" green="0.79707974195480347" blue="0.42725622653961182" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9pc-Lj-4n3" secondAttribute="height" multiplier="129:14" id="29e-lb-thd"/>
@@ -523,7 +523,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="143" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ey9-kM-ZXh">
-                                <rect key="frame" x="0.0" y="84" width="375" height="575"/>
+                                <rect key="frame" x="0.0" y="86" width="375" height="573"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="listOfGifts" rowHeight="143" id="cHo-gW-Anr" customClass="HomeTableViewCell" customModule="GiftTracker" customModuleProvider="target">
@@ -653,16 +653,16 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.78808718919754028" green="0.78791451454162598" blue="0.80853986740112305" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="9pc-Lj-4n3" firstAttribute="top" secondItem="nnX-Up-KvQ" secondAttribute="bottom" constant="22" id="15h-wa-Jjm"/>
+                            <constraint firstItem="9pc-Lj-4n3" firstAttribute="top" secondItem="nnX-Up-KvQ" secondAttribute="bottom" constant="15" id="15h-wa-Jjm"/>
                             <constraint firstItem="9pc-Lj-4n3" firstAttribute="centerX" secondItem="taf-zd-5Gg" secondAttribute="centerX" id="4V6-dF-puF"/>
                             <constraint firstItem="t2n-h4-PCA" firstAttribute="top" secondItem="ey9-kM-ZXh" secondAttribute="bottom" constant="8" symbolic="YES" id="5Kf-2j-xau"/>
                             <constraint firstAttribute="trailing" secondItem="taf-zd-5Gg" secondAttribute="trailing" id="E82-c5-ORx"/>
                             <constraint firstItem="t2n-h4-PCA" firstAttribute="top" secondItem="taf-zd-5Gg" secondAttribute="bottom" id="JKQ-lj-nzK"/>
                             <constraint firstItem="taf-zd-5Gg" firstAttribute="leading" secondItem="dN8-YK-y4a" secondAttribute="leading" id="P8S-5k-cSK"/>
                             <constraint firstItem="ey9-kM-ZXh" firstAttribute="leading" secondItem="taf-zd-5Gg" secondAttribute="leading" id="UkK-bk-G3f"/>
-                            <constraint firstItem="ey9-kM-ZXh" firstAttribute="top" secondItem="9pc-Lj-4n3" secondAttribute="bottom" constant="14" id="fbh-i1-lDe"/>
+                            <constraint firstItem="ey9-kM-ZXh" firstAttribute="top" secondItem="9pc-Lj-4n3" secondAttribute="bottom" constant="23" id="fbh-i1-lDe"/>
                             <constraint firstItem="HWg-Qp-pHj" firstAttribute="centerY" secondItem="dN8-YK-y4a" secondAttribute="centerY" id="jJi-wT-atQ"/>
                             <constraint firstItem="HWg-Qp-pHj" firstAttribute="centerX" secondItem="dN8-YK-y4a" secondAttribute="centerX" id="qaL-RJ-qNO"/>
                             <constraint firstItem="9pc-Lj-4n3" firstAttribute="width" secondItem="dN8-YK-y4a" secondAttribute="width" constant="-117" id="wfl-2E-69s"/>
@@ -690,7 +690,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WPi-7x-EtR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1483.125" y="-816.54929577464793"/>
+            <point key="canvasLocation" x="1482.4000000000001" y="-817.24137931034488"/>
         </scene>
         <!--Detail Gift View Controller-->
         <scene sceneID="1nU-id-e4n">

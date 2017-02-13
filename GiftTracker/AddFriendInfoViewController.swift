@@ -12,7 +12,7 @@ class AddFriendInfoViewController: UIViewController, UITextFieldDelegate, UIPick
    
    var source = "giving"
    var isGiving:Bool = true
-   var eventPickerData: [String] = ["Birthday", "Valentine\'s day", "Mother\'s day", "Father's day", "Thanksgiving", "Hanukkah", "Christmas", "Bridal Shower", "Baby Shower", "Other"]
+   var eventPickerData: [String] = ["Valentine\'s day", "Birthday", "Mother\'s day", "Father's day", "Thanksgiving", "Hanukkah", "Christmas", "Bridal Shower", "Baby Shower", "Other"]
    var eventName = "Birthday"
    let eventPicker = UIPickerView()
    let datePicker = UIDatePicker()
@@ -169,9 +169,6 @@ class AddFriendInfoViewController: UIViewController, UITextFieldDelegate, UIPick
             AddGiftInfoController.date = giftDateTextField.text!
             AddGiftInfoController.eventName = eventPickerTextField.text!
             AddGiftInfoController.source = source
-            
-            print("from friend \(AddGiftInfoController.firstName)")
-            
          }
       }
    }

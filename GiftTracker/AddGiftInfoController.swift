@@ -115,6 +115,7 @@ class AddGiftInfoController: UIViewController, UITextFieldDelegate {
       let giftName = self.giftNameTextField.text?.lowercased()
       let firstName = AddGiftInfoController.firstName.lowercased()
       let lastName = AddGiftInfoController.lastName.lowercased()
+      let eventName = AddGiftInfoController.eventName.lowercased()
       let giftPrice = self.giftPriceTextField?.text
       let notes = AddGiftInfoController.notes
       let date = AddGiftInfoController.date
@@ -122,7 +123,7 @@ class AddGiftInfoController: UIViewController, UITextFieldDelegate {
       if giftName == "" {
          alert(message: "gift name")
       } else {
-         GiftDataModel.shared.createGift(dateRecieved: date, eventDate: date, eventName: AddGiftInfoController.eventName, friendFirstName: firstName, friendLastName: lastName, giftStatus: AddGiftInfoController.source, giftImageUrl: giftImageURL, giftName: giftName!, giftPrice: giftPrice!, giftUPCCode: passUPC, notes: notes, timeStamp: Date().format(), userID: FIRAuth.auth()!.currentUser!.uid, complete: { success in
+         GiftDataModel.shared.createGift(dateRecieved: date, eventDate: date, eventName: eventName, friendFirstName: firstName, friendLastName: lastName, giftStatus: AddGiftInfoController.source, giftImageUrl: giftImageURL, giftName: giftName!, giftPrice: giftPrice!, giftUPCCode: passUPC, notes: notes, timeStamp: Date().format(), userID: FIRAuth.auth()!.currentUser!.uid, complete: { success in
             if success {
                self.performSegue(withIdentifier: "goToHome", sender: self)
             }

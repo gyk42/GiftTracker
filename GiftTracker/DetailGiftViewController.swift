@@ -12,6 +12,7 @@ import Firebase
 class DetailGiftViewController: UIViewController {
    
    var gift: Gift!
+   var detail: String!
    
    @IBOutlet weak var giftImageView: UIImageView!
    @IBOutlet weak var giftNameLabel: UILabel!
