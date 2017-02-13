@@ -22,9 +22,9 @@ Gift Recorder requires to be connected via wifi or internet to retrieve informat
 [Link to Propsal](proposal.md)
 
 ##Future Implementation
-* Search functionality
+* <del>Search functionality<del>
 * Setting page to change password, email address or delete an account
-* Able upload your own photo of gift
+* Able to upload your own photo of gift
 * Able to modify gift information
 
 ##Login, Create New Account and Welcome modal
@@ -35,3 +35,6 @@ Gift Recorder requires to be connected via wifi or internet to retrieve informat
 
 ##Add Friend's info, Gift ino and Scanner
 ![Screen Grab of Information and Scanner](./images/Add-Friend-Gift-Scanner.png)
+
+##Search
+![Screen Grab of Search capability](./images/Search.png)
